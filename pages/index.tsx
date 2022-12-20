@@ -47,8 +47,24 @@ const Home: NextPage = () => {
 					<img src="/img/landscape/p/layer_6.png" className="min-w-[3000px] object-cover"></img>
 				</div>
 			</ParallaxLayer>
-			<ParallaxLayer offset={0.99999} speed={1} className="z-10 bg-red-500"></ParallaxLayer>
-			<ParallaxLayer offset={2} speed={1} className="z-10 bg-blue-500"></ParallaxLayer>
+			<ParallaxLayer offset={0.99999} speed={1} className="z-10 bg-[#2d112b]">
+				<div className="w-full h-full grid grid-cols-2 max-w-[1000px] mx-auto pt-[100px]">
+					<div className="max-h-[280px] flex flex-col justify-center">
+						<h3 className="font-black font-permanent-marker italic text-white text-4xl mb-[10px]">
+							About Us
+						</h3>
+						<p className="font-sans text-white text-lg font-bold">
+							RowdyHacks is a free, weekend-long, overnight hackathon hosted at UTSA and the second
+							biggest hackathon in Texas! Students can join us to network, code, collaborate, and
+							compete. We welcome hackers from all disciplines, backgrounds, & technical levels!
+						</p>
+					</div>
+					<div className="flex items-center justify-center max-h-[280px]">
+						<Image src={'/img/logos/rh_landing.svg'} width={175} height={175}></Image>
+					</div>
+				</div>
+			</ParallaxLayer>
+			<ParallaxLayer offset={1} speed={1} className="z-10 bg-blue-500"></ParallaxLayer>
 		</Parallax>
 	);
 };
