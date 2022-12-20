@@ -1,6 +1,23 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+import Head from 'next/head';
+import { GetServerSideProps } from 'next';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { buttonDatas, stats } from '../lib/data';
+import { RequestHelper } from '../lib/request-helper';
+import firebase from 'firebase/app';
+import 'firebase/messaging';
+import 'firebase/storage';
+import KeynoteSpeaker from '../components/KeynoteSpeaker';
+import HomeChallengeCard from '../components/HomeChallengeCard';
+import MemberCards from '../components/MemberCards';
+import SponsorCard from '../components/SponsorCard';
+import FAQ from '../components/faq';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 const Home: NextPage = () => {
 	return (
@@ -55,7 +72,7 @@ const Home: NextPage = () => {
 						</h3>
 						<p className="font-sans text-white text-lg font-bold">
 							RowdyHacks is a free, weekend-long, overnight hackathon hosted at UTSA and the second
-							biggest hackathon in Texas! Students can join us to network, code, collaborate, and
+							largest hackathon in Texas! Students can join us to network, code, collaborate, and
 							compete. We welcome hackers from all disciplines, backgrounds, & technical levels!
 						</p>
 					</div>
