@@ -156,7 +156,7 @@ export default function Register() {
 	};
 
 	return (
-		<div className="flex flex-col flex-grow sky-gradient text-white">
+		<div className="flex flex-col flex-grow register-gradient text-white absolute top-0 left-0 pt-[80px]">
 			<Head>
 				<title>Hacker Registration | RowdyHacks</title>
 				<meta name="description" content="Register for RowdyHacks" />
@@ -294,7 +294,7 @@ export default function Register() {
 							<div className="my-8">
 								<button
 									type="submit"
-									className="mr-auto cursor-pointer px-4 py-2 rounded-md bg-blue-200 hover:bg-blue-300"
+									className="mr-auto cursor-pointer px-4 py-2 rounded-md border-white border-2 ease-in-out hover:bg-white hover:text-black"
 									onClick={() => setFormValid(!(!isValid || !dirty))}
 								>
 									Submit
