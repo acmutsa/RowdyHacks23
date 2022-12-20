@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react';
 import { useAuthContext } from '../lib/user/AuthContext';
 import LoadIcon from '../components/LoadIcon';
 import { getFileExtension } from '../lib/util';
+import { titleCase } from 'title-case';
 
 /**
  * A page that allows a user to modify app or profile settings and see their data.
@@ -50,16 +51,16 @@ export default function ProfilePage() {
 	}
 
 	return (
-		<div className="p-8 w-full bg-black">
+		<div className="p-8 w-full h-screen absolute top-0 pt-[80px] left-0 bg-black text-white">
 			<div className="max-w-6xl mx-auto">
-				<h1 className="text-3xl font-bold">User Profile</h1>
+				<h1 className="text-3xl font-bold">Hacker Profile</h1>
 				<section className="w-full py-5">
 					<div className="flex flex-col md:flex-row gap-x-10">
 						<div
-							className="bg-gray-300 w-full md:w-2/3 rounded-xl p-4 flex flex-col justify-around"
+							className="bg-white text-black w-full md:w-2/3 rounded-xl p-4 flex flex-col justify-around"
 							style={{ minHeight: '500px' }}
 						>
-							<h1 className="font-bold text-xl text-center">HackPortal</h1> {/* !change */}
+							<h1 className="font-bold text-xl text-center">RowdyHacks</h1> {/* !change */}
 							<div className="mx-auto">
 								{user.photoUrl && (
 									<Image
@@ -79,24 +80,24 @@ export default function ProfilePage() {
 						<div className="w-full my-5">
 							<div className="profile-view">
 								<div className="profile-view-name flex flex-col gap-y-2">
-									<div className="font-bold text-xl">Name</div>
+									<div className="font-bold font-permanent-marker text-xl">Name</div>
 									<h1 className="font-bold">{`${profile.user.firstName} ${profile.user.lastName}`}</h1>
 								</div>
 								<div className="profile-view-role flex flex-col gap-y-2">
-									<div className="font-bold text-xl">Role</div>
-									<h1 className="font-bold">{profile.user.permissions[0]}</h1>
+									<div className="font-bold font-permanent-marker text-xl">Role</div>
+									<h1 className="font-bold">{titleCase(profile.user.permissions[0])}</h1>
 								</div>
 								<div className="profile-view-univ flex flex-col gap-y-2">
-									<div className="font-bold text-xl">University</div>
+									<div className="font-bold font-permanent-marker text-xl">University</div>
 									<h1 className="font-bold">{profile.university}</h1>
 								</div>
 								<div className="profile-view-major flex flex-col gap-y-2">
-									<div className="font-bold text-xl">Major</div>
+									<div className="font-bold font-permanent-marker text-xl">Major</div>
 									<h1 className="font-bold">{profile.major}</h1>
 								</div>
 								<div className="profile-view-stlvl flex flex-col gap-y-2">
-									<div className="font-bold text-xl">Level of Study</div>
-									<h1 className="font-bold">{profile.studyLevel}</h1>
+									<div className="font-bold font-permanent-marker text-xl">Level of Study</div>
+									<h1 className="font-bold">{titleCase(profile.studyLevel)}</h1>
 								</div>
 								<div>
 									{!uploading ? (

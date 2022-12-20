@@ -176,5 +176,16 @@ a.link {
 }
 
 .register-gradient {
-	background: linear-gradient(to top, #c9283e 0%, #2d112b 100%);
+	background: linear-gradient(
+		to bottom,
+		black 0%,
+		black 60%,
+		#40405c 80%,
+		#6f71aa 90%,
+		#f84c34 100%
+	);
+}
+
+.brush-stroke-bg {
+	background: url('/img/landing/brushstroke.png');
 }

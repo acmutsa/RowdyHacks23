@@ -28,7 +28,7 @@ function Question(props) {
 	} else if (props.type === 'number') {
 		return (
 			<Fragment key={props.question.id}>
-				<label htmlFor={props.question.id} className="mt-4">
+				<label htmlFor={props.question.id} className="mt-4 font-sans font-bold">
 					{props.question.required ? '*' : ''}
 					{props.question.question}
 				</label>
