@@ -4,7 +4,9 @@ module.exports = {
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		extend: {
-			fontFamily: {},
+			fontFamily: {
+				'permanent-marker': ['Permanent Marker', 'cursive'],
+			},
 			width: {
 				'1/8': '12.5%',
 				'3/8': '37.5%',
@@ -31,14 +33,9 @@ module.exports = {
 				'5/8': '62.5%',
 				16: '4rem',
 			},
-			backgroundColor: (theme) => ({
-				lightBackground: '#F4F4F4',
-				aqua: '#D8F8FF',
-				darkAqua: '#B0F1FF',
-			}),
-			backgroundImage: {
-				'hero-pattern': `url(${'/assets/bg2.jpeg'})`, // !change
-			},
+			// backgroundImage: {
+			// 	'hero-pattern': `url(${'/assets/bg2.jpeg'})`, // !change
+			// },
 			color: {
 				'rh-white': '#FFF',
 			},
