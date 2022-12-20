@@ -4,9 +4,7 @@ module.exports = {
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		extend: {
-			fontFamily: {
-				sans: ['wavehaus'],
-			},
+			fontFamily: {},
 			width: {
 				'1/8': '12.5%',
 				'3/8': '37.5%',
