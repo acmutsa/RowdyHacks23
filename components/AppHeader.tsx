@@ -75,7 +75,7 @@ export default function AppHeader() {
 			<div className="min-h-[4rem]"></div>
 			<header
 				className="top-0 fixed justify-between flex flex-row w-full text-white items-center h-16 z-10 p-4"
-				style={{ backdropFilter: 'blur(5px)', backgroundColor: 'rgba(0, 0, 0, 0.61)' }}
+				style={{ backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
 			>
 				<div className="flex justify-between items-center md:max-w-full md:justify-start md:w-9/12">
 					<Link href="/">
