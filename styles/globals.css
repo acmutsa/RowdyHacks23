@@ -164,6 +164,17 @@ a.link {
 
 /* RowdyHacks Added Styles */
 
-.sky-gradient-2nd {
-	background: linear-gradient(to bottom, black 0%, #40405c 25%, #6f71aa 40%, #f84c34 100%);
+.sky-gradient {
+	background: linear-gradient(
+		to bottom,
+		black 0%,
+		black 5%,
+		#40405c 25%,
+		#6f71aa 40%,
+		#f84c34 100%
+	);
+}
+
+.register-gradient {
+	background: linear-gradient(to top, #c9283e 0%, #2d112b 100%);
 }
