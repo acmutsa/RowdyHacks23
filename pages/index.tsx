@@ -4,7 +4,7 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 const Home: NextPage = () => {
 	return (
-		<Parallax pages={3} className={'w-full mt-[64px] overflow-x-hidden top-0 left-0'}>
+		<Parallax pages={3} className={'w-full overflow-hidden top-0 left-0'}>
 			<ParallaxLayer factor={1} speed={1} className="sky-gradient-2nd overflow-hidden" />
 			<ParallaxLayer factor={1} speed={1} className="overflow-hidden">
 				<div className="w-full flex justify-center items-center pt-[calc(100vh/4)]">
