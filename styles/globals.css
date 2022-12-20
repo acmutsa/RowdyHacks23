@@ -167,5 +167,33 @@ a.link {
 /* RowdyHacks Added Styles */
 
 .sky-gradient-2nd {
-	background: linear-gradient(to bottom, black 0%, #40405c 25%, #6f71aa 50%, #ff8c64 100%);
+	background: linear-gradient(to bottom, black 0%, #40405c 25%, #6f71aa 40%, #f84c34 100%);
+}
+
+.p_l_0 {
+	transform: translateZ(-300px) scale(4);
+}
+
+.p_l_1 {
+	transform: translateZ(-250px) scale(3.5);
+}
+
+.p_l_2 {
+	transform: translateZ(-200px) scale(3);
+}
+
+.p_l_3 {
+	transform: translateZ(-150px) scale(2.5);
+}
+
+.p_l_4 {
+	transform: translateZ(-100px) scale(2);
+}
+
+.p_l_5 {
+	transform: translateZ(-50px) scale(1.5);
+}
+
+.p_l_6 {
+	transform: translateZ(0px) scale(1);
 }
