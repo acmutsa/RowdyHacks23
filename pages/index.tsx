@@ -32,7 +32,7 @@ interface propsType {
 const Home: NextPage<propsType> = ({ props }) => {
 	return (
 		<Parallax pages={3} className={'w-full overflow-hidden top-0 left-0'}>
-			<ParallaxLayer factor={1} speed={1} className="sky-gradient-2nd overflow-hidden" />
+			<ParallaxLayer factor={1} speed={1} className="sky-gradient overflow-hidden" />
 			<ParallaxLayer factor={1} speed={1} className="overflow-hidden">
 				<div className="w-full flex justify-center items-center pt-[calc(100vh/4)]">
 					<Image
@@ -89,6 +89,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 					<div className="flex items-center justify-center max-h-[280px]">
 						<Image src={'/img/logos/rh_landing.svg'} width={175} height={175}></Image>
 					</div>
+					<div></div>
 				</div>
 			</ParallaxLayer>
 			<ParallaxLayer offset={1} speed={1} className="z-10 bg-blue-500"></ParallaxLayer>
