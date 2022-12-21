@@ -31,69 +31,76 @@ interface propsType {
 
 const Home: NextPage<propsType> = ({ props }) => {
 	return (
-		<Parallax pages={3} className={'w-full overflow-hidden top-0 left-0'}>
-			<ParallaxLayer factor={1} speed={1} className="sky-gradient overflow-hidden" />
-			<ParallaxLayer factor={1} speed={1} className="overflow-hidden">
-				<div className="w-full flex justify-center items-center pt-[calc(100vh/4)]">
-					<Image
-						src="/img/logos/rh_landing.svg"
-						width={175}
-						height={175}
-						className="h-[100px] w-[100px]"
-					></Image>
-					<div className="ml-[5px]">
-						<h1 className="text-8xl font-black font-sans text-white">RowdyHacks</h1>
-						<h2 className="text-4xl font-black font-permanent-marker italic text-white text-center">
-							Into The Unknown
-						</h2>
+		<div className="w-full h-screen absolute top-0 left-0">
+			<Parallax pages={3} className={'w-full overflow-hidden top-0 left-0'}>
+				<ParallaxLayer factor={2} speed={1} className="hidden" />
+				<ParallaxLayer speed={0} className="sky-gradient overflow-hidden" />
+				<ParallaxLayer speed={-0.2} className="overflow-hidden">
+					<div className="w-full flex justify-center items-center pt-[calc(100vh/4)]">
+						<Image
+							src="/img/logos/rh_landing.svg"
+							width={175}
+							height={175}
+							className="h-[100px] w-[100px]"
+						></Image>
+						<div className="ml-[5px]">
+							<h1 className="text-8xl font-black font-sans text-white">RowdyHacks</h1>
+							<h2 className="text-4xl font-black font-permanent-marker italic text-white text-center">
+								Into The Unknown
+							</h2>
+						</div>
 					</div>
-				</div>
-			</ParallaxLayer>
-			<ParallaxLayer factor={1} speed={0.2} className="overflow-hidden">
-				<div className="w-full h-full overflow-x-hidden flex justify-center items-end">
-					<img src="/img/landscape/p/layer_2.png" className="min-w-[3000px] object-cover"></img>
-				</div>
-			</ParallaxLayer>
-			<ParallaxLayer factor={1} speed={0.4} className="overflow-hidden">
-				<div className="w-full h-full overflow-x-hidden flex justify-center items-end">
-					<img src="/img/landscape/p/layer_3.png" className="min-w-[3000px] object-cover"></img>
-				</div>
-			</ParallaxLayer>
-			<ParallaxLayer factor={1} speed={0.6} className="overflow-hidden">
-				<div className="w-full h-full overflow-x-hidden flex justify-center items-end">
-					<img src="/img/landscape/p/layer_4.png" className="min-w-[3000px] object-cover"></img>
-				</div>
-			</ParallaxLayer>
-			<ParallaxLayer factor={1} speed={0.8} className="overflow-hidden">
-				<div className="w-full h-full overflow-x-hidden flex justify-center items-end">
-					<img src="/img/landscape/p/layer_5.png" className="min-w-[3000px] object-cover"></img>
-				</div>
-			</ParallaxLayer>
-			<ParallaxLayer factor={1} speed={1} className="overflow-hidden">
-				<div className="w-full h-full overflow-x-hidden flex justify-center items-end">
-					<img src="/img/landscape/p/layer_6.png" className="min-w-[3000px] object-cover"></img>
-				</div>
-			</ParallaxLayer>
-			<ParallaxLayer offset={0.99999} speed={1} className="z-10 bg-[#2d112b]">
-				<div className="w-full h-full grid grid-cols-2 max-w-[1000px] mx-auto pt-[100px]">
-					<div className="max-h-[280px] flex flex-col justify-center">
-						<h3 className="font-black font-permanent-marker italic text-white text-4xl mb-[10px]">
-							About Us
-						</h3>
-						<p className="font-sans text-white text-lg font-bold">
-							RowdyHacks is a free, weekend-long, overnight hackathon hosted at UTSA and the second
-							largest hackathon in Texas! Students can join us to network, code, collaborate, and
-							compete. We welcome hackers from all disciplines, backgrounds, & technical levels!
-						</p>
+				</ParallaxLayer>
+				<ParallaxLayer speed={-0.5} className="overflow-hidden">
+					<div className="w-full h-full overflow-x-hidden flex justify-center items-end">
+						<img src="/img/landscape/p/layer_2.png" className="min-w-[3000px] object-cover"></img>
 					</div>
-					<div className="flex items-center justify-center max-h-[280px]">
-						<Image src={'/img/logos/rh_landing.svg'} width={175} height={175}></Image>
+				</ParallaxLayer>
+				<ParallaxLayer speed={-0.3} className="overflow-hidden">
+					<div className="w-full h-full overflow-x-hidden flex justify-center items-end">
+						<img src="/img/landscape/p/layer_3.png" className="min-w-[3000px] object-cover"></img>
 					</div>
-					<div></div>
-				</div>
-			</ParallaxLayer>
-			<ParallaxLayer offset={1} speed={1} className="z-10 bg-blue-500"></ParallaxLayer>
-		</Parallax>
+				</ParallaxLayer>
+				<ParallaxLayer speed={-0.3} className="overflow-hidden">
+					<div className="w-full h-full overflow-x-hidden flex justify-center items-end">
+						<img src="/img/landscape/p/layer_4.png" className="min-w-[3000px] object-cover"></img>
+					</div>
+				</ParallaxLayer>
+				<ParallaxLayer speed={-0.2} className="overflow-hidden">
+					<div className="w-full h-full overflow-x-hidden flex justify-center items-end">
+						<img src="/img/landscape/p/layer_5.png" className="min-w-[3000px] object-cover"></img>
+					</div>
+				</ParallaxLayer>
+				<ParallaxLayer speed={0} className="overflow-hidden">
+					<div className="w-full h-full overflow-x-hidden flex justify-center items-end">
+						<img
+							src="/img/landscape/p/layer_6.png"
+							className="min-w-[3000px] object-cover border-b-[#2d112b] border-b-4"
+						></img>
+					</div>
+				</ParallaxLayer>
+				<ParallaxLayer offset={1} speed={0} className="bg-[#2d112b]">
+					<div className="w-full h-full grid grid-cols-2 max-w-[1000px] mx-auto pt-[100px]">
+						<div className="max-h-[280px] flex flex-col justify-center">
+							<h3 className="font-black font-permanent-marker italic text-white text-4xl mb-[10px]">
+								About Us
+							</h3>
+							<p className="font-sans text-white text-lg font-bold">
+								RowdyHacks is a free, weekend-long, overnight hackathon hosted at UTSA and the
+								second largest hackathon in Texas! Students can join us to network, code,
+								collaborate, and compete. We welcome hackers from all disciplines, backgrounds, &
+								technical levels!
+							</p>
+						</div>
+						<div className="flex items-center justify-center max-h-[280px]">
+							<Image src={'/img/logos/rh_landing.svg'} width={175} height={175}></Image>
+						</div>
+						<div></div>
+					</div>
+				</ParallaxLayer>
+				<ParallaxLayer offset={2} speed={0} className="z-10 bg-blue-500"></ParallaxLayer>
+			</Parallax>
+		</div>
 	);
 };
 

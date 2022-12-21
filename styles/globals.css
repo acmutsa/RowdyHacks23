@@ -36,10 +36,6 @@ a.link {
 	@apply px-4;
 }
 
-.element {
-	font-family: 'wavehaus';
-}
-
 .profile-view {
 	display: grid;
 	grid-template-areas:
