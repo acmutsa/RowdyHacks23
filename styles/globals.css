@@ -182,6 +182,33 @@ a.link {
 	);
 }
 
+.cave-gradient {
+	background: linear-gradient(to bottom, #2d112b 0%, #692b44 100%);
+}
+
+.forrest-bg {
+	background: linear-gradient(to bottom, rgb(74 222 128) 0%, rgb(21 128 61) 100%);
+	backgroundimage: url('/img/landing/forest.png');
+}
+
+.forrest-bg2 {
+	backgroundimage: url('/img/landing/forest.png');
+}
+
+.cave-wrap-bg {
+	background: url('/img/landscape/cave_wrap.png') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover !important;
+}
+
 .brush-stroke-bg {
 	background: url('/img/landing/brushstroke.png');
+}
+
+.cave-bottom-border {
+	--mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50%/60px 100%;
+	-webkit-mask: var(--mask);
+	mask: var(--mask);
 }
