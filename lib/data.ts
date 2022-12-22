@@ -1,5 +1,4 @@
 export const buttonDatas = [
-	{ text: 'Hacker App', path: '/' },
 	{ text: 'Mentor App', path: '/' },
 	{ text: 'Sponsor App', path: '/' },
 ];

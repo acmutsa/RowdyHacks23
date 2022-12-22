@@ -6,6 +6,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				'permanent-marker': ['Permanent Marker', 'cursive'],
+				poppins: ['Poppins', 'sans-serif'],
 			},
 			width: {
 				'1/8': '12.5%',
