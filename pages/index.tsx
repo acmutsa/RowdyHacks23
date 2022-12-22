@@ -37,6 +37,9 @@ const Home: NextPage<propsType> = ({ props }) => {
 			<Parallax pages={3} className={'w-full overflow-hidden top-0 left-0'}>
 				<ParallaxLayer factor={2} speed={1} className="hidden" />
 				<ParallaxLayer speed={0} className="sky-gradient overflow-hidden" />
+				<ParallaxLayer speed={-0.5} className="overflow-hidden flex items-center justify-center">
+					<img src="/img/landscape/clouds.svg" className="w-full opacity-20"></img>
+				</ParallaxLayer>
 				<ParallaxLayer speed={-0.2} className="overflow-hidden">
 					<div className="w-full flex justify-center items-center pt-[calc(100vh/4)]">
 						<Image
@@ -123,7 +126,90 @@ const Home: NextPage<propsType> = ({ props }) => {
 						</div>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer offset={2} speed={0} className="z-10 bg-emerald-900"></ParallaxLayer>
+				<ParallaxLayer offset={2} speed={0} className="z-10 bg-emerald-900">
+					<div className="absolute top-0 left-0 w-full h-full">
+						<img
+							src="/img/landscape/trees.svg"
+							className="min-w-[calc(100%+100px)] translate-x-[-50px]"
+						></img>
+					</div>
+					<div className="absolute left-0 top-0 w-full f-hull">
+						<div className="w-full h-full mx-auto max-w-[1000px] grid grid-cols-2 gap-2">
+							<div className="col-span-2 flex items-center min-h-[20vh] ">
+								<h1 className="font-permanent-marker text-6xl font-bold text-emerald-700">
+									Work With Us
+								</h1>
+							</div>
+							<div>
+								<div className="bg-stone-800 border-emerald-700 border-2 px-[15px] w-full rounded-xl aspect-video text-white py-[20px]">
+									<div className="bg-emerald-700 rounded-full w-[150px] h-[30px] mt-[-35px] absolute">
+										<h1 className="font-poppins font-bold text-xl text-center text-white">
+											Students
+										</h1>
+									</div>
+									<div className="grid grid-cols-1 h-full">
+										<h1 className="text-3xl font-black font-sans pt-[5px] h-[20%]">
+											Interested in helping?
+										</h1>
+										<div>
+											<p className="font-bold text-md">
+												We are always looking for volunteers and mentors to help us make RowdyHacks
+												the best hackathon around! If you are interested in becoming a volunteer or
+												mentor, please fill out the form below.
+											</p>
+										</div>
+										<div className="grid grid-cols-2 h-[20%]">
+											<div className="flex items-center justify-center">
+												<a href="#">
+													<button className="bg-emerald-700 font-sans w-[100px] h-[45px] rounded font-bold">
+														Volunteer
+													</button>
+												</a>
+											</div>
+											<div className="flex items-center justify-center">
+												<a href="#">
+													<button className="bg-emerald-700 font-sans w-[100px] h-[45px] rounded font-bold">
+														Mentor
+													</button>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div className="bg-stone-800 border-emerald-700 border-2 px-[15px] w-full rounded-xl aspect-video text-white py-[20px]">
+									<div className="bg-emerald-700 rounded-full w-[150px] h-[30px] mt-[-35px] absolute">
+										<h1 className="font-poppins font-bold text-xl text-center text-white">
+											Companies
+										</h1>
+									</div>
+									<div className="grid grid-cols-1 h-full">
+										<h1 className="text-3xl font-black font-sans pt-[5px] h-[20%]">
+											Interested in sponsoring?
+										</h1>
+										<div>
+											<p className="font-bold text-md">
+												RowdyHacks would not be possible without our incredible sponsors! If you or
+												a group you represent are interested in sponsoring, please click below to
+												view our sponsorship packet.
+											</p>
+										</div>
+										<div className="grid grid-cols-2 h-[20%]">
+											<div className="flex items-center justify-center col-span-2">
+												<a href="#">
+													<button className="bg-emerald-700 font-sans w-[150px] h-[45px] rounded font-bold">
+														Sponsor Packet
+													</button>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</ParallaxLayer>
 			</Parallax>
 		</div>
 	);
