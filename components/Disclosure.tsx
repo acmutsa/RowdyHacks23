@@ -44,11 +44,27 @@ const Disclosure: FunctionComponent = () => {
 						Open Source
 					</a>
 				</Link>
-				<Link href={'/sur'}>
+				<Link href={'/guide'}>
 					<a className="text-white font-sans font-extrabold hover:underline hover:cursor-pointer">
-						Open Source
+						Survival Guide
 					</a>
 				</Link>
+			</div>
+			<div className="h-[20vh] col-span-2 pt-[20px]">
+				<div className="text-white flex flex-col items-center font-sans font-bold">
+					<p className="text-center text-sm">
+						Made with &lt;/&gt; & ♥ @ RowdyHacks
+						<br />© RowdyHacks & Association of Computing Machinery at UTSA{' '}
+						{new Date().getFullYear()}. All Rights Reserved.
+					</p>
+					<p className="text-center mt-[20px] text-sm">
+						HackPortal developed with &lt;3 by <p className="font-black inline">HackUTD</p> and{' '}
+						<p className="font-black inline">ACM UTD Development</p>
+					</p>
+					<Link href={'/contributions'}>
+						<a className="text-sm underline">Other Contributions</a>
+					</Link>
+				</div>
 			</div>
 		</div>
 	);
