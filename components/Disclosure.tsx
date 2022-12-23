@@ -1,6 +1,14 @@
 import type { FunctionComponent } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+	FaTwitter,
+	FaInstagram,
+	FaFacebook,
+	FaGithub,
+	FaDiscord,
+	FaLinkedin,
+} from 'react-icons/fa';
 
 interface Props {
 	className?: string;
@@ -44,26 +52,45 @@ const Disclosure: FunctionComponent = () => {
 						Open Source
 					</a>
 				</Link>
-				<Link href={'/guide'}>
+				<Link href={'https://acmutsa.org/'}>
 					<a className="text-white font-sans font-extrabold hover:underline hover:cursor-pointer">
-						Survival Guide
+						ACM UTSA
 					</a>
 				</Link>
+				<div className="flex text-gray-900 bg-white p-[5px] rounded text-xl mt-[10px]">
+					<a href="https://twitter.com/rowdyhacks" className="mr-2">
+						<FaTwitter />
+					</a>
+					<a href="https://twitter.com/rowdyhacks" className="mx-2">
+						<FaInstagram />
+					</a>
+					<a href="https://twitter.com/rowdyhacks" className="mx-2">
+						<FaFacebook />
+					</a>
+					<a href="https://twitter.com/rowdyhacks" className="mx-2">
+						<FaGithub />
+					</a>
+					<a href="https://twitter.com/rowdyhacks" className="ml-2">
+						<FaDiscord />
+					</a>
+				</div>
 			</div>
-			<div className="h-[20vh] col-span-2 pt-[20px]">
-				<div className="text-white flex flex-col items-center font-sans font-bold">
+			<div className="h-[15vh] col-span-2">
+				<div className="text-white flex flex-col items-center justify-end font-sans font-bold h-[15vh] ">
 					<p className="text-center text-sm">
 						Made with &lt;/&gt; & ♥ @ RowdyHacks
 						<br />© RowdyHacks & Association of Computing Machinery at UTSA{' '}
 						{new Date().getFullYear()}. All Rights Reserved.
 					</p>
-					<p className="text-center mt-[20px] text-sm">
-						HackPortal developed with &lt;3 by <p className="font-black inline">HackUTD</p> and{' '}
-						<p className="font-black inline">ACM UTD Development</p>
-					</p>
-					<Link href={'/contributions'}>
-						<a className="text-sm underline">Other Contributions</a>
-					</Link>
+					<div className="bg-amber-500 w-full flex flex-col items-center mt-[20px]">
+						<p className="text-center text-sm">
+							HackPortal developed with &lt;3 by <p className="font-black inline">HackUTD</p> and{' '}
+							<p className="font-black inline">ACM UTD Development</p>
+						</p>
+						<Link href={'/contributions'}>
+							<a className="text-sm underline">Other Contributions</a>
+						</Link>
+					</div>
 				</div>
 			</div>
 		</div>
