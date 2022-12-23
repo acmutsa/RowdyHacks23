@@ -35,7 +35,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 
 	return (
 		<div className="w-full h-screen absolute top-0 left-0">
-			<Parallax pages={3.5} className={'w-full overflow-hidden top-0 left-0'}>
+			<Parallax pages={4.5} className={'w-full overflow-hidden top-0 left-0'}>
 				<ParallaxLayer speed={0} className="sky-gradient overflow-hidden" />
 				<ParallaxLayer speed={-0.5} className="overflow-hidden flex items-center justify-center">
 					<img src="/img/landscape/clouds.svg" className="w-full opacity-20"></img>
@@ -126,7 +126,8 @@ const Home: NextPage<propsType> = ({ props }) => {
 						</div>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer offset={2} speed={0} className="z-10 bg-emerald-900 overflow-hidden">
+				<ParallaxLayer offset={2} speed={0} className="bg-red-500"></ParallaxLayer>
+				<ParallaxLayer offset={3} speed={0} className="z-10 bg-emerald-900 overflow-hidden">
 					<div className="w-full h-full absolute">
 						<img
 							src="/img/landscape/trees.svg"
@@ -210,7 +211,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 						</div>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer speed={0} offset={3} factor={0.5}>
+				<ParallaxLayer speed={0} offset={4} factor={0.5}>
 					<Disclosure />
 				</ParallaxLayer>
 			</Parallax>
