@@ -186,6 +186,10 @@ a.link {
 	background: linear-gradient(to bottom, #2d112b 0%, #692b44 100%);
 }
 
+.ocean-gradient {
+	background: linear-gradient(to bottom, #009ffd 0%, #2a2a72 100%);
+}
+
 .forrest-bg {
 	background: linear-gradient(to bottom, rgb(74 222 128) 0%, rgb(21 128 61) 100%);
 	backgroundimage: url('/img/landing/forest.png');

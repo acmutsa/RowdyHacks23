@@ -35,7 +35,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 
 	return (
 		<div className="w-full h-screen absolute top-0 left-0">
-			<Parallax pages={3.5} className={'w-full overflow-hidden top-0 left-0'}>
+			<Parallax pages={5.5} className={'w-full overflow-hidden top-0 left-0'}>
 				<ParallaxLayer speed={0} className="sky-gradient overflow-hidden" />
 				<ParallaxLayer speed={-0.5} className="overflow-hidden flex items-center justify-center">
 					<img src="/img/landscape/clouds.svg" className="w-full opacity-20"></img>
@@ -84,7 +84,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 						></img>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer offset={1} speed={0} className="cave-gradient">
+				<ParallaxLayer offset={1} speed={0} className="bg-[#2d112b]">
 					<div className="w-full h-full grid grid-cols-2 max-w-[1000px] mx-auto pt-[100px]">
 						<div className="max-h-[280px] flex flex-col justify-center">
 							<h3 className="font-black font-permanent-marker italic text-white text-4xl mb-[10px]">
@@ -126,7 +126,14 @@ const Home: NextPage<propsType> = ({ props }) => {
 						</div>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer offset={2} speed={0} className="z-10 bg-emerald-900 overflow-hidden">
+				<ParallaxLayer offset={2} factor={2} speed={0} className="ocean-gradient">
+					<img className="w-full absolute top-0 left-0" src="/img/borders/cave_down.svg"></img>
+					<img
+						className="w-full absolute bottom-0 left-0 rotate-180"
+						src="/img/borders/trees_up.svg"
+					></img>
+				</ParallaxLayer>
+				<ParallaxLayer offset={4} speed={0} className="z-10 bg-emerald-900 overflow-hidden">
 					<div className="w-full h-full absolute">
 						<img
 							src="/img/landscape/trees.svg"
@@ -210,7 +217,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 						</div>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer speed={0} offset={3} factor={0.5}>
+				<ParallaxLayer speed={0} offset={5} factor={0.5}>
 					<Disclosure />
 				</ParallaxLayer>
 			</Parallax>
