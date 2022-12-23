@@ -18,6 +18,7 @@ import FAQ from '../components/faq';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import Disclosure from '../components/Disclosure';
 
 interface propsType {
 	props: {
@@ -34,8 +35,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 
 	return (
 		<div className="w-full h-screen absolute top-0 left-0">
-			<Parallax pages={3} className={'w-full overflow-hidden top-0 left-0'}>
-				<ParallaxLayer factor={2} speed={1} className="hidden" />
+			<Parallax pages={3.5} className={'w-full overflow-hidden top-0 left-0'}>
 				<ParallaxLayer speed={0} className="sky-gradient overflow-hidden" />
 				<ParallaxLayer speed={-0.5} className="overflow-hidden flex items-center justify-center">
 					<img src="/img/landscape/clouds.svg" className="w-full opacity-20"></img>
@@ -126,11 +126,11 @@ const Home: NextPage<propsType> = ({ props }) => {
 						</div>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer offset={2} speed={0} className="z-10 bg-emerald-900">
-					<div className="absolute top-0 left-0 w-full h-full">
+				<ParallaxLayer offset={2} speed={0} className="z-10 bg-emerald-900 overflow-hidden">
+					<div className="w-full h-full absolute">
 						<img
 							src="/img/landscape/trees.svg"
-							className="min-w-[calc(100%+100px)] translate-x-[-50px]"
+							className="min-w-[calc(100%+100px)] translate-x-[-50px] translate-y-[-20vh]"
 						></img>
 					</div>
 					<div className="absolute left-0 top-0 w-full f-hull">
@@ -209,6 +209,9 @@ const Home: NextPage<propsType> = ({ props }) => {
 							</div>
 						</div>
 					</div>
+				</ParallaxLayer>
+				<ParallaxLayer speed={0} offset={3} factor={0.5}>
+					<Disclosure />
 				</ParallaxLayer>
 			</Parallax>
 		</div>
