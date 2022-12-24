@@ -138,7 +138,12 @@ const Home: NextPage<propsType> = ({ props }) => {
 					></img>
 				</ParallaxLayer>
 				<ParallaxLayer offset={4} speed={0} className="z-10 bg-emerald-900 overflow-hidden">
-					<div className="w-full h-full absolute"></div>
+					<div className="w-full h-full absolute">
+						<img
+							src="/img/landscape/trees.svg"
+							className="min-w-[calc(100%+100px)] translate-x-[-50px] translate-y-[-20vh]"
+						></img>
+					</div>
 					<div className="absolute left-0 top-0 w-full f-hull">
 						<div className="w-full h-full mx-auto max-w-[1000px] grid grid-cols-2 gap-2">
 							<div className="col-span-2 flex items-center min-h-[20vh] ">
