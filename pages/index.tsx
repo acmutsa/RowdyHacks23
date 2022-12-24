@@ -99,6 +99,13 @@ const Home: NextPage<propsType> = ({ props }) => {
 						</div>
 						<div className="flex items-center justify-center max-h-[280px]">
 							<Image src={'/img/logos/rh_landing.svg'} width={175} height={175}></Image>
+							<div className="h-[175px] ml-[10px] flex flex-col justify-center text-3xl font-sans text-white font-black">
+								<h1 className="w-full">LET'S</h1>
+
+								<h1 className="w-full">GET</h1>
+
+								<h1 className="w-full">ROWDY.</h1>
+							</div>
 						</div>
 						<div className="flex items-center justify-center !overflow-visible">
 							<Image
