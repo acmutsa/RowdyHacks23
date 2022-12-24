@@ -98,7 +98,16 @@ const Home: NextPage<propsType> = ({ props }) => {
 							</p>
 						</div>
 						<div className="flex items-center justify-center max-h-[280px]">
-							<Image src={'/img/logos/rh_landing.svg'} width={175} height={175}></Image>
+							<Image src={'/img/logos/rh_sunset.svg'} width={175} height={175}></Image>
+							<div className="h-[175px] ml-[10px] flex flex-col justify-center text-3xl font-sans text-[#ff583d] font-black">
+								<h1 className="w-full">LET'S</h1>
+
+								<h1 className="w-full">GET</h1>
+
+								<h1 className="w-full">
+									<span className="font-permanent-marker tracking-wider">ROWDY</span>
+								</h1>
+							</div>
 						</div>
 						<div className="flex items-center justify-center !overflow-visible">
 							<Image
@@ -124,17 +133,12 @@ const Home: NextPage<propsType> = ({ props }) => {
 				<ParallaxLayer offset={2} factor={2} speed={0} className="ocean-gradient">
 					<img className="w-full absolute top-0 left-0" src="/img/borders/cave_down.svg"></img>
 					<img
-						className="w-full absolute bottom-0 left-0 rotate-180"
+						className="w-full absolute bottom-0 left-0 rotate-180 mb-[-1px]"
 						src="/img/borders/trees_up.svg"
 					></img>
 				</ParallaxLayer>
 				<ParallaxLayer offset={4} speed={0} className="z-10 bg-emerald-900 overflow-hidden">
-					<div className="w-full h-full absolute">
-						<img
-							src="/img/landscape/trees.svg"
-							className="min-w-[calc(100%+100px)] translate-x-[-50px] translate-y-[-20vh]"
-						></img>
-					</div>
+					<div className="w-full h-full absolute"></div>
 					<div className="absolute left-0 top-0 w-full f-hull">
 						<div className="w-full h-full mx-auto max-w-[1000px] grid grid-cols-2 gap-2">
 							<div className="col-span-2 flex items-center min-h-[20vh] ">
