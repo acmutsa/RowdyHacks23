@@ -70,7 +70,7 @@ const Disclosure: FunctionComponent = () => {
 					<a href="https://twitter.com/rowdyhacks" className="mx-2">
 						<FaGithub />
 					</a>
-					<a href="https://twitter.com/rowdyhacks" className="ml-2">
+					<a href="https://go.rowdyhacks.org/discord" className="ml-2">
 						<FaDiscord />
 					</a>
 				</div>
