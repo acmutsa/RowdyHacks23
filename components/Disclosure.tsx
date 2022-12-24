@@ -42,7 +42,7 @@ const Disclosure: FunctionComponent = () => {
 						Contact Us
 					</a>
 				</Link>
-				<Link href={'/contributions'}>
+				<Link href={'http://mlh.io/code-of-conduct '}>
 					<a className="text-white font-sans font-extrabold hover:underline hover:cursor-pointer">
 						Code of Conduct
 					</a>
