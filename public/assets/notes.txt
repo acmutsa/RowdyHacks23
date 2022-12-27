@@ -103,3 +103,8 @@
 									</button>
 								</div>
 							))} */}
+
+
+
+
+<span class="inline-block px-2 py-1 relative text-white bg-brand-blue" style="border-radius: 91% 9% 90% 10% / 29% 82% 18% 71%">developers</span>

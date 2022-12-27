@@ -38,7 +38,8 @@ const Home: NextPage<propsType> = ({ props }) => {
 			<Parallax pages={5.5} className={'w-full overflow-hidden top-0 left-0'}>
 				<ParallaxLayer speed={0} className="sky-gradient overflow-hidden" />
 				<ParallaxLayer speed={-0.5} className="overflow-hidden flex items-center justify-center">
-					<img src="/img/landscape/clouds.svg" className="w-full opacity-20"></img>
+					{/* TODO: Make this more dynamic, split the clouds into different layers and then have then move at different speeds */}
+					<div className="cloud-scroll-bg"></div>
 				</ParallaxLayer>
 				<ParallaxLayer speed={-0.2} className="overflow-hidden">
 					<div className="w-full flex justify-center items-center pt-[calc(100vh/4)]">
@@ -117,7 +118,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 						</div>
 						<div className="max-h-[280px] flex flex-col justify-center">
 							<h3 className="font-black font-permanent-marker text-white text-4xl mb-[10px]">
-								About Us
+								Why attend?
 							</h3>
 							<p className="font-sans text-white text-lg font-bold">
 								RowdyHacks is a free, weekend-long, overnight hackathon hosted at UTSA and the
@@ -132,7 +133,9 @@ const Home: NextPage<propsType> = ({ props }) => {
 					<img className="w-full absolute top-0 left-0" src="/img/borders/cave_down.svg"></img>
 
 					<div className="w-full h-full pt-[600px] max-w-[1000px] mx-auto">
-						<h1 className="font-permanent-marker text-6xl font-bold text-[#2a2a72]">Sponsors</h1>
+						<h1 className="font-permanent-marker text-6xl font-bold text-[#2a2a72] border-b-2 border-b-[#2a2a72] border-dashed">
+							Sponsors
+						</h1>
 					</div>
 					<img
 						className="w-full absolute bottom-0 left-0 rotate-180 mb-[-1px]"
@@ -174,14 +177,14 @@ const Home: NextPage<propsType> = ({ props }) => {
 										<div className="grid grid-cols-2 h-[20%]">
 											<div className="flex items-center justify-center">
 												<a href="#">
-													<button className="bg-emerald-700 font-sans w-[100px] h-[45px] rounded font-bold">
+													<button className="bg-emerald-700 hover:bg-emerald-800 font-sans w-[100px] h-[45px] rounded font-bold">
 														Volunteer
 													</button>
 												</a>
 											</div>
 											<div className="flex items-center justify-center">
 												<a href="#">
-													<button className="bg-emerald-700 font-sans w-[100px] h-[45px] rounded font-bold">
+													<button className="bg-emerald-700 hover:bg-emerald-800 font-sans w-[100px] h-[45px] rounded font-bold">
 														Mentor
 													</button>
 												</a>
@@ -211,7 +214,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 										<div className="grid grid-cols-2 h-[20%]">
 											<div className="flex items-center justify-center col-span-2">
 												<a href="#">
-													<button className="bg-emerald-700 font-sans w-[150px] h-[45px] rounded font-bold">
+													<button className="bg-emerald-700 hover:bg-emerald-800 font-sans w-[150px] h-[45px] rounded font-bold">
 														Sponsor Packet
 													</button>
 												</a>
