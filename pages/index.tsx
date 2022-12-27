@@ -92,10 +92,9 @@ const Home: NextPage<propsType> = ({ props }) => {
 								About Us
 							</h3>
 							<p className="font-sans text-white text-lg font-bold">
-								RowdyHacks is a free, weekend-long, overnight hackathon hosted at UTSA and the
-								second largest hackathon in Texas! Students can join us to network, code,
-								collaborate, and compete. We welcome hackers from all disciplines, backgrounds, &
-								technical levels!
+								RowdyHacks is a free, weekend-long, overnight hackathon hosted at UTSA! Students can
+								join us to network, code, collaborate, and compete. We welcome hackers from all
+								disciplines, backgrounds, & technical levels!
 							</p>
 						</div>
 						<div className="flex items-center justify-center max-h-[280px]">
