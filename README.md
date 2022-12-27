@@ -1,4 +1,4 @@
-# RowdyHacks 2023: _Into The Unkown_
+# 🏔️ RowdyHacks 2023: _Into The Unkown_
 
 **The offical website for RowdyHacks 2023!**
 
@@ -24,6 +24,7 @@ Want to help make RowdyHacks the best Hackathon around? Please reach out to us a
 ## HackPortal Contributors
 
 This project would not be possible without the awesome folks who work on [Hack Portal](https://github.com/acmutd/hackportal)!
+
 <a href="https://github.com/acmutd/hackportal/graphs/contributors">
 <img src="https://contrib.rocks/image?repo=acmutd/hackportal" />
 </a>
