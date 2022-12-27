@@ -39,6 +39,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 				<ParallaxLayer speed={0} className="sky-gradient overflow-hidden" />
 				<ParallaxLayer speed={-0.5} className="overflow-hidden flex items-center justify-center">
 					{/* TODO: Make this more dynamic, split the clouds into different layers and then have then move at different speeds */}
+					{/* TODO: Fix bug where animation sometimes skips */}
 					<div className="cloud-scroll-bg"></div>
 				</ParallaxLayer>
 				<ParallaxLayer speed={-0.2} className="overflow-hidden">
