@@ -137,10 +137,13 @@ const Home: NextPage<propsType> = ({ props }) => {
 							Sponsors
 						</h1>
 					</div>
-					<img
-						className="w-full absolute bottom-0 left-0 rotate-180 mb-[-1px]"
-						src="/img/borders/trees_up.svg"
-					></img>
+					<div className="w-full absolute bottom-0 left-0">
+						<img className="w-full mb-[-1px] " src="/img/landscape/oceanfloor.svg"></img>
+						<img
+							className="w-full rotate-180 mb-[-1px] bg-[#00213E]"
+							src="/img/borders/trees_up.svg"
+						></img>
+					</div>
 				</ParallaxLayer>
 				<ParallaxLayer offset={4} speed={0} className="z-10 bg-emerald-900 overflow-hidden">
 					<div className="w-full h-full absolute">
