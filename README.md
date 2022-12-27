@@ -1,36 +1,29 @@
-# HackPortal
-### _A platform for user-friendly hackathon event management._  
+# RowdyHacks 2023: _Into The Unkown_
 
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+**The offical website for RowdyHacks 2023!**
 
+## Technologies Used
 
-## Features Summary
-- Fully customizable front end  
-- Sign in with email/ Google  
-- Hacker registration   
-- Images, challenges, sponsors, FAQ and more fetched from backend  
-- Push notifications  
-- Spotlight carousel highlighting ongoing events  
-- QR code check in and swag claims  
-- Report submission/ Ask a question  
-- Built-in and easy to set up schedule  
-- Hacker, Admin, and Super Admin roles  
-- Admin console to send announcement, update user roles, show number of check-ins, swag claims
-- And more!
+- TypeScript
+- Next.js
+- Firebase
+- Tailwind CSS
 
+This project is powered by [Hack Portal](https://github.com/acmutd/hackportal)! If you need a event managment solution for Hackathon, make sure to check it out!
 
-## Setting up HackPortal for a Hackathon
+## Join The Team
 
-_If you are using HackPortal for your event, please add yourself to this [list](https://github.com/acmutd/hackportal/wiki/HackPortal-Users). It only takes a moment and shows us our software is helping real organizations._ 
+Want to help make RowdyHacks the best Hackathon around? Please reach out to us at team@rowdyhacks.org!
 
-Follow the instructions in the [set-up docs](./docs/set-up.md) to set up HackPortal for your hackathon.
+## RH 2023 Website Contributors
 
-## Making Changes
-Want to contribute? Follow the instructions in the [contributor docs](./docs/contributors.md) to see contributing guidelines.
-
+<a href="https://github.com/UTSA-ACM/rh-website-23/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=UTSA-ACM/rh-website-23" />
+</a>
 
 ## HackPortal Contributors
-HackPortal would not be possible without these people. 
+
+This project would not be possible without the awesome folks who work on [Hack Portal](https://github.com/acmutd/hackportal)!
 <a href="https://github.com/acmutd/hackportal/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=acmutd/hackportal" />
+<img src="https://contrib.rocks/image?repo=acmutd/hackportal" />
 </a>
