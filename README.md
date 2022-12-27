@@ -9,7 +9,7 @@
 - Firebase
 - Tailwind CSS
 
-This project is powered by [Hack Portal](https://github.com/acmutd/hackportal)! If you need a event managment solution for Hackathon, make sure to check it out!
+This project is powered by [Hack Portal](https://github.com/acmutd/hackportal)! If you need a event management solution for a Hackathon, make sure to check it out!
 
 ## Join The Team
 
