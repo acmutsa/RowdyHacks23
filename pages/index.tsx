@@ -104,9 +104,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 
 								<h1 className="w-full">GET</h1>
 
-								<h1 className="w-full">
-									<span className="font-permanent-marker tracking-wider">ROWDY</span>
-								</h1>
+								<h1 className="w-full font-permanent-marker tracking-wider">ROWDY</h1>
 							</div>
 						</div>
 						<div className="flex items-center justify-center !overflow-visible">
@@ -132,6 +130,10 @@ const Home: NextPage<propsType> = ({ props }) => {
 				</ParallaxLayer>
 				<ParallaxLayer offset={2} factor={2} speed={0} className="ocean-gradient">
 					<img className="w-full absolute top-0 left-0" src="/img/borders/cave_down.svg"></img>
+
+					<div className="w-full h-full pt-[600px] max-w-[1000px] mx-auto">
+						<h1 className="font-permanent-marker text-6xl font-bold text-[#2a2a72]">Sponsors</h1>
+					</div>
 					<img
 						className="w-full absolute bottom-0 left-0 rotate-180 mb-[-1px]"
 						src="/img/borders/trees_up.svg"
