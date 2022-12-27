@@ -88,7 +88,7 @@ const Disclosure: FunctionComponent = () => {
 							<p className="font-black inline">ACM UTD Development</p>
 						</p>
 						<Link href={'/contributions'}>
-							<a className="text-sm underline">Other Contributions</a>
+							<a className="text-sm underline">Other Contributions♥</a>
 						</Link>
 					</div>
 				</div>
