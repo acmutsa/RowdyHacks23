@@ -2,7 +2,7 @@
  * A type extender that gives an object type an ID.
  */
 type WithId<T> = T & {
-  id: string;
+	id: string;
 };
 
 type SortableObject<T> = T & { id: string };
@@ -18,97 +18,97 @@ type Companies = 'SF' | 'AA' | 'C1' | 'EB' | 'FB';
  * This person type can be used.
  */
 type Person = {
-  /**
-   * The user's first name.
-   */
-  firstName: string;
+	/**
+	 * The user's first name.
+	 */
+	firstName: string;
 
-  /**
-   * The user's last name.
-   */
-  lastName: string;
+	/**
+	 * The user's last name.
+	 */
+	lastName: string;
 
-  /**
-   * The user's contact email.
-   */
-  preferredEmail: string;
+	/**
+	 * The user's contact email.
+	 */
+	preferredEmail: string;
 
-  /**
-   * The user's profile image.
-   */
-  photoUrl?: string;
+	/**
+	 * The user's profile image.
+	 */
+	photoUrl?: string;
 };
 
 /**
  * Information for a user account.
  */
 type User = Person & {
-  /**
-   * The unique identifier for this user.
-   */
-  id: string;
+	/**
+	 * The unique identifier for this user.
+	 */
+	id: string;
 
-  /**
-   * User's JWT.
-   */
-  token?: string;
+	/**
+	 * User's JWT.
+	 */
+	token?: string;
 
-  /**
-   * Flags for parts of the app this user can access.
-   */
-  permissions: UserPermission[];
+	/**
+	 * Flags for parts of the app this user can access.
+	 */
+	permissions: UserPermission[];
 
-  /**
-   * University that user currently attends
-   *
-   */
-  university: string;
+	/**
+	 * University that user currently attends
+	 *
+	 */
+	university: string;
 };
 
 /**
  * Information about a specific event registration.
  */
 type Registration = {
-  id: string;
-  /**
-   * A UNIX timestamp corresponding to when a hacker registered for the event.
-   */
-  timestamp: number;
-  /**
-   * Basic biographical user data
-   */
-  user: {
-    id: string;
-    permissions: UserPermission[];
-    firstName: string;
-    lastName: string;
-    /**
-     * The email used to contact the user.
-     */
-    preferredEmail: string;
-  };
-  // TODO: Allow for qualifiers like "how old will you be at the day of the event?"
-  // TODO: Allow this to be dynamically defined by the organizers
-  // TODO: responses: { [questionId: string]: Question }
-  age: number;
-  gender: string;
-  race: string;
-  ethnicity: string;
-  university: string;
-  major: string;
-  studyLevel: string;
-  hackathonExperience: number;
-  softwareExperience: string;
-  heardFrom: string;
-  size: string;
-  dietary: string[];
-  accomodations: string;
-  github?: string;
-  linkedin?: string;
-  website?: string;
-  resume?: string;
-  companies: Companies[];
-  //claims: []; //Array of Strings will be used to id any claims (lunch, merch, etc.) made by user
+	id: string;
+	/**
+	 * A UNIX timestamp corresponding to when a hacker registered for the event.
+	 */
+	timestamp: number;
+	/**
+	 * Basic biographical user data
+	 */
+	user: {
+		id: string;
+		permissions: UserPermission[];
+		firstName: string;
+		lastName: string;
+		/**
+		 * The email used to contact the user.
+		 */
+		preferredEmail: string;
+	};
+	// TODO: Allow for qualifiers like "how old will you be at the day of the event?"
+	// TODO: Allow this to be dynamically defined by the organizers
+	// TODO: responses: { [questionId: string]: Question }
+	age: number;
+	gender: string;
+	race: string;
+	ethnicity: string;
+	university: string;
+	major: string;
+	studyLevel: string;
+	hackathonExperience: number;
+	softwareExperience: string;
+	heardFrom: string;
+	size: string;
+	dietary: string[];
+	accomodations: string;
+	github?: string;
+	linkedin?: string;
+	website?: string;
+	resume?: string;
+	companies: Companies[];
+	//claims: []; //Array of Strings will be used to id any claims (lunch, merch, etc.) made by user
 };
 
 /**
@@ -119,8 +119,8 @@ type Registration = {
  *
  *  */
 type AnsweredQuestion = {
-  question: string;
-  answer: string;
+	question: string;
+	answer: string;
 };
 
 /**
@@ -130,7 +130,7 @@ type AnsweredQuestion = {
  *
  *  */
 type PendingQuestion = {
-  question: string;
+	question: string;
 };
 
 /**
@@ -147,13 +147,13 @@ type PendingQuestion = {
  *
  */
 type TeamMember = {
-  name: string;
-  description: string;
-  linkedin: string;
-  github: string;
-  personalSite: string;
-  rank: int;
-  fileName: string;
+	name: string;
+	description: string;
+	linkedin: string;
+	github: string;
+	personalSite: string;
+	rank: int;
+	fileName: string;
 };
 
 /**
@@ -166,9 +166,9 @@ type TeamMember = {
  *
  */
 type KeynoteSpeaker = {
-  name: string;
-  description: string;
-  fileName: string;
+	name: string;
+	description: string;
+	fileName: string;
 };
 
 /**
@@ -182,11 +182,11 @@ type KeynoteSpeaker = {
  * @param rank number determining which challenge gets displayed in higher order, lower rank means higher order(index of array)
  */
 type Challenge = {
-  title: string;
-  description: string;
-  prizes?: string[];
-  organization: string;
-  rank: int;
+	title: string;
+	description: string;
+	prizes?: string[];
+	organization: string;
+	rank: int;
 };
 
 /**
@@ -197,13 +197,13 @@ type Challenge = {
  * @param dark color code of the dark variant
  */
 type ColorScheme = {
-  light: string;
-  dark: string;
+	light: string;
+	dark: string;
 };
 
 type Announcement = {
-  announcement: string;
-  timestamp?: string;
+	announcement: string;
+	timestamp?: string;
 };
 
 /**
@@ -225,31 +225,33 @@ type Announcement = {
  */
 
 type ScheduleEvent = {
-  title: string;
-  speakers?: string[];
-  type?: string;
-  track: string;
-  startDate: Date;
-  startTimestamp?: any;
-  endDate: Date;
-  endTimestamp?: any;
-  Event: number;
-  location: string;
-  page: string;
-  description: string;
+	title: string;
+	speakers?: string[];
+	type?: string;
+	track: string;
+	startDate: Date;
+	startTimestamp?: any;
+	endDate: Date;
+	endTimestamp?: any;
+	Event: number;
+	location: string;
+	page: string;
+	description: string;
 };
 
 type Sponsor = {
-  link: string;
-  reference: string;
+	link: string;
+	reference: string;
+	tier: string;
+	image: string;
 };
 
 type GeneralStats = {
-  superAdminCount: number;
-  checkedInCount: number;
-  hackerCount: number;
-  adminCount: number;
-  scans: Record<string, number>;
+	superAdminCount: number;
+	checkedInCount: number;
+	hackerCount: number;
+	adminCount: number;
+	scans: Record<string, number>;
 };
 
 /**
@@ -258,14 +260,14 @@ type GeneralStats = {
  * as the section to redirect to
  */
 type SidebarSection = {
-  /** Display name of the section */
-  title: string;
+	/** Display name of the section */
+	title: string;
 
-  /** Path to redirect to (eg. '#Workshops') */
-  href?: string;
+	/** Path to redirect to (eg. '#Workshops') */
+	href?: string;
 
-  /** List of subsections that will appear when clicked */
-  sections?: SidebarSubsection[];
+	/** List of subsections that will appear when clicked */
+	sections?: SidebarSubsection[];
 };
 
 /**
@@ -273,17 +275,17 @@ type SidebarSection = {
  * does NOT contain deeper nestings of sections
  */
 type SidebarSubsection = {
-  /** Display name of the section */
-  title: string;
+	/** Display name of the section */
+	title: string;
 
-  /** Path to redirect to (eg. '#Workshops') */
-  href?: string;
+	/** Path to redirect to (eg. '#Workshops') */
+	href?: string;
 };
 
 /**
  * Typescript module decleration for markdown files
  */
 declare module '*.md' {
-  const content: any;
-  export default content;
+	const content: any;
+	export default content;
 }

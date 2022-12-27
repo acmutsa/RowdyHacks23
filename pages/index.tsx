@@ -13,12 +13,13 @@ import 'firebase/storage';
 import KeynoteSpeaker from '../components/KeynoteSpeaker';
 import HomeChallengeCard from '../components/HomeChallengeCard';
 import MemberCards from '../components/MemberCards';
-import SponsorCard from '../components/SponsorCard';
 import FAQ from '../components/faq';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import Disclosure from '../components/Disclosure';
+
+import SponsorCard from '../components/rh/SponsorCard';
 
 interface propsType {
 	props: {
@@ -26,7 +27,7 @@ interface propsType {
 		challenges: Challenge[];
 		answeredQuestion: AnsweredQuestion[];
 		fetchedMembers: TeamMember[];
-		sponsorCard: Sponsor[];
+		sponsors: Sponsor[];
 	};
 }
 
@@ -131,11 +132,24 @@ const Home: NextPage<propsType> = ({ props }) => {
 				</ParallaxLayer>
 				<ParallaxLayer offset={2} factor={2} speed={0} className="ocean-gradient">
 					<img className="w-full absolute top-0 left-0" src="/img/borders/cave_down.svg"></img>
-
-					<div className="w-full h-full pt-[600px] max-w-[1000px] mx-auto">
+					<div className="max-w-[1200px] mx-auto pt-[60vh] pb-[30px]">
 						<h1 className="font-permanent-marker text-6xl font-bold text-[#2a2a72] border-b-2 border-b-[#2a2a72] border-dashed">
 							Sponsors
 						</h1>
+					</div>
+					<div className="w-full h-full max-w-[1200px] mx-auto grid grid-cols-3">
+						{(() => {
+							let sponsorCards = [];
+							if (props?.sponsors) {
+								for (const sponsor of props.sponsors) {
+									console.log('Sponsor Data: ', sponsor);
+									sponsorCards.push(
+										<SponsorCard key={`${sponsor.reference}_${sponsor.tier}`} {...sponsor} />,
+									);
+								}
+							}
+							return sponsorCards;
+						})()}
 					</div>
 					<div className="w-full absolute bottom-0 left-0">
 						<img className="w-full mb-[-1px] " src="/img/landscape/oceanfloor.svg"></img>
@@ -239,7 +253,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps<propsType> = async (context) => {
 	const protocol = context.req.headers.referer?.split('://')[0] || 'http';
 	const { data: keynoteData } = await RequestHelper.get<KeynoteSpeaker[]>(
 		`${protocol}://${context.req.headers.host}/api/keynotespeakers`,
@@ -263,11 +277,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 	);
 	return {
 		props: {
-			keynoteSpeakers: keynoteData,
-			challenges: challengeData,
-			answeredQuestion: answeredQuestion,
-			fetchedMembers: memberData,
-			sponsorCard: sponsorData,
+			props: {
+				keynoteSpeakers: keynoteData,
+				challenges: challengeData,
+				answeredQuestion: answeredQuestion,
+				fetchedMembers: memberData,
+				sponsors: sponsorData,
+			},
 		},
 	};
 };
