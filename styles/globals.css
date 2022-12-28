@@ -200,6 +200,12 @@ a.link {
 
 /* Backgrounds */
 
+.ocean-animated-background {
+	background: linear-gradient(360deg, #001a33, #003366, #004080, #0059b3, #0066cc);
+	background-size: 300% 300%;
+	animation: ocean-bg-animation 45s ease infinite;
+}
+
 .cloud-scroll-bg {
 	background: url('/img/landscape/clouds.svg');
 	background-repeat: repeat-x;
@@ -238,5 +244,17 @@ a.link {
 	}
 	to {
 		background-position: 100vw 0;
+	}
+}
+
+@keyframes ocean-bg-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
 	}
 }

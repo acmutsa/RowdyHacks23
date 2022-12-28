@@ -130,14 +130,14 @@ const Home: NextPage<propsType> = ({ props }) => {
 						</div>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer offset={2} factor={2} speed={0} className="ocean-gradient">
+				<ParallaxLayer offset={2} factor={2} speed={0} className="ocean-animated-background">
 					<img className="w-full absolute top-0 left-0" src="/img/borders/cave_down.svg"></img>
 					<div className="max-w-[1200px] mx-auto pt-[60vh] pb-[30px]">
-						<h1 className="font-permanent-marker text-6xl font-bold text-[#2a2a72] border-b-2 border-b-[#2a2a72] border-dashed">
+						<h1 className="font-permanent-marker text-6xl font-bold text-white pb-[5px] border-b-2 border-b-white">
 							Sponsors
 						</h1>
 					</div>
-					<div className="w-full h-full max-w-[1200px] mx-auto grid grid-cols-3">
+					<div className="w-full h-full max-w-[1200px] mx-auto grid grid-cols-3 gap-2">
 						{(() => {
 							let sponsorCards = [];
 							if (props?.sponsors) {
