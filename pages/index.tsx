@@ -196,15 +196,15 @@ const Home: NextPage<propsType> = ({ props }) => {
 										</div>
 										<div className="grid grid-cols-2 h-[20%]">
 											<div className="flex items-center justify-center">
-												<a href="#">
-													<button className="bg-emerald-700 hover:bg-emerald-800 font-sans w-[100px] h-[45px] rounded font-bold">
+												<a className="bg-emerald-900 rounded" href="#">
+													<button className="bg-emerald-700 translate-y-[-4px] hover:translate-y-0 font-sans w-[100px] h-[45px] rounded font-bold">
 														Volunteer
 													</button>
 												</a>
 											</div>
 											<div className="flex items-center justify-center">
-												<a href="#">
-													<button className="bg-emerald-700 hover:bg-emerald-800 font-sans w-[100px] h-[45px] rounded font-bold">
+												<a className="bg-emerald-900 rounded" href="#">
+													<button className="bg-emerald-700 translate-y-[-4px] hover:translate-y-0 font-sans w-[100px] h-[45px] rounded font-bold">
 														Mentor
 													</button>
 												</a>
@@ -233,8 +233,8 @@ const Home: NextPage<propsType> = ({ props }) => {
 										</div>
 										<div className="grid grid-cols-2 h-[20%]">
 											<div className="flex items-center justify-center col-span-2">
-												<a href="#">
-													<button className="bg-emerald-700 hover:bg-emerald-800 font-sans w-[150px] h-[45px] rounded font-bold">
+												<a className="bg-emerald-900 rounded" href="#">
+													<button className="bg-emerald-700 font-sans w-[150px] h-[45px] rounded font-bold translate-y-[-4px] hover:translate-y-0">
 														Sponsor Packet
 													</button>
 												</a>
