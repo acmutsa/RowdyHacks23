@@ -13,12 +13,13 @@ import 'firebase/storage';
 import KeynoteSpeaker from '../components/KeynoteSpeaker';
 import HomeChallengeCard from '../components/HomeChallengeCard';
 import MemberCards from '../components/MemberCards';
-import SponsorCard from '../components/SponsorCard';
 import FAQ from '../components/faq';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import Disclosure from '../components/Disclosure';
+
+import SponsorCard from '../components/rh/SponsorCard';
 
 interface propsType {
 	props: {
@@ -26,7 +27,7 @@ interface propsType {
 		challenges: Challenge[];
 		answeredQuestion: AnsweredQuestion[];
 		fetchedMembers: TeamMember[];
-		sponsorCard: Sponsor[];
+		sponsors: Sponsor[];
 	};
 }
 
@@ -35,10 +36,11 @@ const Home: NextPage<propsType> = ({ props }) => {
 
 	return (
 		<div className="w-full h-screen absolute top-0 left-0">
-			<Parallax pages={5.5} className={'w-full overflow-hidden top-0 left-0'}>
+			<Parallax pages={6.5} className={'w-full overflow-hidden top-0 left-0'}>
 				<ParallaxLayer speed={0} className="sky-gradient overflow-hidden" />
 				<ParallaxLayer speed={-0.5} className="overflow-hidden flex items-center justify-center">
 					{/* TODO: Make this more dynamic, split the clouds into different layers and then have then move at different speeds */}
+					{/* TODO: Fix bug where animation sometimes skips */}
 					<div className="cloud-scroll-bg"></div>
 				</ParallaxLayer>
 				<ParallaxLayer speed={-0.2} className="overflow-hidden">
@@ -128,13 +130,26 @@ const Home: NextPage<propsType> = ({ props }) => {
 						</div>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer offset={2} factor={2} speed={0} className="ocean-gradient">
-					<img className="w-full absolute top-0 left-0" src="/img/borders/cave_down.svg"></img>
-
-					<div className="w-full h-full pt-[600px] max-w-[1000px] mx-auto">
-						<h1 className="font-permanent-marker text-6xl font-bold text-[#2a2a72] border-b-2 border-b-[#2a2a72] border-dashed">
+				<ParallaxLayer offset={2} factor={3} speed={0} className="ocean-gradient">
+					<img className="w-full absolute top-0 left-0 z-10" src="/img/borders/cave_down.svg"></img>
+					<div className="max-w-[1200px] mx-auto pt-[60vh] pb-[30px]">
+						<h1 className="font-permanent-marker text-6xl font-bold text-white pb-[5px] border-b-2 border-b-white">
 							Sponsors
 						</h1>
+					</div>
+					<div className="w-full h-full max-w-[1200px] mx-auto grid grid-cols-3 gap-2">
+						{(() => {
+							let sponsorCards = [];
+							if (props?.sponsors) {
+								for (const sponsor of props.sponsors) {
+									console.log('Sponsor Data: ', sponsor);
+									sponsorCards.push(
+										<SponsorCard key={`${sponsor.reference}_${sponsor.tier}`} {...sponsor} />,
+									);
+								}
+							}
+							return sponsorCards;
+						})()}
 					</div>
 					<div className="w-full absolute bottom-0 left-0">
 						<img className="w-full mb-[-1px] " src="/img/landscape/oceanfloor.svg"></img>
@@ -144,7 +159,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 						></img>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer offset={4} speed={0} className="z-10 bg-emerald-900 overflow-hidden">
+				<ParallaxLayer offset={5} speed={0} className="z-10 bg-emerald-900 overflow-hidden">
 					<div className="w-full h-full absolute">
 						<img
 							src="/img/landscape/trees.svg"
@@ -228,7 +243,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 						</div>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer speed={0} offset={5} factor={0.5}>
+				<ParallaxLayer speed={0} offset={6} factor={0.5}>
 					<Disclosure />
 				</ParallaxLayer>
 			</Parallax>
@@ -238,7 +253,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps<propsType> = async (context) => {
 	const protocol = context.req.headers.referer?.split('://')[0] || 'http';
 	const { data: keynoteData } = await RequestHelper.get<KeynoteSpeaker[]>(
 		`${protocol}://${context.req.headers.host}/api/keynotespeakers`,
@@ -262,11 +277,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 	);
 	return {
 		props: {
-			keynoteSpeakers: keynoteData,
-			challenges: challengeData,
-			answeredQuestion: answeredQuestion,
-			fetchedMembers: memberData,
-			sponsorCard: sponsorData,
+			props: {
+				keynoteSpeakers: keynoteData,
+				challenges: challengeData,
+				answeredQuestion: answeredQuestion,
+				fetchedMembers: memberData,
+				sponsors: sponsorData,
+			},
 		},
 	};
 };

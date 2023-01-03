@@ -166,7 +166,7 @@ a.link {
 	background: linear-gradient(
 		to bottom,
 		black 0%,
-		black 5%,
+		black 7.5%,
 		#40405c 25%,
 		#6f71aa 40%,
 		#f84c34 100%
@@ -189,7 +189,8 @@ a.link {
 }
 
 .ocean-gradient {
-	background: linear-gradient(to bottom, #009ffd 0%, #2a2a72 100%);
+	background: rgb(0, 102, 204);
+	background: radial-gradient(circle, rgba(0, 102, 204, 1) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
 .cave-bottom-border {
@@ -199,6 +200,12 @@ a.link {
 }
 
 /* Backgrounds */
+
+.ocean-animated-background {
+	background: linear-gradient(360deg, #001a33, #003366, #004080, #0059b3, #0066cc);
+	background-size: 300% 300%;
+	animation: ocean-bg-animation 45s ease infinite;
+}
 
 .cloud-scroll-bg {
 	background: url('/img/landscape/clouds.svg');
@@ -238,5 +245,17 @@ a.link {
 	}
 	to {
 		background-position: 100vw 0;
+	}
+}
+
+@keyframes ocean-bg-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
 	}
 }

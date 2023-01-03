@@ -11,6 +11,7 @@ const withFonts = require('next-fonts');
 			'rowdyhacks.org',
 			'acmutsa.org',
 			'imagedelivery.net',
+			'static.rowdyhacks.org',
 		],
 	},
 	pwa: {
