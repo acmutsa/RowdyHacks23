@@ -131,7 +131,10 @@ const Home: NextPage<propsType> = ({ props }) => {
 					</div>
 				</ParallaxLayer>
 				<ParallaxLayer offset={2} factor={3} speed={0} className="ocean-gradient">
-					<img className="w-full absolute top-0 left-0 z-10" src="/img/borders/cave_down.svg"></img>
+					<img
+						className="w-full absolute top-0 left-0 select-none drag-none"
+						src="/img/borders/cave_down.svg"
+					></img>
 					<div className="max-w-[1200px] mx-auto pt-[60vh] pb-[30px]">
 						<h1 className="font-permanent-marker text-6xl font-bold text-white pb-[5px] border-b-2 border-b-white">
 							Sponsors
