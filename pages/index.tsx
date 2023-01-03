@@ -36,7 +36,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 
 	return (
 		<div className="w-full h-screen absolute top-0 left-0">
-			<Parallax pages={5.5} className={'w-full overflow-hidden top-0 left-0'}>
+			<Parallax pages={6.5} className={'w-full overflow-hidden top-0 left-0'}>
 				<ParallaxLayer speed={0} className="sky-gradient overflow-hidden" />
 				<ParallaxLayer speed={-0.5} className="overflow-hidden flex items-center justify-center">
 					{/* TODO: Make this more dynamic, split the clouds into different layers and then have then move at different speeds */}
@@ -130,8 +130,8 @@ const Home: NextPage<propsType> = ({ props }) => {
 						</div>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer offset={2} factor={2} speed={0} className="ocean-animated-background">
-					<img className="w-full absolute top-0 left-0" src="/img/borders/cave_down.svg"></img>
+				<ParallaxLayer offset={2} factor={3} speed={0} className="ocean-gradient">
+					<img className="w-full absolute top-0 left-0 z-10" src="/img/borders/cave_down.svg"></img>
 					<div className="max-w-[1200px] mx-auto pt-[60vh] pb-[30px]">
 						<h1 className="font-permanent-marker text-6xl font-bold text-white pb-[5px] border-b-2 border-b-white">
 							Sponsors
@@ -159,7 +159,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 						></img>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer offset={4} speed={0} className="z-10 bg-emerald-900 overflow-hidden">
+				<ParallaxLayer offset={5} speed={0} className="z-10 bg-emerald-900 overflow-hidden">
 					<div className="w-full h-full absolute">
 						<img
 							src="/img/landscape/trees.svg"
@@ -243,7 +243,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 						</div>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer speed={0} offset={5} factor={0.5}>
+				<ParallaxLayer speed={0} offset={6} factor={0.5}>
 					<Disclosure />
 				</ParallaxLayer>
 			</Parallax>

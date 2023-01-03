@@ -189,7 +189,8 @@ a.link {
 }
 
 .ocean-gradient {
-	background: linear-gradient(to bottom, #009ffd 0%, #2a2a72 100%);
+	background: rgb(0, 102, 204);
+	background: radial-gradient(circle, rgba(0, 102, 204, 1) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
 .cave-bottom-border {
