@@ -259,3 +259,10 @@ a.link {
 		background-position: 0% 50%;
 	}
 }
+
+/* Utility */
+
+.drag-none {
+	user-drag: none;
+	-webkit-user-drag: none;
+}
