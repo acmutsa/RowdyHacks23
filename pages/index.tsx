@@ -10,13 +10,6 @@ import { RequestHelper } from '../lib/request-helper';
 import firebase from 'firebase/app';
 import 'firebase/messaging';
 import 'firebase/storage';
-import KeynoteSpeaker from '../components/KeynoteSpeaker';
-import HomeChallengeCard from '../components/HomeChallengeCard';
-import MemberCards from '../components/MemberCards';
-import FAQ from '../components/faq';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
 import Disclosure from '../components/Disclosure';
 
 import SponsorCard from '../components/rh/SponsorCard';
@@ -130,7 +123,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 						</div>
 					</div>
 				</ParallaxLayer>
-				<ParallaxLayer offset={2} factor={3} speed={0} className="ocean-gradient">
+				<ParallaxLayer offset={2} factor={3} speed={0} className="ocean-gradient px-[5px]">
 					<img
 						className="w-full absolute top-0 left-0 select-none drag-none"
 						src="/img/borders/cave_down.svg"
@@ -140,7 +133,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 							Sponsors
 						</h1>
 					</div>
-					<div className="w-full max-w-[1200px] mx-auto grid grid-cols-3 gap-2 gap-y-12">
+					<div className="w-full max-w-[1200px] mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 gap-y-12">
 						{(() => {
 							let sponsorCards = [];
 							if (props?.sponsors) {
