@@ -140,7 +140,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 							Sponsors
 						</h1>
 					</div>
-					<div className="w-full h-full max-w-[1200px] mx-auto grid grid-cols-3 gap-2">
+					<div className="w-full max-w-[1200px] mx-auto grid grid-cols-3 gap-2 gap-y-10">
 						{(() => {
 							let sponsorCards = [];
 							if (props?.sponsors) {
