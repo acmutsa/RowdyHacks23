@@ -1,1 +1,15 @@
-<svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 239L129 208L257 167L386 230L514 153L643 173L771 164L900 231L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#692b44"></path><path d="M0 153L129 156L257 178L386 154L514 192L643 176L771 160L900 179L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#59243f"></path><path d="M0 145L129 128L257 126L386 119L514 120L643 120L771 158L900 155L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#4a1d39"></path><path d="M0 110L129 113L257 60L386 61L514 57L643 62L771 79L900 71L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#3b1732"></path><path d="M0 26L129 35L257 46L386 37L514 52L643 48L771 64L900 31L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#2d112b"></path></svg>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" width="900" height="250">
+	<title>cave_down-svg</title>
+	<style>
+		.s0 { fill: #692b44 } 
+		.s1 { fill: #59243f } 
+		.s2 { fill: #4a1d39 } 
+		.s3 { fill: #3b1732 } 
+		.s4 { fill: #2d112b } 
+	</style>
+	<path id="Layer" class="s0" d="m0 0h129 128 129 128 129 128 129v231l-129-67-128 9-129-20-128 77-129-63-128 41-129 31z"/>
+	<path id="Layer" class="s1" d="m0 0h129 128 129 128 129 128 129v179l-129-19-128 16-129 16-128-38-129 24-128-22-129-3z"/>
+	<path id="Layer" class="s2" d="m0 0h129 128 129 128 129 128 129v155l-129 3-128-38h-129l-128-1-129 7-128 2-129 17z"/>
+	<path id="Layer" class="s3" d="m0 0h129 128 129 128 129 128 129v71l-129 8-128-17-129-5-128 4-129-1-128 53-129-3z"/>
+	<path id="Layer" class="s4" d="m0 0h129 128 129 128 129 128 129v31l-129 33-128-16-129 4-128-15-129 9-128-11-129-9z"/>
+</svg>
