@@ -15,7 +15,13 @@ export const Ocean: FunctionComponent<propsType> = ({ sponsors }) => {
 			<br />
 			<br />
 			<br />
-			<div className="max-w-[1200px] mx-auto pb-[30px]">
+			<br className="md:hidden" />
+			<br className="md:hidden" />
+			<br className="md:hidden" />
+			<br className="md:hidden" />
+			<br className="md:hidden" />
+			<br className="md:hidden" />
+			<div className="max-w-[1200px] mx-auto pb-[30px] px-[5px]">
 				<h1 className="font-permanent-marker text-6xl font-bold text-white pb-[5px] border-b-2 border-b-white">
 					Sponsors
 				</h1>

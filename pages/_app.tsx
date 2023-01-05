@@ -35,7 +35,10 @@ function PortalApp({ Component, pageProps }: AppProps) {
 					<FCMProvider>
 						<Head>
 							<meta charSet="utf-8" />
-							<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+							<meta
+								name="viewport"
+								content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+							/>
 							<title>RowdyHacks</title> {/* !change */}
 							<meta name="description" content="Your all-in-one guide to this hackathon." />
 							{process.env.ENABLE_PWA ||

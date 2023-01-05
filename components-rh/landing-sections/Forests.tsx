@@ -2,22 +2,22 @@ import { type FunctionComponent } from 'react';
 
 export const Forest: FunctionComponent = () => {
 	return (
-		<div className="relative min-h-screen bg-emerald-900 overflow-x-hidden">
-			<div className="w-full h-full relative ">
+		<div className="relative min-h-screen bg-emerald-900 overflow-x-hidden bg-[url('/img/landscape/trees.svg')] bg-no-repeat bg-bottom bg-cover">
+			{/* <div className="w-full h-full absolute bottom-0">
 				<img
 					src="/img/landscape/trees.svg"
 					className="min-w-[calc(100%+100px)] translate-x-[-50px] translate-y-[-20vh]"
 				></img>
-			</div>
+			</div> */}
 			<div className="absolute left-0 top-0 w-full f-hull">
-				<div className="w-full h-full mx-auto max-w-[1000px] grid grid-cols-2 gap-2">
-					<div className="col-span-2 flex items-center min-h-[20vh] ">
-						<h1 className="font-permanent-marker text-6xl font-bold text-emerald-700">
+				<div className="w-full h-full mx-auto max-w-[1000px] grid lg:grid-cols-2 grid-cols-1 gap-2">
+					<div className="lg:col-span-2 flex items-center min-h-[20vh] ">
+						<h1 className="font-permanent-marker text-6xl font-bold text-emerald-700 text-center lg:text-left w-full">
 							Work With Us
 						</h1>
 					</div>
 					<div>
-						<div className="bg-stone-800 border-emerald-700 border-2 px-[15px] w-full rounded-xl aspect-video text-white py-[20px]">
+						<div className="bg-stone-800 border-emerald-700 border-2 px-[15px] w-full rounded-xl aspect-video max-w-[500px] text-white py-[20px] mx-auto">
 							<div className="bg-emerald-700 rounded-full w-[150px] h-[30px] mt-[-35px] absolute">
 								<h1 className="font-poppins font-bold text-xl text-center text-white">Students</h1>
 							</div>
@@ -52,7 +52,7 @@ export const Forest: FunctionComponent = () => {
 						</div>
 					</div>
 					<div>
-						<div className="bg-stone-800 border-emerald-700 border-2 px-[15px] w-full rounded-xl aspect-video text-white py-[20px]">
+						<div className="bg-stone-800 border-emerald-700 max-w-[500px] border-2 px-[15px] w-full rounded-xl aspect-video text-white py-[20px] mx-auto mt-[20px] lg:mt-0">
 							<div className="bg-emerald-700 rounded-full w-[150px] h-[30px] mt-[-35px] absolute">
 								<h1 className="font-poppins font-bold text-xl text-center text-white">Companies</h1>
 							</div>
