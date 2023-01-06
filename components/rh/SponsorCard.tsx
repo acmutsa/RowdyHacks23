@@ -21,7 +21,7 @@ const SponsorCard: FunctionComponent<Sponsor> = (sponsor) => {
 	// );
 
 	return (
-		<Link href={sponsor.link}>
+		<Link href={sponsor.link} target="_blank">
 			<div className="w-full aspect-[3/2] flex items-center justify-center relative shadow-xl box-border hover:cursor-pointer bg-gray-800 rounded-t-xl border-b-0 border-gray-900 border-4 bg-[url('/img/landing/underwater_tablet_bg.svg')]">
 				<div className="absolute top-0 bg-gray-900 h-[15px] w-[20%] rounded-b-lg flex justify-center z-10">
 					<div className="h-[50%] w-[30%] bg-gray-600 rounded-full mt-[2%] mr-[2px]"></div>

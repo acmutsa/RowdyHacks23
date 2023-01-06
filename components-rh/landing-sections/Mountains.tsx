@@ -39,12 +39,9 @@ export const Mountains: FunctionComponent = () => {
 				style={{ y: header }}
 				className="w-full flex md:flex-row flex-col justify-center absolute items-center pt-[calc(100vh/4)] will-change-transform"
 			>
-				<Image
-					src="/img/logos/rh_landing.svg"
-					width={175}
-					height={175}
-					className="h-[100px] w-[100px]"
-				></Image>
+				<div className="md:h-[175px] md:w-[175px] w-[100px] h-[100px] relative">
+					<Image src="/img/logos/rh_landing.svg" layout="fill"></Image>
+				</div>
 				<div className="ml-[5px]">
 					<h1 className="md:text-8xl text-5xl font-black font-sans text-white">RowdyHacks</h1>
 					<h2 className="md:text-4xl text-3xl font-black font-permanent-marker italic text-white text-center">
