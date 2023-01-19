@@ -87,7 +87,10 @@ const Disclosure: FunctionComponent = () => {
 							HackPortal developed with &lt;3 by <p className="font-black inline">HackUTD</p> and{' '}
 							<p className="font-black inline">ACM UTD Development</p>
 						</p>
-						<Link href={'https://github.com/UTSA-ACM/RowdyHacks23/blob/develop/contributions.md'}>
+						<Link
+							href={'https://github.com/UTSA-ACM/RowdyHacks23/blob/develop/contributions.md'}
+							target={'_blank'}
+						>
 							<a className="text-sm underline">Other Contributions♥</a>
 						</Link>
 					</div>
