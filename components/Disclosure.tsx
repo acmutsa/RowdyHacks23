@@ -61,13 +61,13 @@ const Disclosure: FunctionComponent = () => {
 					<a href="https://twitter.com/rowdyhacks" className="mr-2">
 						<FaTwitter />
 					</a>
-					<a href="https://twitter.com/rowdyhacks" className="mx-2">
+					<a href="https://www.instagram.com/rowdyhacks/" className="mx-2">
 						<FaInstagram />
 					</a>
-					<a href="https://twitter.com/rowdyhacks" className="mx-2">
+					<a href="https://www.facebook.com/rowdyhacks" className="mx-2">
 						<FaFacebook />
 					</a>
-					<a href="https://twitter.com/rowdyhacks" className="mx-2">
+					<a href="https://github.com/UTSA-ACM" className="mx-2">
 						<FaGithub />
 					</a>
 					<a href="https://go.rowdyhacks.org/discord" className="ml-2">
