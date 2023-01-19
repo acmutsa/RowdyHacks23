@@ -4,6 +4,7 @@ import type { NextPage } from 'next';
 import { GetServerSideProps } from 'next';
 import { useScroll, useSpring, useTransform, motion } from 'framer-motion';
 import { useRef } from 'react';
+import { stats } from '../lib/data';
 
 /* Firebase */
 
@@ -17,6 +18,7 @@ import { Mountains, MountainCaves } from '../components-rh/landing-sections/Moun
 import { Ocean } from '../components-rh/landing-sections/Ocean';
 import { Forest } from '../components-rh/landing-sections/Forests';
 import Disclosure from '../components/Disclosure';
+import { data } from 'jquery';
 
 interface propsType {
 	props: {
@@ -34,7 +36,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 	return (
 		<div className="w-full absolute top-0">
 			<Mountains />
-			<MountainCaves />
+			<MountainCaves stats={stats} />
 			<Ocean sponsors={props?.sponsors} />
 			<Forest />
 			<Disclosure />

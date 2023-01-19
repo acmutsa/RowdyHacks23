@@ -207,6 +207,13 @@ a.link {
 	animation: ocean-bg-animation 45s ease infinite;
 }
 
+.border-rocks {
+	border-image: url('/img/borders/rocksborder.svg') 30 round;
+	border-width: 20px;
+	border-style: solid;
+	margin: 10px;
+}
+
 .cloud-scroll-bg {
 	background: url('/img/landscape/clouds.svg');
 	background-repeat: repeat-x;
