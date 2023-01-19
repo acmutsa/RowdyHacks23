@@ -6,6 +6,10 @@ interface MountainsProps {
 	containterRef: MutableRefObject<any>;
 }
 
+interface Mountain2Props {
+	stats: Array<{ data: string; object: string }>;
+}
+
 export const Mountains: FunctionComponent = () => {
 	let contentWrapperRef = useRef(null);
 
@@ -95,10 +99,10 @@ export const Mountains: FunctionComponent = () => {
 	);
 };
 
-export const MountainCaves: FunctionComponent = () => {
+export const MountainCaves: FunctionComponent<Mountain2Props> = ({ stats }) => {
 	return (
 		<section className="min-h-screen bg-[#2d112b] relative z-10">
-			<div className="w-full min-h-screen grid md:grid-cols-2 grid-cols-1 max-w-[1000px] mx-auto pt-[100px]">
+			<div className="w-full grid md:grid-cols-2 grid-cols-1 max-w-[1000px] mx-auto pt-[100px]">
 				<div className="max-h-[280px] flex flex-col justify-center px-[5px]">
 					<h3 className="font-black font-permanent-marker text-white text-4xl mb-[10px] text-center md:text-left">
 						About Us
@@ -119,19 +123,42 @@ export const MountainCaves: FunctionComponent = () => {
 						<h1 className="w-full font-permanent-marker tracking-wider">ROWDY</h1>
 					</div>
 				</div>
-				<div className="md:flex items-start justify-center hidden">
-					<Image src={'/img/mountain_camping_site.png'} width={280} height={280} />
+			</div>
+			<div className="w-full grid md:grid-cols-2 grid-cols-1 max-w-[1000px] mx-auto pt-[100px]">
+				<div className="flex items-center justify-center relative">
+					<Image
+						src={'/img/landing/people/people-04.png'}
+						layout={'fill'}
+						objectFit={'contain'}
+						className="mx-auto"
+					></Image>
 				</div>
 				<div className="max-h-[280px] flex flex-col justify-center px-[5px]">
-					<h3 className="font-black font-permanent-marker text-white text-4xl mb-[10px] md:mt-0 mt-[100px] text-center md:text-left">
-						Why attend?
+					<h3 className="font-black font-permanent-marker text-white text-4xl mb-[10px] text-center md:text-left">
+						Who Can Attend?
 					</h3>
 					<p className="font-sans text-white text-lg font-bold text-center md:text-left">
-						RowdyHacks is a free, weekend-long, overnight hackathon hosted at UTSA and the second
-						largest hackathon in Texas! Students can join us to network, code, collaborate, and
-						compete. We welcome hackers from all disciplines, backgrounds, & technical levels!
+						We're excited to welcome hackers from all disciplines, backgrounds, & technical levels!
+						Whether you can't count the number of apps you've built, or you have never written a
+						line of code before, RowdyHacks has something for everyone!
 					</p>
 				</div>
+			</div>
+			<div className="w-full flex items-center justify-evenly flex-wrap max-w-[1000px] mx-auto mt-[100px] min-h-[200px] border-[#ff583d] border-2 rounded">
+				{(() => {
+					let els = [];
+					for (const stat of stats) {
+						els.push(
+							<div className="flex flex-col justify-center items-center">
+								<h1 className="text-9xl font-poppins font-black text-[#ff583d]">{stat.data}</h1>
+								<p className="font-bold text-xl text-white mt-[-15px] font-permanent-marker">
+									{stat.object}
+								</p>
+							</div>,
+						);
+					}
+					return els;
+				})()}
 			</div>
 		</section>
 	);

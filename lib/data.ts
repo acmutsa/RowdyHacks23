@@ -11,16 +11,16 @@ export const navItems = [
 
 export const stats = [
 	{
-		data: 'Big',
-		object: 'statistic 1',
+		data: '36',
+		object: 'Hours',
 	},
 	{
-		data: 'Shocking',
-		object: 'statistic 2',
+		data: '400+',
+		object: 'Hackers',
 	},
 	{
-		data: 'Incredible',
-		object: 'statistic 3',
+		data: '70+',
+		object: 'Projects',
 	},
 ];
 
