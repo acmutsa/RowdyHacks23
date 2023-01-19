@@ -1,4 +1,5 @@
 import { type FunctionComponent } from 'react';
+import Image from 'next/image';
 import SponsorCard from '../../components/rh/SponsorCard';
 
 interface propsType {
@@ -21,8 +22,9 @@ export const Ocean: FunctionComponent<propsType> = ({ sponsors }) => {
 			<br className="md:hidden" />
 			<br className="md:hidden" />
 			<br className="md:hidden" />
-			<div className="max-w-[1200px] mx-auto pb-[30px] px-[5px]">
-				<h1 className="font-permanent-marker text-9xl text-[rgb(0,102,204)] font-black">
+			<div className="max-w-[1200px] mx-auto pb-[30px] px-[5px] flex items-center relative">
+				<Image src={'/img/logos/rh_aqua.svg'} width={150} height={150}></Image>
+				<h1 className="font-poppins text-9xl text-[rgb(0,102,204)] font-black pl-[10px]">
 					Sponsors
 				</h1>
 			</div>

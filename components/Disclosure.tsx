@@ -91,7 +91,7 @@ const Disclosure: FunctionComponent = () => {
 							href={'https://github.com/UTSA-ACM/RowdyHacks23/blob/develop/contributions.md'}
 							target={'_blank'}
 						>
-							<a className="text-sm underline">Other Contributions♥</a>
+							<a className="text-sm underline">Other Contributions</a>
 						</Link>
 					</div>
 				</div>
