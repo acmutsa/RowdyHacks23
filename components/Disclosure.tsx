@@ -84,11 +84,14 @@ const Disclosure: FunctionComponent = () => {
 					</p>
 					<div className="bg-amber-500 w-full flex flex-col items-center mt-[20px]">
 						<p className="text-center text-sm">
-							HackPortal developed with &lt;3 by <p className="font-black inline">HackUTD</p> and{' '}
-							<p className="font-black inline">ACM UTD Development</p>
+							HackPortal developed with &lt;3 by <span className="font-black inline">HackUTD</span>{' '}
+							and <span className="font-black inline">ACM UTD Development</span>
 						</p>
-						<Link href={'/contributions'}>
-							<a className="text-sm underline">Other Contributions♥</a>
+						<Link
+							href={'https://github.com/UTSA-ACM/RowdyHacks23/blob/develop/contributions.md'}
+							target={'_blank'}
+						>
+							<a className="text-sm underline">Other Contributions</a>
 						</Link>
 					</div>
 				</div>
