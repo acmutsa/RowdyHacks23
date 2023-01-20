@@ -8,6 +8,8 @@ import { useAuthContext } from '../lib/user/AuthContext';
 import { navItems } from '../lib/data';
 import firebase from 'firebase/app';
 import Image from 'next/image';
+import 'firebase/remote-config';
+import { getAccordionActionsUtilityClass } from '@mui/material';
 
 /**
  * A global site header throughout the entire app.
@@ -32,20 +34,34 @@ export default function AppHeader() {
 					console.warn('Could not sign out');
 				});
 		}
+		const toExecute = async () => {
+			await firebase.remoteConfig().fetchAndActivate();
 
-		//creating dynamic nav items
-		setDynamicNavItems((dynamicNavItems) => {
-			if (
-				isSignedIn &&
-				profile &&
-				(profile.user.permissions[0] === 'admin' ||
-					profile.user.permissions[0] === 'super_admin') &&
-				dynamicNavItems.filter(({ text }) => text === 'Admin').length === 0
-			) {
-				return [...dynamicNavItems, { text: 'Admin', path: '/admin' }];
-			}
-			return dynamicNavItems;
-		});
+			firebase.remoteConfig().settings.minimumFetchIntervalMillis = 300000;
+			const HHT = firebase.remoteConfig().getValue('hackathonHasStarted').asBoolean();
+			console.log('config: ', HHT);
+			//creating dynamic nav items
+			setDynamicNavItems((dynamicNavItems) => {
+				let navItemsToSet = [...dynamicNavItems];
+
+				if (
+					isSignedIn &&
+					profile &&
+					(profile.user.permissions[0] === 'admin' ||
+						profile.user.permissions[0] === 'super_admin') &&
+					dynamicNavItems.filter(({ text }) => text === 'Admin').length === 0
+				) {
+					navItemsToSet.push({ text: 'Admin', path: '/admin' });
+				}
+
+				if (HHT && dynamicNavItems.filter(({ text }) => text === 'Survival Guide').length === 0) {
+					navItemsToSet.push({ text: 'Survival Guide', path: '/guide' });
+				}
+				return navItemsToSet;
+			});
+		};
+
+		toExecute();
 	}, []);
 
 	const toggleMenu = () => {

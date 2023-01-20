@@ -175,7 +175,7 @@ export default function Register() {
 				</div>
 			</section>
 
-			<section className="flex justify-center border-white p-[5px] max-w-[1000px] mx-auto border-4 rounded-2xl">
+			<section className="flex justify-center border-rh-sunset bg-rh-deep-purple p-[5px] max-w-[1000px] mx-auto border-4 rounded-2xl">
 				<Formik
 					initialValues={formInitialValues}
 					//validation

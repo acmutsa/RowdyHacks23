@@ -217,10 +217,10 @@ a.link {
 .cloud-scroll-bg {
 	background: url('/img/landscape/clouds.svg');
 	background-repeat: repeat-x;
-	width: 100vw;
 	height: 100vh;
 	animation: bgScrollLeft 60s linear infinite;
 	opacity: 0.2;
+	background-size: 1000;
 }
 
 .forrest-bg {
