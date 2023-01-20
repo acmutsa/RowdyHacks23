@@ -308,10 +308,10 @@ export default function AuthPage() {
 					</section>
 					<section
 						id="signUpSection"
-						className="hidden bg-[#F2F3FF] 2xl:min-h-[30rem] min-h-[28rem] rounded-lg p-6"
+						className="hidden bg-rh-deep-purple border-rh-sunset border-2 2xl:min-h-[30rem] min-h-[28rem] rounded-lg p-6"
 					>
 						<form onSubmit={handleSignUpSubmit}>
-							<h1 className="text-xl font-bold mt-4 mb-2">Email</h1>
+							<h1 className="text-xl font-bold mt-4 mb-2 text-rh-white">Email</h1>
 							<input
 								className="w-full rounded-lg p-2 !bg-white"
 								value={currentEmail}
@@ -321,13 +321,12 @@ export default function AuthPage() {
 								autoComplete="email"
 								placeholder="email@example.com"
 							></input>
-							<h1 className="text-xl font-bold mt-4 mb-2">Password</h1>
+							<h1 className="text-xl font-bold mt-4 mb-2 text-rh-white">Password</h1>
 							<input
 								id="passwordInputSignUp"
-								className="w-full rounded-lg p-2"
+								className="w-full rounded-lg p-2 bg-white"
 								value={currentPassword}
 								onChange={(e) => setCurrentPassword(e.target.value)}
-								style={{ backgroundColor: '#C1C8FF' }}
 								type="password"
 								name="password"
 								autoComplete="current-password"
@@ -345,15 +344,16 @@ export default function AuthPage() {
 								<input className="hidden" type="submit" value="Submit" />
 							</div>
 							<div className="flex justify-center mt-6 mb-4">
-								<button
-									type="button"
-									className="rounded-md text-xl w-[20rem] bg-[#C1C8FF] hover:brightness-90 px-4 py-2"
-									onClick={() => {
-										signUp();
-									}}
-								>
-									Sign Up
-								</button>
+								<a className="bg-[#c41e04] rounded" href="#">
+									<button
+										onClick={() => {
+											signUp();
+										}}
+										className="bg-[#ff583d] font-sans w-[150px] h-[45px] rounded font-bold translate-y-[-4px] hover:translate-y-0"
+									>
+										Sign Up
+									</button>
+								</a>
 							</div>
 						</form>
 						{/* Error and verification messages */}

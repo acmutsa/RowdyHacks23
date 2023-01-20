@@ -41,8 +41,13 @@ module.exports = {
 			// backgroundImage: {
 			// 	'hero-pattern': `url(${'/assets/bg2.jpeg'})`, // !change
 			// },
-			color: {
+			colors: {
 				'rh-white': '#FFF',
+				'rh-black': '#000',
+				'rh-deep-purple': '#2D112B',
+				'rh-sunset': '#FF583D',
+				'rh-forrest': '#047857',
+				'rh-ocean-blue': '#0066CC',
 			},
 		},
 	},
