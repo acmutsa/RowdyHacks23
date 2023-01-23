@@ -5,6 +5,7 @@ import { useAuthContext } from '../lib/user/AuthContext';
 import LoadIcon from '../components/LoadIcon';
 import { getFileExtension } from '../lib/util';
 import { titleCase } from 'title-case';
+import { groups } from '../lib/data';
 
 /**
  * A page that allows a user to modify app or profile settings and see their data.
@@ -78,24 +79,28 @@ export default function ProfilePage() {
 							</div>
 						</div>
 						<div className="w-full my-5">
-							<div className="profile-view">
-								<div className="profile-view-name flex flex-col gap-y-2">
+							<div className="grid grid-cols-2 gap-10">
+								<div className="flex flex-col gap-y-2">
 									<div className="font-bold font-permanent-marker text-xl">Name</div>
 									<h1 className="font-bold">{`${profile.user.firstName} ${profile.user.lastName}`}</h1>
 								</div>
-								<div className="profile-view-role flex flex-col gap-y-2">
+								<div className="flex flex-col gap-y-2">
 									<div className="font-bold font-permanent-marker text-xl">Role</div>
 									<h1 className="font-bold">{titleCase(profile.user.permissions[0])}</h1>
 								</div>
-								<div className="profile-view-univ flex flex-col gap-y-2">
+								<div className="flex flex-col gap-y-2">
 									<div className="font-bold font-permanent-marker text-xl">University</div>
 									<h1 className="font-bold">{profile.university}</h1>
 								</div>
-								<div className="profile-view-major flex flex-col gap-y-2">
+								<div className="flex flex-col gap-y-2">
+									<div className="font-bold font-permanent-marker text-xl">Guild</div>
+									<h1 className="font-bold">{groups[profile.group]}</h1>
+								</div>
+								<div className="flex flex-col gap-y-2">
 									<div className="font-bold font-permanent-marker text-xl">Major</div>
 									<h1 className="font-bold">{profile.major}</h1>
 								</div>
-								<div className="profile-view-stlvl flex flex-col gap-y-2">
+								<div className="flex flex-col gap-y-2">
 									<div className="font-bold font-permanent-marker text-xl">Level of Study</div>
 									<h1 className="font-bold">{titleCase(profile.studyLevel)}</h1>
 								</div>
