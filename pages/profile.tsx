@@ -93,7 +93,7 @@ export default function ProfilePage() {
 									<h1 className="font-bold">{profile.university}</h1>
 								</div>
 								<div className="flex flex-col gap-y-2">
-									<div className="font-bold font-permanent-marker text-xl">Guild</div>
+									<div className="font-bold font-permanent-marker text-xl">Biome</div>
 									<h1 className="font-bold">{groups[profile.group]}</h1>
 								</div>
 								<div className="flex flex-col gap-y-2">
