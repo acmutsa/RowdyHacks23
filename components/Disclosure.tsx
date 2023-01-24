@@ -32,12 +32,12 @@ const Disclosure: FunctionComponent = () => {
 				</div>
 			</div>
 			<div className="w-full h-[30vh] flex flex-col justify-center md:items-start items-center pl-[10px] col-span-2 md:col-span-1">
-				<Link href={'/contributions'}>
+				<Link href={'https://github.com/UTSA-ACM/RowdyHacks23/blob/develop/contributions.md'}>
 					<a className="text-white font-sans font-extrabold hover:underline hover:cursor-pointer">
 						Contributions
 					</a>
 				</Link>
-				<Link href={'/contributions'}>
+				<Link href={'/contact'}>
 					<a className="text-white font-sans font-extrabold hover:underline hover:cursor-pointer">
 						Contact Us
 					</a>
@@ -47,7 +47,7 @@ const Disclosure: FunctionComponent = () => {
 						Code of Conduct
 					</a>
 				</Link>
-				<Link href={'/oss'}>
+				<Link href={'https://github.com/UTSA-ACM/RowdyHacks23'}>
 					<a className="text-white font-sans font-extrabold hover:underline hover:cursor-pointer">
 						Open Source
 					</a>
@@ -91,7 +91,9 @@ const Disclosure: FunctionComponent = () => {
 							href={'https://github.com/UTSA-ACM/RowdyHacks23/blob/develop/contributions.md'}
 							target={'_blank'}
 						>
-							<a className="text-sm underline">Other Contributions</a>
+							<span>
+								❤️<a className="text-sm underline">Other Contributions</a>❤️
+							</span>
 						</Link>
 					</div>
 				</div>
