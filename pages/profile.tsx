@@ -65,7 +65,7 @@ export default function ProfilePage() {
 							className={`w-full md:w-2/3 rounded-xl p-4 flex flex-col justify-around font-poppins ${'bg-rh-deep-purple text-white border-2 border-rh-sunset'}`}
 							style={{ minHeight: '500px' }}
 						>
-							<h1 className="font-bold text-xl text-center">RowdyHacks</h1> {/* !change */}
+							<h1 className="font-bold text-xl text-center">RowdyHacks</h1>
 							<div className="mx-auto">
 								{user.photoUrl ? (
 									<Image
