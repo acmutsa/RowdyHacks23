@@ -113,9 +113,9 @@ export const MountainCaves: FunctionComponent<Mountain2Props> = ({ stats }) => {
 						disciplines, backgrounds, & technical levels!
 					</p>
 				</div>
-				<div className="flex items-center justify-center max-h-[280px]">
+				<div className="flex items-center justify-center max-h-[280px] pt-[100px] md:pt-0">
 					<Image src={'/img/logos/rh_sunset.svg'} width={175} height={175}></Image>
-					<div className="h-[175px] ml-[10px] flex flex-col justify-center text-3xl font-sans text-[#ff583d] font-black">
+					<div className="h-[175px] ml-[10px] flex flex-col justify-center text-3xl font-sans text-rh-sunset font-black">
 						<h1 className="w-full">LET'S</h1>
 
 						<h1 className="w-full">GET</h1>
