@@ -22,9 +22,15 @@ export const Ocean: FunctionComponent<propsType> = ({ sponsors }) => {
 			<br className="md:hidden" />
 			<br className="md:hidden" />
 			<br className="md:hidden" />
-			<div className="max-w-[1200px] mx-auto pb-[30px] px-[5px] flex items-center relative">
+			<div className="max-w-[1200px] mx-auto pb-[30px] px-[5px] lg:flex items-center relative hidden">
 				<Image src={'/img/logos/rh_aqua.svg'} width={150} height={150}></Image>
 				<h1 className="font-poppins text-9xl text-[rgb(0,102,204)] font-black pl-[10px]">
+					Sponsors
+				</h1>
+			</div>
+			<div className="max-w-[1200px] mx-auto pb-[30px] px-[5px] lg:hidden items-center relative flex justify-center">
+				<Image src={'/img/logos/rh_aqua.svg'} width={75} height={75}></Image>
+				<h1 className="font-poppins text-6xl text-[rgb(0,102,204)] font-black pl-[10px] text-center">
 					Sponsors
 				</h1>
 			</div>
