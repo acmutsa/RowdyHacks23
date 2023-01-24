@@ -3,10 +3,7 @@ export const buttonDatas = [
 	{ text: 'Sponsor App', path: '/' },
 ];
 
-export const navItems = [
-	{ text: 'Dashboard', path: '/dashboard' },
-	{ text: 'Schedule', path: '/schedule' },
-];
+export const navItems = [];
 
 export const stats = [
 	{
