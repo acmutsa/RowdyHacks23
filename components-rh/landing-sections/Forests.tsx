@@ -2,14 +2,14 @@ import { type FunctionComponent } from 'react';
 
 export const Forest: FunctionComponent = () => {
 	return (
-		<div className="relative min-h-screen bg-emerald-900 overflow-x-hidden bg-[url('/img/landscape/trees.svg')] bg-no-repeat bg-bottom bg-cover">
+		<div className="relative min-h-screen h-full bg-emerald-900 overflow-x-hidden bg-[url('/img/landscape/trees.svg')] bg-no-repeat bg-bottom bg-cover pb-[30px]">
 			{/* <div className="w-full h-full absolute bottom-0">
 				<img
 					src="/img/landscape/trees.svg"
 					className="min-w-[calc(100%+100px)] translate-x-[-50px] translate-y-[-20vh]"
 				></img>
 			</div> */}
-			<div className="absolute left-0 top-0 w-full f-hull">
+			<div className="absolute left-0 top-0 w-full">
 				<div className="w-full h-full mx-auto max-w-[1000px] grid lg:grid-cols-2 grid-cols-1 gap-2">
 					<div className="lg:col-span-2 flex items-center min-h-[20vh] ">
 						<h1 className="font-permanent-marker text-6xl font-bold text-emerald-700 text-center lg:text-left w-full">
