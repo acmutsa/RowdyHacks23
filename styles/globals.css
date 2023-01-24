@@ -8,6 +8,11 @@ body {
 	font-family: sans-serif;
 }
 
+body {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
 @font-face {
 	font-family: 'wavehaus';
 	src: url('/fonts/Wavehaus-66Book.ttf') format('truetype');
