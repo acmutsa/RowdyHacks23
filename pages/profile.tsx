@@ -51,14 +51,37 @@ export default function ProfilePage() {
 		return <div></div>;
 	}
 
+	// TODO: Update this to be dynamic in the future
+	let groupTheme = 2;
+
 	return (
-		<div className="p-8 w-full h-screen absolute top-0 pt-[80px] left-0 bg-black text-white">
-			<div className="max-w-6xl mx-auto">
-				<h1 className="text-3xl font-bold">Hacker Profile</h1>
+		<div
+			className={`p-8 w-full min-h-screen flex items-center absolute top-0 pt-[80px] left-0 ${
+				groupTheme == 0
+					? 'bg-[#214d3c] text-white bg-[url("/img/landscape/trees.svg")] bg-center bg-cover'
+					: groupTheme == 1
+					? 'bg-rh-space-blue space-gradient starfield-bg'
+					: groupTheme == 2
+					? 'bg-[url("/img/profiles/mountainbg.svg")]'
+					: 'bg-black'
+			}`}
+		>
+			<div className="max-w-6xl mx-auto w-full">
+				<h1 className="text-5xl font-bold font-permanent-marker text-white">
+					Welcome, Adventurer!
+				</h1>
 				<section className="w-full py-5">
 					<div className="flex flex-col md:flex-row gap-x-10">
 						<div
-							className="bg-white text-black w-full md:w-2/3 rounded-xl p-4 flex flex-col justify-around"
+							className={`w-full md:w-2/3 rounded-xl p-4 flex flex-col justify-around font-poppins ${
+								groupTheme == 0
+									? 'bg-rh-forrest text-white bg-center bg-cover'
+									: groupTheme == 1
+									? 'text-white bg-slate-800'
+									: groupTheme == 2
+									? 'bg-rh-deep-purple text-white border-2 border-rh-sunset'
+									: 'bg-black'
+							}`}
 							style={{ minHeight: '500px' }}
 						>
 							<h1 className="font-bold text-xl text-center">RowdyHacks</h1> {/* !change */}
@@ -75,11 +98,11 @@ export default function ProfilePage() {
 							</div>
 							<div>
 								<h1 className="text-center font-bold text-xl">{`${profile.user.firstName} ${profile.user.lastName}`}</h1>
-								<p className="text-center">{profile.user.permissions[0]}</p>
+								<p className="text-center font-permanent-marker">{profile.user.permissions[0]}</p>
 							</div>
 						</div>
 						<div className="w-full my-5">
-							<div className="grid grid-cols-2 gap-10">
+							<div className="grid grid-cols-2 gap-10 text-white">
 								<div className="flex flex-col gap-y-2">
 									<div className="font-bold font-permanent-marker text-xl">Name</div>
 									<h1 className="font-bold">{`${profile.user.firstName} ${profile.user.lastName}`}</h1>
@@ -94,7 +117,7 @@ export default function ProfilePage() {
 								</div>
 								<div className="flex flex-col gap-y-2">
 									<div className="font-bold font-permanent-marker text-xl">Biome</div>
-									<h1 className="font-bold">{groups[profile.user.group]}</h1>
+									<h1 className="font-bold">{groups[profile.user.group] || 'Reload To View'}</h1>
 								</div>
 								<div className="flex flex-col gap-y-2">
 									<div className="font-bold font-permanent-marker text-xl">Major</div>

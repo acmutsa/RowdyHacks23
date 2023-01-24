@@ -162,6 +162,10 @@ a.link {
 
 /* Gradients */
 
+.space-gradient {
+	background: radial-gradient(#0f172a 0%, transparent 75%);
+}
+
 .sky-gradient {
 	background: linear-gradient(
 		to bottom,
@@ -200,6 +204,10 @@ a.link {
 }
 
 /* Backgrounds */
+
+.starfield-bg {
+	background-image: url(/img/landscape/space/stars.png);
+}
 
 .ocean-animated-background {
 	background: linear-gradient(360deg, #001a33, #003366, #004080, #0059b3, #0066cc);

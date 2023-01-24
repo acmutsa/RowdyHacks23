@@ -48,6 +48,7 @@ module.exports = {
 				'rh-sunset': '#FF583D',
 				'rh-forrest': '#047857',
 				'rh-ocean-blue': '#0066CC',
+				'rh-space-blue': 'rgb(15, 23, 42)',
 			},
 		},
 	},
