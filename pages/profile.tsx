@@ -76,11 +76,12 @@ export default function ProfilePage() {
 										alt="Your profile"
 									/>
 								) : (
-									<Image
-										className="rounded-full object-cover"
-										src={'https://api.dicebear.com/5.x/bottts-neutral/svg?seed=' + user.id}
-										height={180}
-										width={180}
+									<img
+										className="rounded-full object-cover w-[180px] h-[180px]"
+										src={
+											'https://api.dicebear.com/5.x/bottts-neutral/svg?seed=' +
+											encodeURIComponent(`${profile.user.firstName}${profile.user.lastName}`)
+										}
 										alt="Your profile"
 									/>
 								)}
