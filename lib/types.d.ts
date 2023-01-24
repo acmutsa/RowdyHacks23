@@ -63,6 +63,13 @@ type User = Person & {
 	 *
 	 */
 	university: string;
+
+	/**
+	 * Group that user is in
+	 *
+	 */
+
+	group: number;
 };
 
 /**
@@ -86,6 +93,7 @@ type Registration = {
 		 * The email used to contact the user.
 		 */
 		preferredEmail: string;
+		group?: number;
 	};
 	// TODO: Allow for qualifiers like "how old will you be at the day of the event?"
 	// TODO: Allow this to be dynamically defined by the organizers

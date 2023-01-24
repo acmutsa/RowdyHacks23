@@ -189,7 +189,7 @@ export default function AuthPage() {
 							className="py-2 cursor-pointer text-white"
 							onClick={() => changeOption(false)}
 						>
-							Create Account
+							Register
 						</div>
 					</div>
 					<section

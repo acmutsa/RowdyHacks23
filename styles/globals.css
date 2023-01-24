@@ -162,6 +162,10 @@ a.link {
 
 /* Gradients */
 
+.space-gradient {
+	background: radial-gradient(#0f172a 0%, transparent 75%);
+}
+
 .sky-gradient {
 	background: linear-gradient(
 		to bottom,
@@ -201,6 +205,10 @@ a.link {
 
 /* Backgrounds */
 
+.starfield-bg {
+	background-image: url(/img/landscape/space/stars.png);
+}
+
 .ocean-animated-background {
 	background: linear-gradient(360deg, #001a33, #003366, #004080, #0059b3, #0066cc);
 	background-size: 300% 300%;
@@ -217,10 +225,10 @@ a.link {
 .cloud-scroll-bg {
 	background: url('/img/landscape/clouds.svg');
 	background-repeat: repeat-x;
-	width: 100vw;
 	height: 100vh;
 	animation: bgScrollLeft 60s linear infinite;
 	opacity: 0.2;
+	background-size: 1000;
 }
 
 .forrest-bg {

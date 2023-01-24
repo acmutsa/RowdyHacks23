@@ -5,7 +5,6 @@ export const buttonDatas = [
 
 export const navItems = [
 	{ text: 'Dashboard', path: '/dashboard' },
-	{ text: 'Survival Guide', path: '/guide' },
 	{ text: 'Schedule', path: '/schedule' },
 ];
 
@@ -36,3 +35,5 @@ export const DEFAULT_EVENT_FORM_DATA: ScheduleEvent = {
 	endDate: new Date(),
 	Event: -1,
 };
+
+export const groups = ['Forrests', 'Space', 'Caves', 'Oceans'];
