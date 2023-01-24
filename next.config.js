@@ -17,6 +17,7 @@ const withPWA = require('next-pwa')({
 			'acmutsa.org',
 			'imagedelivery.net',
 			'static.rowdyhacks.org',
+			'api.dicebear.com',
 		],
 	},
 
