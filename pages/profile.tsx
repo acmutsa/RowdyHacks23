@@ -51,20 +51,9 @@ export default function ProfilePage() {
 		return <div></div>;
 	}
 
-	// TODO: Update this to be dynamic in the future
-	let groupTheme = 2;
-
 	return (
 		<div
-			className={`p-8 w-full min-h-screen flex items-center absolute top-0 pt-[80px] left-0 ${
-				groupTheme == 0
-					? 'bg-[#214d3c] text-white bg-[url("/img/landscape/trees.svg")] bg-center bg-cover'
-					: groupTheme == 1
-					? 'bg-rh-space-blue space-gradient starfield-bg'
-					: groupTheme == 2
-					? 'bg-[url("/img/profiles/mountainbg.svg")]'
-					: 'bg-black'
-			}`}
+			className={`p-8 w-full min-h-screen flex items-center absolute top-0 pt-[80px] left-0 ${'bg-[url("/img/profiles/mountainbg.svg")]'}`}
 		>
 			<div className="max-w-6xl mx-auto w-full">
 				<h1 className="text-5xl font-bold font-permanent-marker text-white">
@@ -73,15 +62,7 @@ export default function ProfilePage() {
 				<section className="w-full py-5">
 					<div className="flex flex-col md:flex-row gap-x-10">
 						<div
-							className={`w-full md:w-2/3 rounded-xl p-4 flex flex-col justify-around font-poppins ${
-								groupTheme == 0
-									? 'bg-rh-forrest text-white bg-center bg-cover'
-									: groupTheme == 1
-									? 'text-white bg-slate-800'
-									: groupTheme == 2
-									? 'bg-rh-deep-purple text-white border-2 border-rh-sunset'
-									: 'bg-black'
-							}`}
+							className={`w-full md:w-2/3 rounded-xl p-4 flex flex-col justify-around font-poppins ${'bg-rh-deep-purple text-white border-2 border-rh-sunset'}`}
 							style={{ minHeight: '500px' }}
 						>
 							<h1 className="font-bold text-xl text-center">RowdyHacks</h1> {/* !change */}
