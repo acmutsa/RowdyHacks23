@@ -53,10 +53,10 @@ export default function ProfilePage() {
 
 	return (
 		<div
-			className={`p-8 w-full min-h-screen flex items-center absolute top-0 pt-[80px] left-0 ${'bg-[url("/img/profiles/mountainbg.svg")]'}`}
+			className={`p-8 w-full min-h-screen flex items-center absolute top-0 pt-[80px] left-0 bg-[url("/img/profiles/mountainbg.svg")] bg-cover bg-fixed`}
 		>
 			<div className="max-w-6xl mx-auto w-full">
-				<h1 className="text-5xl font-bold font-permanent-marker text-white">
+				<h1 className="md:text-5xl md:text-left text-center text-3xl font-bold font-permanent-marker text-white">
 					Welcome, Adventurer!
 				</h1>
 				<section className="w-full py-5">
