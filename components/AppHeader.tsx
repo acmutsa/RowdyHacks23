@@ -63,6 +63,16 @@ export default function AppHeader() {
 					navItemsToSet.push({ text: 'Schedule', path: '/schedule' });
 				}
 
+				if (dynamicNavItems.filter(({ text }) => text === 'About Us').length === 0) {
+					navItemsToSet.push({ text: 'About Us', path: '/#about' });
+				}
+				if (dynamicNavItems.filter(({ text }) => text === 'Partners').length === 0) {
+					navItemsToSet.push({ text: 'Partners', path: '/#partners' });
+				}
+				if (dynamicNavItems.filter(({ text }) => text === 'Contact').length === 0) {
+					navItemsToSet.push({ text: 'Contact', path: '/contact' });
+				}
+
 				if (
 					isSignedIn &&
 					profile &&
