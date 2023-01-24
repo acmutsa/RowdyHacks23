@@ -94,7 +94,7 @@ export default function ProfilePage() {
 								</div>
 								<div className="flex flex-col gap-y-2">
 									<div className="font-bold font-permanent-marker text-xl">Biome</div>
-									<h1 className="font-bold">{groups[profile.group]}</h1>
+									<h1 className="font-bold">{groups[profile.user.group]}</h1>
 								</div>
 								<div className="flex flex-col gap-y-2">
 									<div className="font-bold font-permanent-marker text-xl">Major</div>
