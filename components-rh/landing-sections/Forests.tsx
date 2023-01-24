@@ -21,7 +21,7 @@ export const Forest: FunctionComponent = () => {
 							<div className="bg-emerald-700 rounded-full w-[150px] h-[30px] mt-[-35px] absolute">
 								<h1 className="font-poppins font-bold text-xl text-center text-white">Students</h1>
 							</div>
-							<div className="grid grid-cols-1 h-full">
+							<div className="grid grid-cols-1 min-h-full">
 								<h1 className="text-3xl font-black font-sans pt-[5px] h-[20%]">
 									Interested in helping?
 								</h1>
@@ -32,7 +32,7 @@ export const Forest: FunctionComponent = () => {
 										please fill out the form below.
 									</p>
 								</div>
-								<div className="grid grid-cols-2 h-[20%]">
+								<div className="grid grid-cols-2 h-[20%] pt-[20px]">
 									<div className="flex items-center justify-center">
 										<a className="bg-emerald-900 rounded" href="#">
 											<button className="bg-emerald-700 translate-y-[-4px] hover:translate-y-0 font-sans w-[100px] h-[45px] rounded font-bold">
@@ -56,7 +56,7 @@ export const Forest: FunctionComponent = () => {
 							<div className="bg-emerald-700 rounded-full w-[150px] h-[30px] mt-[-35px] absolute">
 								<h1 className="font-poppins font-bold text-xl text-center text-white">Companies</h1>
 							</div>
-							<div className="grid grid-cols-1 h-full">
+							<div className="grid grid-cols-1 min-h-full">
 								<h1 className="text-3xl font-black font-sans pt-[5px] h-[20%]">
 									Interested in sponsoring?
 								</h1>
@@ -67,7 +67,7 @@ export const Forest: FunctionComponent = () => {
 										sponsorship packet.
 									</p>
 								</div>
-								<div className="grid grid-cols-2 h-[20%]">
+								<div className="grid grid-cols-2 h-[20%] pt-[20px]">
 									<div className="flex items-center justify-center col-span-2">
 										<a className="bg-emerald-900 rounded" href="#">
 											<button className="bg-emerald-700 font-sans w-[150px] h-[45px] rounded font-bold translate-y-[-4px] hover:translate-y-0">
