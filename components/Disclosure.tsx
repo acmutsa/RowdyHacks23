@@ -16,8 +16,8 @@ interface Props {
 
 const Disclosure: FunctionComponent = () => {
 	return (
-		<div className="bg-gray-900 h-[50vh] w-full grid grid-cols-2 py-[20px]">
-			<div className="w-full h-[30vh] flex justify-end items-center border-r-white border-r-2 pr-[10px]">
+		<div className="bg-gray-900 min-h-[50vh] w-full grid grid-cols-2 py-[20px]">
+			<div className="w-full md:h-[30vh] flex md:justify-end justify-center items-center md:border-r-white md:border-r-2 pr-[10px] col-span-2 md:col-span-1">
 				<Image
 					src="/img/logos/rh_landing.svg"
 					width={75}
@@ -31,13 +31,13 @@ const Disclosure: FunctionComponent = () => {
 					</h2>
 				</div>
 			</div>
-			<div className="w-full h-[30vh] flex flex-col justify-center items-start pl-[10px]">
-				<Link href={'/contributions'}>
+			<div className="w-full h-[30vh] flex flex-col justify-center md:items-start items-center pl-[10px] col-span-2 md:col-span-1">
+				<Link href={'https://github.com/UTSA-ACM/RowdyHacks23/blob/develop/contributions.md'}>
 					<a className="text-white font-sans font-extrabold hover:underline hover:cursor-pointer">
 						Contributions
 					</a>
 				</Link>
-				<Link href={'/contributions'}>
+				<Link href={'/contact'}>
 					<a className="text-white font-sans font-extrabold hover:underline hover:cursor-pointer">
 						Contact Us
 					</a>
@@ -47,7 +47,7 @@ const Disclosure: FunctionComponent = () => {
 						Code of Conduct
 					</a>
 				</Link>
-				<Link href={'/oss'}>
+				<Link href={'https://github.com/UTSA-ACM/RowdyHacks23'}>
 					<a className="text-white font-sans font-extrabold hover:underline hover:cursor-pointer">
 						Open Source
 					</a>
@@ -91,7 +91,9 @@ const Disclosure: FunctionComponent = () => {
 							href={'https://github.com/UTSA-ACM/RowdyHacks23/blob/develop/contributions.md'}
 							target={'_blank'}
 						>
-							<a className="text-sm underline">Other Contributions</a>
+							<span>
+								❤️<a className="text-sm underline">Other Contributions</a>❤️
+							</span>
 						</Link>
 					</div>
 				</div>
