@@ -110,15 +110,19 @@ export default function AppHeader() {
 					</Link>
 					{/* Smartphone nav */}
 					<div onClick={toggleMenu} className={'relative md:hidden'}>
-						{mobileIcon ? <MenuIcon /> : <CloseIcon />}
+						{mobileIcon ? (
+							<MenuIcon className="hover:cursor-pointer" />
+						) : (
+							<CloseIcon className="hover:cursor-pointer" />
+						)}
 						<ul
 							className={`${
 								showMenu ? 'translate-x-0' : '-translate-x-full'
-							} transform transition-all ease-out duration-300 flex w-6/12 h-screen border-2 border-black flex-col bg-white fixed top-0 left-0 z-[-1] pt-16`}
+							} transform transition-all ease-out duration-300 flex w-6/12 h-screen border-rh-sunset flex-col bg-rh-deep-purple fixed top-0 left-0 z-[-1] pt-16`}
 						>
 							{dynamicNavItems.map((item) => (
 								<Link key={item.text} href={item.path}>
-									<a className="border-b-2 first:border-t-2 border-black p-4 py-6 hover:bg-[#D8F8FF]">
+									<a className="border-b-2 first:border-t-2 border-rh-sunset p-4 py-6 hover:bg-rh-sunset">
 										<p className="text-sm font-bold">{item.text}</p>
 									</a>
 								</Link>
