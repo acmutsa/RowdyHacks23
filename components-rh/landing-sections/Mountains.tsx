@@ -44,7 +44,7 @@ export const Mountains: FunctionComponent = () => {
 				className="w-full flex md:flex-row flex-col justify-center absolute items-center pt-[calc(100vh/4)] will-change-transform"
 			>
 				<div className="md:h-[175px] md:w-[175px] w-[100px] h-[100px] relative">
-					<Image src="/img/logos/rh_landing.svg" layout="fill"></Image>
+					<Image src="https://static.rowdyhacks.org/img/logos/rh_landing.svg" layout="fill"></Image>
 				</div>
 				<div className="ml-[5px]">
 					<h1 className="md:text-8xl text-5xl font-black font-sans text-white">RowdyHacks</h1>
@@ -58,7 +58,7 @@ export const Mountains: FunctionComponent = () => {
 				className="w-full h-full absolute overflow-x-hidden flex justify-center items-end will-change-transform"
 			>
 				<img
-					src="/img/landscape/p/layer_2.png"
+					src="https://static.rowdyhacks.org/img/landscape/p/layer_2.png"
 					className="min-w-[3000px] object-cover border-b-[#2d112b] border-b-4"
 				></img>
 			</motion.div>
@@ -67,7 +67,7 @@ export const Mountains: FunctionComponent = () => {
 				className="w-full h-full absolute overflow-x-hidden flex justify-center items-end will-change-transform"
 			>
 				<img
-					src="/img/landscape/p/layer_3.png"
+					src="https://static.rowdyhacks.org/img/landscape/p/layer_3.png"
 					className="min-w-[3000px] object-cover border-b-[#2d112b] border-b-4"
 				></img>
 			</motion.div>
@@ -76,7 +76,7 @@ export const Mountains: FunctionComponent = () => {
 				className="w-full h-full absolute overflow-x-hidden flex justify-center items-end will-change-transform"
 			>
 				<img
-					src="/img/landscape/p/layer_4.png"
+					src="https://static.rowdyhacks.org/img/landscape/p/layer_4.png"
 					className="min-w-[3000px] object-cover border-b-[#2d112b] border-b-4"
 				></img>
 			</motion.div>
@@ -85,13 +85,13 @@ export const Mountains: FunctionComponent = () => {
 				className="w-full h-full absolute overflow-x-hidden flex justify-center items-end will-change-transform"
 			>
 				<img
-					src="/img/landscape/p/layer_5.png"
+					src="https://static.rowdyhacks.org/img/landscape/p/layer_5.png"
 					className="min-w-[3000px] object-cover border-b-[#2d112b] border-b-4"
 				></img>
 			</motion.div>
 			<div className="w-full h-full absolute overflow-x-hidden flex justify-center items-end bottom-0">
 				<img
-					src="/img/landscape/p/layer_6.png"
+					src="https://static.rowdyhacks.org/img/landscape/p/layer_6.png"
 					className="min-w-[3000px] object-cover border-b-[#2d112b] border-b-4"
 				></img>
 			</div>
@@ -114,7 +114,11 @@ export const MountainCaves: FunctionComponent<Mountain2Props> = ({ stats }) => {
 					</p>
 				</div>
 				<div className="flex items-center justify-center max-h-[280px] pt-[100px] md:pt-0">
-					<Image src={'/img/logos/rh_sunset.svg'} width={175} height={175}></Image>
+					<Image
+						src={'https://static.rowdyhacks.org/img/logos/rh_sunset.svg'}
+						width={175}
+						height={175}
+					></Image>
 					<div className="h-[175px] ml-[10px] flex flex-col justify-center text-3xl font-sans text-rh-sunset font-black">
 						<h1 className="w-full">LET'S</h1>
 
@@ -127,7 +131,7 @@ export const MountainCaves: FunctionComponent<Mountain2Props> = ({ stats }) => {
 			<div className="w-full grid md:grid-cols-2 grid-cols-1 max-w-[1000px] mx-auto pt-[100px]">
 				<div className="flex items-center justify-center relative">
 					<Image
-						src={'/img/landing/people/people-04.png'}
+						src={'https://static.rowdyhacks.org/img/landing/people/people-04.png'}
 						layout={'fill'}
 						objectFit={'contain'}
 						className="mx-auto"
