@@ -34,14 +34,22 @@ export const Forest: FunctionComponent = () => {
 								</div>
 								<div className="grid grid-cols-2 h-[20%] pt-[20px]">
 									<div className="flex items-center justify-center">
-										<a className="bg-emerald-900 rounded" href="#">
+										<a
+											className="bg-emerald-900 rounded"
+											href="https://form.typeform.com/to/VKSlaX97"
+											target={'_blank'}
+										>
 											<button className="bg-emerald-700 translate-y-[-4px] hover:translate-y-0 font-sans w-[100px] h-[45px] rounded font-bold">
 												Volunteer
 											</button>
 										</a>
 									</div>
 									<div className="flex items-center justify-center">
-										<a className="bg-emerald-900 rounded" href="#">
+										<a
+											className="bg-emerald-900 rounded"
+											href="https://rowdyhacks.typeform.com/to/DUXjOjXU"
+											target={'_blank'}
+										>
 											<button className="bg-emerald-700 translate-y-[-4px] hover:translate-y-0 font-sans w-[100px] h-[45px] rounded font-bold">
 												Mentor
 											</button>

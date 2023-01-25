@@ -47,7 +47,7 @@ export const Mountains: FunctionComponent = () => {
 					<Image src="https://static.rowdyhacks.org/img/logos/rh_landing.svg" layout="fill"></Image>
 				</div>
 				<div className="ml-[5px]">
-					<h1 className="md:text-8xl text-5xl font-black font-sans text-white">RowdyHacks</h1>
+					<h1 className="md:text-8xl text-5xl font-black font-sans text-white mb-4">RowdyHacks</h1>
 					<h2 className="md:text-4xl text-3xl font-black font-permanent-marker italic text-white text-center">
 						Into The Unknown
 					</h2>
