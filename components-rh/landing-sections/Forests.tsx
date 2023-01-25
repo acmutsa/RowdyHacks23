@@ -58,13 +58,13 @@ export const Forest: FunctionComponent = () => {
 							</div>
 							<div className="grid grid-cols-1 min-h-full">
 								<h1 className="text-3xl font-black font-sans pt-[5px] h-[20%]">
-									Interested in sponsoring?
+									Interested in partnering?
 								</h1>
 								<div>
 									<p className="font-bold text-md">
-										RowdyHacks would not be possible without our incredible sponsors! If you or a
-										group you represent are interested in sponsoring, please click below to view our
-										sponsorship packet.
+										RowdyHacks would not be possible without our incredible partners! If you or a
+										group you represent are interested in partnering, please click below to view our
+										Partner Packet.
 									</p>
 								</div>
 								<div className="grid grid-cols-2 h-[20%] pt-[20px]">
