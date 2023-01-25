@@ -69,7 +69,11 @@ export const Forest: FunctionComponent = () => {
 								</div>
 								<div className="grid grid-cols-2 h-[20%] pt-[20px]">
 									<div className="flex items-center justify-center col-span-2">
-										<a className="bg-emerald-900 rounded" href="#">
+										<a
+											className="bg-emerald-900 rounded"
+											href="https://static.rowdyhacks.org/docs/RowdyHacks%20Partner%20Packet.pdf"
+											target={'_blank'}
+										>
 											<button className="bg-emerald-700 font-sans w-[150px] h-[45px] rounded font-bold translate-y-[-4px] hover:translate-y-0">
 												Sponsor Packet
 											</button>
