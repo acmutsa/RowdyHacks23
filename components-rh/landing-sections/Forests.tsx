@@ -2,7 +2,7 @@ import { type FunctionComponent } from 'react';
 
 export const Forest: FunctionComponent = () => {
 	return (
-		<div className="relative md:h-screen h-[calc(100vh+100px)] bg-emerald-900 overflow-x-hidden bg-[url('/img/landscape/trees.svg')] bg-no-repeat bg-bottom bg-cover pb-[30px]">
+		<div className="relative md:h-screen h-[calc(100vh+100px)] bg-emerald-900 overflow-x-hidden bg-[url('https://static.rowdyhacks.org/img/landscape/trees.svg')] bg-no-repeat bg-bottom bg-cover pb-[30px]">
 			{/* <div className="w-full h-full absolute bottom-0">
 				<img
 					src="/img/landscape/trees.svg"
@@ -58,18 +58,22 @@ export const Forest: FunctionComponent = () => {
 							</div>
 							<div className="grid grid-cols-1 min-h-full">
 								<h1 className="text-3xl font-black font-sans pt-[5px] h-[20%]">
-									Interested in sponsoring?
+									Interested in partnering?
 								</h1>
 								<div>
 									<p className="font-bold text-md">
-										RowdyHacks would not be possible without our incredible sponsors! If you or a
-										group you represent are interested in sponsoring, please click below to view our
-										sponsorship packet.
+										RowdyHacks would not be possible without our incredible partners! If you or a
+										group you represent are interested in partnering, please click below to view our
+										Partner Packet.
 									</p>
 								</div>
 								<div className="grid grid-cols-2 h-[20%] pt-[20px]">
 									<div className="flex items-center justify-center col-span-2">
-										<a className="bg-emerald-900 rounded" href="#">
+										<a
+											className="bg-emerald-900 rounded"
+											href="https://static.rowdyhacks.org/docs/RowdyHacks%20Partner%20Packet.pdf"
+											target={'_blank'}
+										>
 											<button className="bg-emerald-700 font-sans w-[150px] h-[45px] rounded font-bold translate-y-[-4px] hover:translate-y-0">
 												Sponsor Packet
 											</button>
