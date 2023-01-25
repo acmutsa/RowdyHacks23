@@ -24,6 +24,12 @@ export default function AuthPage() {
 	const [sendVerification, setSendVerification] = useState(false);
 	const [signInOption, setSignInOption] = useState(true);
 
+	useEffect(() => {
+		alert(
+			'Note: At the moment my.utsa.edu emails are not supported. Please use a personal email in the meantime.',
+		);
+	});
+
 	const router = useRouter();
 	const signIn = () => {
 		setSendVerification(false);
