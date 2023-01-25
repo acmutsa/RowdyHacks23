@@ -35,14 +35,43 @@ export default function AppHeader() {
 				});
 		}
 		const toExecute = async () => {
-			await firebase.remoteConfig().fetchAndActivate();
+			const dataReq = await fetch('/api/config');
+			const dataBody = await dataReq.json();
 
-			firebase.remoteConfig().settings.minimumFetchIntervalMillis = 300000;
-			const HHT = firebase.remoteConfig().getValue('hackathonHasStarted').asBoolean();
-			console.log('config: ', HHT);
 			//creating dynamic nav items
 			setDynamicNavItems((dynamicNavItems) => {
 				let navItemsToSet = [...dynamicNavItems];
+
+				if (
+					(dataBody.showDashboardInNav || process.env.NEXT_PUBLIC_IS_STAGED_PROD == 'true') &&
+					dynamicNavItems.filter(({ text }) => text === 'Dashboard').length === 0
+				) {
+					navItemsToSet.push({ text: 'Dashboard', path: '/dashboard' });
+				}
+
+				if (
+					(dataBody.showSurvivalGuideInNav || process.env.NEXT_PUBLIC_IS_STAGED_PROD == 'true') &&
+					dynamicNavItems.filter(({ text }) => text === 'Adventure Guide').length === 0
+				) {
+					navItemsToSet.push({ text: 'Adventure Guide', path: '/guide' });
+				}
+
+				if (
+					(dataBody.showScheduleInNav || process.env.NEXT_PUBLIC_IS_STAGED_PROD == 'true') &&
+					dynamicNavItems.filter(({ text }) => text === 'Schedule').length === 0
+				) {
+					navItemsToSet.push({ text: 'Schedule', path: '/schedule' });
+				}
+
+				if (dynamicNavItems.filter(({ text }) => text === 'About Us').length === 0) {
+					navItemsToSet.push({ text: 'About Us', path: '/#about' });
+				}
+				if (dynamicNavItems.filter(({ text }) => text === 'Partners').length === 0) {
+					navItemsToSet.push({ text: 'Partners', path: '/#partners' });
+				}
+				if (dynamicNavItems.filter(({ text }) => text === 'Contact').length === 0) {
+					navItemsToSet.push({ text: 'Contact', path: '/contact' });
+				}
 
 				if (
 					isSignedIn &&
@@ -54,9 +83,6 @@ export default function AppHeader() {
 					navItemsToSet.push({ text: 'Admin', path: '/admin' });
 				}
 
-				if (HHT && dynamicNavItems.filter(({ text }) => text === 'Survival Guide').length === 0) {
-					navItemsToSet.push({ text: 'Survival Guide', path: '/guide' });
-				}
 				return navItemsToSet;
 			});
 		};

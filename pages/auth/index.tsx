@@ -136,7 +136,7 @@ export default function AuthPage() {
 	};
 
 	return (
-		<div className="sky-gradient min-h-screen absolute top-0 w-full">
+		<div className="sky-gradient h-full min-h-[1000px] oveflow-y-auto absolute top-0 w-full">
 			<div className="w-full h-full absolute overflow-x-hidden flex justify-center items-end will-change-transform">
 				<img
 					src="/img/landscape/p/layer_2.png"
