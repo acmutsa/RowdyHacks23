@@ -8,7 +8,7 @@ interface propsType {
 
 export const Ocean: FunctionComponent<propsType> = ({ sponsors }) => {
 	return (
-		<div className="ocean-gradient relative">
+		<div className="ocean-gradient relative" id="partners">
 			<img
 				className="w-full relative top-0 left-0 select-none drag-none"
 				src="https://static.rowdyhacks.org/img/borders/cave_down.svg"
