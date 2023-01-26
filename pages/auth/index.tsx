@@ -28,7 +28,7 @@ export default function AuthPage() {
 		alert(
 			'Note: At the moment my.utsa.edu emails are not supported. Please use a personal email in the meantime.',
 		);
-	});
+	}, []);
 
 	const router = useRouter();
 	const signIn = () => {
