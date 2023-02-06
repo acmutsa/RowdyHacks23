@@ -280,6 +280,25 @@ a.link {
 	}
 }
 
+@keyframes blimpFloatAnimation {
+	0% {
+		transform: translate(0, 0px);
+		rotate: -2deg;
+	}
+	50% {
+		transform: translate(0, 5px);
+		rotate: -2deg;
+	}
+	100% {
+		transform: translate(0, -0px);
+		rotate: -2deg;
+	}
+}
+
+.blimpFloat {
+	animation: blimpFloatAnimation 3s ease-in-out infinite;
+}
+
 /* Utility */
 
 .drag-none {
