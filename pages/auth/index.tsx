@@ -9,7 +9,8 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import GoogleIcon from '../../public/icons/googleicon.png';
 import Image from 'next/image';
 import NextConnect from 'next-connect';
-import LoginImage from '../../public/assets/fillerAsset.png';
+import { GoAlert } from 'react-icons/go';
+
 /**
  * A page that allows the user to sign in.
  *
@@ -23,12 +24,6 @@ export default function AuthPage() {
 	const [passwordResetDialog, setPasswordResetDialog] = useState(false);
 	const [sendVerification, setSendVerification] = useState(false);
 	const [signInOption, setSignInOption] = useState(true);
-
-	useEffect(() => {
-		alert(
-			'Note: At the moment my.utsa.edu emails are not supported. Please use a personal email in the meantime.',
-		);
-	}, []);
 
 	const router = useRouter();
 	const signIn = () => {
@@ -202,6 +197,17 @@ export default function AuthPage() {
 						id="signInSection"
 						className="bg-[#2d112b] 2xl:min-h-[30rem] min-h-[28rem] rounded-lg p-6 border-[#ff583d] border-2"
 					>
+						<div className="bg-red-300 border-red-500 border-2 min-h-[75px] w-full mx-auto rounded flex items-center px-2">
+							<GoAlert className="text-5xl text-red-500" />
+							<div className="pl-2 text-red-900">
+								<h1 className="font-bold">Notice:</h1>
+								<p className="text-xs">
+									At the moment, utsa.edu and my.utsa.edu emails <b>are not supported</b>. We are
+									working to get this issue resolved with UTSA ASAP. In the meantime, please use a
+									non-UTSA email when signing up. Thanks!
+								</p>
+							</div>
+						</div>
 						{!passwordResetDialog ? (
 							<React.Fragment>
 								<form onSubmit={handleSubmit}>
@@ -316,6 +322,17 @@ export default function AuthPage() {
 						id="signUpSection"
 						className="hidden bg-rh-deep-purple border-rh-sunset border-2 2xl:min-h-[30rem] min-h-[28rem] rounded-lg p-6"
 					>
+						<div className="bg-red-300 border-red-500 border-2 min-h-[75px] w-full mx-auto rounded flex items-center px-2">
+							<GoAlert className="text-5xl text-red-500" />
+							<div className="pl-2 text-red-900">
+								<h1 className="font-bold">Notice:</h1>
+								<p className="text-xs">
+									At the moment, utsa.edu and my.utsa.edu emails <b>are not supported</b>. We are
+									working to get this issue resolved with UTSA ASAP. In the meantime, please use a
+									non-UTSA email when signing up. Thanks!
+								</p>
+							</div>
+						</div>
 						<form onSubmit={handleSignUpSubmit}>
 							<h1 className="text-xl font-bold mt-4 mb-2 text-rh-white">Email</h1>
 							<input
