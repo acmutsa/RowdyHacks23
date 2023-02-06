@@ -156,7 +156,7 @@ export default function Register() {
 	};
 
 	return (
-		<div className="flex flex-col flex-grow register-gradient text-white absolute top-0 left-0 pt-[80px]">
+		<div className="flex flex-col flex-grow w-full text-white absolute top-0 left-0 pt-[80px] bg-[url('https://static.rowdyhacks.org/img/profiles/mountainbg.svg')] bg-cover bg-fixed">
 			<Head>
 				<title>Hacker Registration | RowdyHacks</title>
 				<meta name="description" content="Register for RowdyHacks" />
@@ -175,7 +175,7 @@ export default function Register() {
 				</div>
 			</section>
 
-			<section className="flex justify-center border-rh-sunset bg-rh-deep-purple p-[5px] max-w-[1000px] mx-auto border-4 rounded-2xl">
+			<section className="flex justify-center border-rh-sunset bg-rh-deep-purple p-[5px] max-w-[1000px] mx-auto border-4 rounded-2xl mb-5">
 				<Formik
 					initialValues={formInitialValues}
 					//validation
@@ -307,7 +307,6 @@ export default function Register() {
 					)}
 				</Formik>
 			</section>
-			<img src={'https://static.rowdyhacks.org/img/landscape/p/layer_6.png'}></img>
 		</div>
 	);
 }
