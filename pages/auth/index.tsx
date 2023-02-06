@@ -288,25 +288,25 @@ export default function AuthPage() {
 							</React.Fragment>
 						) : (
 							<React.Fragment>
-								<div className="text-left">
+								<div className="text-left mt-4">
 									<ArrowBackIcon
-										className="cursor-pointer"
+										className="cursor-pointer text-white"
 										onClick={() => {
 											setPasswordResetDialog(false);
 											setErrorMsg('');
 										}}
 									/>
 								</div>
-								<h1 className="text-2xl my-4">Reset Password</h1>
+								<h1 className="text-2xl my-4 text-white">Reset Password</h1>
 								<input
-									className="w-full rounded-lg p-2"
+									className="w-full rounded-lg p-2 bg-white"
 									value={currentEmail}
 									onChange={(e) => setCurrentEmail(e.target.value)}
-									style={{ backgroundColor: '#C1C8FF' }}
 									placeholder="Email"
 								></input>
+
 								<button
-									className=" px-4 py-2 rounded-md shadow-md bg-[#C1C8FF] hover:brightness-90 my-6"
+									className="bg-[#ff583d] font-sans w-[150px] h-[45px] rounded font-bold mt-10"
 									onClick={() => {
 										sendResetEmail();
 										setErrorMsg('');
