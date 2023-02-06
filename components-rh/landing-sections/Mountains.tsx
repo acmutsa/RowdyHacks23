@@ -40,6 +40,20 @@ export const Mountains: FunctionComponent = () => {
 				<div className="cloud-scroll-bg will-change-transform"></div>
 			</motion.div>
 			<motion.div
+				style={{ y: l3 }}
+				className="absolute flex items-center justify-center w-screen h-screen"
+			>
+				<div className='bg-[url("https://static.rowdyhacks.org/img/landscape/BlimpSketch.png")] bg-contain h-[400px] w-[400px] bg-center bg-no-repeat flex items-center justify-center text-2xl font-permanent-marker mt-32 blimpFloat'>
+					<div className="bg-rh-deep-purple rounded border-rh-sunset border-dashed border-2 translate-y-[-15px] p-2 text-rh-sunset">
+						<h1 className="text-center">
+							March
+							<br />
+							<span className="text-3xl">25th - 26th</span>
+						</h1>
+					</div>
+				</div>
+			</motion.div>
+			<motion.div
 				style={{ y: header }}
 				className="w-full flex md:flex-row flex-col justify-center absolute items-center pt-[calc(100vh/4)] will-change-transform"
 			>
@@ -48,7 +62,11 @@ export const Mountains: FunctionComponent = () => {
 				</div>
 				<div className="ml-[5px]">
 					<h1 className="md:text-8xl text-5xl font-black font-sans text-white mb-4">RowdyHacks</h1>
-					<h2 className="md:text-4xl text-3xl font-black font-permanent-marker italic text-white text-center">
+					<h2
+						className={
+							'md:text-4xl text-3xl font-black font-permanent-marker italic text-white text-center'
+						}
+					>
 						Into The Unknown
 					</h2>
 				</div>
@@ -82,17 +100,19 @@ export const Mountains: FunctionComponent = () => {
 			</motion.div>
 			<motion.div
 				style={{ y: l5 }}
-				className="w-full h-full absolute overflow-x-hidden flex justify-center items-end will-change-transform"
+				className={
+					'w-full h-full absolute overflow-x-hidden flex justify-center items-end will-change-transform'
+				}
 			>
 				<img
 					src="https://static.rowdyhacks.org/img/landscape/p/layer_5.png"
-					className="min-w-[3000px] object-cover border-b-[#2d112b] border-b-4"
+					className={'min-w-[3000px] object-cover border-b-[#2d112b] border-b-4'}
 				></img>
 			</motion.div>
 			<div className="w-full h-full absolute overflow-x-hidden flex justify-center items-end bottom-0">
 				<img
 					src="https://static.rowdyhacks.org/img/landscape/p/layer_6.png"
-					className="min-w-[3000px] object-cover border-b-[#2d112b] border-b-4"
+					className={'min-w-[3000px] object-cover border-b-[#2d112b] border-b-4'}
 				></img>
 			</div>
 		</section>
