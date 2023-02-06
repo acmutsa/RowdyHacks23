@@ -271,7 +271,7 @@ export default function Register() {
 								<DisplayQuestion key={idx} obj={obj} values={values} onChange={handleChange} />
 							))}
 
-							<div className="text-4xl py-1 mr-auto mt-8 font-permanent-marker">Company Info</div>
+							<div className="text-4xl py-1 mr-auto mt-8 font-permanent-marker">Career Info</div>
 							{sponsorInfoQuestions.map((obj, idx) => (
 								<DisplayQuestion key={idx} obj={obj} values={values} onChange={handleChange} />
 							))}
@@ -307,7 +307,7 @@ export default function Register() {
 					)}
 				</Formik>
 			</section>
-			<img src={'/img/landscape/p/layer_6.png'}></img>
+			<img src={'https://static.rowdyhacks.org/img/landscape/p/layer_6.png'}></img>
 		</div>
 	);
 }

@@ -33,4 +33,4 @@ export const DEFAULT_EVENT_FORM_DATA: ScheduleEvent = {
 	Event: -1,
 };
 
-export const groups = ['Forrests', 'Space', 'Caves', 'Oceans'];
+export const groups = ['Forests', 'Space', 'Caves', 'Oceans'];

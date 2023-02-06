@@ -160,7 +160,7 @@ export default function AppHeader() {
 						{dynamicNavItems.map((item) => (
 							<Link key={item.text} href={item.path}>
 								<a>
-									<p className="md:mx-4 text-sm font-bold">{item.text}</p>
+									<p className="md:mx-4 text-sm font-bold text-center">{item.text}</p>
 								</a>
 							</Link>
 						))}

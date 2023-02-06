@@ -397,31 +397,31 @@ export const hackPortalConfig: HackPortalConfig = {
 				checkboxQuestions: [
 					{
 						//Companies question
-						question: 'Companies to send my resume to:',
+						question: 'Areas of Interest:',
 						required: false,
-						id: 'companies',
-						name: 'companies',
+						id: 'areasOfInterest',
+						name: 'areasOfInterest',
 						initialValue: [],
 						options: [
 							{
-								title: 'State Farm',
-								value: 'State Farm',
+								title: 'Software Development',
+								value: 'Software Development',
 							},
 							{
-								title: 'American Airlines',
-								value: 'American Airlines',
+								title: 'Cyber Security',
+								value: 'Cyber Security',
 							},
 							{
-								title: 'Capital One',
-								value: 'Capital One',
+								title: 'Data Science',
+								value: 'Data Science',
 							},
 							{
-								title: 'Ebay',
-								value: 'Ebay',
+								title: 'AI',
+								value: 'AI',
 							},
 							{
-								title: 'Facebook',
-								value: 'Facebook',
+								title: 'Game Development',
+								value: 'Game Development',
 							},
 						],
 					},
@@ -462,7 +462,7 @@ export const fieldNames = {
 	hackathonExperience: 'Number of Hackathon attended',
 	heardFrom: 'Heard of Hackathon from',
 	scans: 'Swags', //not part of registration questions, used for scanner
-	companies: 'Companies',
+	areasOfInterest: 'Areas of Interest',
 	dietary: 'Dietary',
 };
 
