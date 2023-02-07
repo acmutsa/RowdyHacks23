@@ -1,6 +1,6 @@
 /* 3rd Party Imports */
 
-import type { NextPage } from 'next';
+import type { GetStaticPropsResult, NextPage } from 'next';
 import { GetServerSideProps } from 'next';
 import { useScroll, useSpring, useTransform, motion } from 'framer-motion';
 import { useRef } from 'react';
@@ -44,28 +44,25 @@ const Home: NextPage<propsType> = ({ props }) => {
 	);
 };
 
-export default Home;
-
-export const getServerSideProps: GetServerSideProps<propsType> = async (context) => {
-	const protocol = context.req.headers.referer?.split('://')[0] || 'http';
+export async function getStaticProps({ params }: any): Promise<GetStaticPropsResult<propsType>> {
 	const { data: keynoteData } = await RequestHelper.get<KeynoteSpeaker[]>(
-		`${protocol}://${context.req.headers.host}/api/keynotespeakers`,
+		`${process.env.NEXT_PUBLIC_APP_URL}/api/keynotespeakers`,
 		{},
 	);
 	const { data: challengeData } = await RequestHelper.get<Challenge[]>(
-		`${protocol}://${context.req.headers.host}/api/challenges/`,
+		`${process.env.NEXT_PUBLIC_APP_URL}/api/challenges/`,
 		{},
 	);
 	const { data: answeredQuestion } = await RequestHelper.get<AnsweredQuestion[]>(
-		`${protocol}://${context.req.headers.host}/api/questions/faq`,
+		`${process.env.NEXT_PUBLIC_APP_URL}/api/questions/faq`,
 		{},
 	);
 	const { data: memberData } = await RequestHelper.get<TeamMember[]>(
-		`${protocol}://${context.req.headers.host}/api/members`,
+		`${process.env.NEXT_PUBLIC_APP_URL}/api/members`,
 		{},
 	);
 	const { data: sponsorData } = await RequestHelper.get<Sponsor[]>(
-		`${protocol}://${context.req.headers.host}/api/sponsor`,
+		`${process.env.NEXT_PUBLIC_APP_URL}/api/sponsor`,
 		{},
 	);
 	return {
@@ -78,5 +75,8 @@ export const getServerSideProps: GetServerSideProps<propsType> = async (context)
 				sponsors: sponsorData,
 			},
 		},
+		revalidate: 60,
 	};
-};
+}
+
+export default Home;
