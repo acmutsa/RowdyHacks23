@@ -97,17 +97,17 @@ const [click, setClick] = useState(false)
     }
 	return (
 		<div className='absolute top-0 min-h-screen w-full bg-[url("https://static.rowdyhacks.org/img/profiles/mountainbg.svg")] bg-cover bg-fixed '>
-			<div className = "mx-auto mt-[10em] items-center text-white flex flex-col justify-between w-[50%] h-[400%]">
+			<div className = "mx-auto mt-[10em] items-center text-white flex flex-col justify-between  w-[60%] md:w-[50%] h-[400%]">
 			<p className= "tracking-wide font-permanent-marker">RowdyHacks</p>
-			<h1 className= "md:text-[3rem] text-[1.5rem] font-poppins font-black">Frequently Asked Questions</h1>
+			<h1 className= "md:text-[3rem] text-[1.75rem] font-poppins font-black"><span className="text-[1.25rem] md:text-[3rem]">Frequently</span> Asked Questions</h1>
 			<p className= "md:text-[1.5rem] text-[0.75rem] font-permanent-marker">Have a question? We are here to help</p>
 			</div>
-			<div className = " md:text-[2rem]  text-white w-[85%] pb-1 md:w-[60%] mt-[2em] mx-auto h-[30px] border-b">
+			<div className = " md:text-[2rem]  text-white w-[85%] pb-5 md:pb-1 md:w-[60%] mt-[2em] mx-auto h-[30px] border-b ">
                {text === "" ? 
                <div className="flex  items-start justify-between w-[100%]">
-               <h1 className = "text-[1.25rem] text-light font-poppins">What can we help you with...........</h1> 
+               <h1 className = "text-[1rem] md:text-[1.25rem]  text-light font-poppins">What can we help you with...........</h1> 
                </div>
-               :  <h1 className = "text-[1.25rem] text-light font-poppins">{text}</h1> }
+               :  <h1 className = "text-[1rem] md:text-[1.25rem] text-light font-poppins">{text}</h1> }
             </div>
             {openIndex !== null && (
         <div className=" text-white w-[85%] md:w-2/3 mt-4 mx-auto bg-rh-deep-purple p-6 rounded-lg shadow-lg border border-rh-sunset">
@@ -120,15 +120,15 @@ const [click, setClick] = useState(false)
           </button>
         </div>
       )}
-            <div className = "container w-[80%]  md:grid mt-7  md:w-[60%] mx-auto  md:grid-cols-2 md:gap-4">
+            <div className = " w-[70%] md:w-[80%]  md:grid mt-7  md:w-[60%] mx-auto  md:grid-cols-2 md:gap-4">
                 {set.map((s, index)=>(
                 <div>               
                  
                  <div  key= {s.id} onClick ={()=> handleToggle(index)}>
                  <div className="rounded border border-black bg-rh-sunset mb-4 p-4 flex gap-2">
-                {openIndex !== index ?  <RxDoubleArrowDown size = {"20px"} className="mt-2" onClick={clickArrow}/>: <RxDoubleArrowUp size = {"20px"} className="mt-2" onClick={clickArrow}/>}
+                {openIndex !== index ?  <RxDoubleArrowDown size = {"25px"} className="mt-1 font-black" onClick={clickArrow}/>: <RxDoubleArrowUp size = {"25px"} className="mt-1 font-black" onClick={clickArrow}/>}
                
-                 <h1 className= "text-[1.5rem] font-poppins" onClick={getText} >{s.Question}</h1>
+                 <h1 className= "text-[1rem]  md:text-[1.5rem] font-poppins" onClick={getText} >{s.Question}</h1>
                  </div>
                  </div>
                  
