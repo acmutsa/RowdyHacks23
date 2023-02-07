@@ -1,14 +1,14 @@
 /* 3rd Party Imports */
 
 import type { GetStaticPropsResult, NextPage } from 'next';
-import { GetServerSideProps } from 'next';
-import { useScroll, useSpring, useTransform, motion } from 'framer-motion';
 import { useRef } from 'react';
 import { stats } from '../lib/data';
 
 /* Firebase */
 
 import { RequestHelper } from '../lib/request-helper';
+import { firestore } from 'firebase-admin';
+import initializeApi from '../lib/admin/init';
 import 'firebase/messaging';
 import 'firebase/storage';
 
@@ -45,26 +45,48 @@ const Home: NextPage<propsType> = ({ props }) => {
 };
 
 export async function getStaticProps({ params }: any): Promise<GetStaticPropsResult<propsType>> {
-	const { data: keynoteData } = await RequestHelper.get<KeynoteSpeaker[]>(
-		`${process.env.NEXT_PUBLIC_APP_URL}/api/keynotespeakers`,
-		{},
-	);
-	const { data: challengeData } = await RequestHelper.get<Challenge[]>(
-		`${process.env.NEXT_PUBLIC_APP_URL}/api/challenges/`,
-		{},
-	);
-	const { data: answeredQuestion } = await RequestHelper.get<AnsweredQuestion[]>(
-		`${process.env.NEXT_PUBLIC_APP_URL}/api/questions/faq`,
-		{},
-	);
-	const { data: memberData } = await RequestHelper.get<TeamMember[]>(
-		`${process.env.NEXT_PUBLIC_APP_URL}/api/members`,
-		{},
-	);
-	const { data: sponsorData } = await RequestHelper.get<Sponsor[]>(
-		`${process.env.NEXT_PUBLIC_APP_URL}/api/sponsor`,
-		{},
-	);
+	initializeApi();
+	const db = firestore();
+
+	const keynoteSpeakerSnapshot = db.collection('/keynotespeakers').get();
+	const challengeSnapshot = db.collection('/challenges').get();
+	const faqSnapshot = db.collection('/faqs').get();
+	const memberSnapshot = db.collection('/members').get();
+	const sponsorSnapshot = db.collection('/sponsors').get();
+
+	const dataRes = await Promise.all([
+		keynoteSpeakerSnapshot,
+		challengeSnapshot,
+		faqSnapshot,
+		memberSnapshot,
+		sponsorSnapshot,
+	]);
+
+	let keynoteData: KeynoteSpeaker[] = [];
+	dataRes[0].forEach((doc) => {
+		keynoteData.push(doc.data() as KeynoteSpeaker);
+	});
+
+	let challengeData: Challenge[] = [];
+	dataRes[1].forEach((doc) => {
+		challengeData.push(doc.data() as Challenge);
+	});
+
+	let answeredQuestion: AnsweredQuestion[] = [];
+	dataRes[2].forEach((doc) => {
+		answeredQuestion.push(doc.data() as AnsweredQuestion);
+	});
+
+	let memberData: TeamMember[] = [];
+	dataRes[3].forEach((doc) => {
+		memberData.push(doc.data() as TeamMember);
+	});
+
+	let sponsorData: Sponsor[] = [];
+	dataRes[4].forEach((doc) => {
+		sponsorData.push(doc.data() as Sponsor);
+	});
+
 	return {
 		props: {
 			props: {
