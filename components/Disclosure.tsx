@@ -10,6 +10,8 @@ import {
 	FaLinkedin,
 } from 'react-icons/fa';
 
+import { SiVercel } from 'react-icons/si';
+
 interface Props {
 	className?: string;
 }
@@ -82,6 +84,9 @@ const Disclosure: FunctionComponent = () => {
 						<br />© RowdyHacks & Association of Computing Machinery at UTSA{' '}
 						{new Date().getFullYear()}. All Rights Reserved.
 					</p>
+					<a className="flex mt-5 items-center border-b-[1px] border-white cursor-pointer">
+						Powered By <SiVercel className="ml-1" />
+					</a>
 					<div className="bg-amber-500 w-full flex flex-col items-center mt-[20px]">
 						<p className="text-center text-sm">
 							HackPortal developed with &lt;3 by <span className="font-black inline">HackUTD</span>{' '}
