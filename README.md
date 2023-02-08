@@ -11,7 +11,7 @@
 
 This project is powered by [HackPortal](https://github.com/acmutd/hackportal)! If you need a event management solution for a Hackathon, make sure to check it out!
 
-[![Vercel](./static/assets/powered-by-vercel.svg)](https://vercel.com?utm_source=ACM%20UTSA&utm_campaign=oss)
+[![Vercel](https://static.rowdyhacks.org/img/powered-by-vercel.svg)](https://vercel.com?utm_source=ACM%20UTSA&utm_campaign=oss)
 
 ## Join The Team
 
