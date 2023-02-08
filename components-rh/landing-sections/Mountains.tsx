@@ -121,7 +121,7 @@ export const Mountains: FunctionComponent = () => {
 
 export const MountainCaves: FunctionComponent<Mountain2Props> = ({ stats }) => {
 	return (
-		<section className="min-h-screen bg-[#2d112b] relative z-10" id="about">
+		<section className="min-h-screen bg-[#2d112b] relative z-10 px-2" id="about">
 			<div className="w-full grid md:grid-cols-2 grid-cols-1 max-w-[1000px] mx-auto pt-[100px]">
 				<div className="max-h-[280px] flex flex-col justify-center px-[5px]">
 					<h3 className="font-black font-permanent-marker text-white text-4xl mb-[10px] text-center md:text-left">
@@ -149,16 +149,16 @@ export const MountainCaves: FunctionComponent<Mountain2Props> = ({ stats }) => {
 				</div>
 			</div>
 			<div className="w-full grid md:grid-cols-2 grid-cols-1 max-w-[1000px] mx-auto pt-[100px]">
-				<div className="flex items-center justify-center relative">
+				<div className="flex items-center justify-center relative min-h-[190px]">
 					<Image
 						src={'https://static.rowdyhacks.org/img/landing/people/people-04.png'}
 						layout={'fill'}
 						objectFit={'contain'}
-						className="mx-auto"
+						className="mx-auto h-[190px]"
 					></Image>
 				</div>
 				<div className="max-h-[280px] flex flex-col justify-center px-[5px]">
-					<h3 className="font-black font-permanent-marker text-white text-4xl mb-[10px] text-center md:text-left">
+					<h3 className="font-black font-permanent-marker text-white text-4xl mb-[10px] text-center md:text-left mt-[100px] md:mt-0">
 						Who Can Attend?
 					</h3>
 					<p className="font-sans text-white text-lg font-bold text-center md:text-left">
