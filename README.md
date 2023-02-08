@@ -30,5 +30,5 @@ This project would not be possible without the awesome folks who work on [HackPo
 <a href="https://github.com/acmutd/hackportal/graphs/contributors">
 <img src="https://contrib.rocks/image?repo=acmutd/hackportal" />
 </a>
-<br />
-[Other Contributions](https://github.com/UTSA-ACM/RowdyHacks23/blob/develop/contributions.md)
+  
+[📣❤️ Other Contributions ❤️📣](https://github.com/UTSA-ACM/RowdyHacks23/blob/develop/contributions.md)
