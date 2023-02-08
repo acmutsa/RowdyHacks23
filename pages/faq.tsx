@@ -97,9 +97,11 @@ const [click, setClick] = useState(false)
     }
 	return (
 		<div className='absolute top-0 min-h-screen w-full bg-[url("https://static.rowdyhacks.org/img/profiles/mountainbg.svg")] bg-cover bg-fixed '>
-			<div className = "mx-auto mt-[10em] items-center text-white flex flex-col justify-between  w-[60%] md:w-[50%] h-[400%]">
+			<div className = "mx-auto  mt-[10em] items-center text-white flex flex-col justify-between  w-[60%] md:w-[50%] h-[400%]">
 			<p className= "tracking-wide font-permanent-marker">RowdyHacks</p>
-			<h1 className= "md:text-[3rem] text-[1.75rem] font-poppins font-black"><span className="text-[1.25rem] md:text-[3rem]">Frequently</span> Asked Questions</h1>
+			
+			<h1 className= " ml-3 md:ml-0 md:text-[3rem] text-[1.75rem] font-poppins font-black"><span className="text-[1.25rem] md:text-[3rem]">Frequently</span> Asked Questions</h1>
+			
 			<p className= "md:text-[1.5rem] text-[0.75rem] font-permanent-marker">Have a question? We are here to help</p>
 			</div>
 			<div className = " md:text-[2rem]  text-white w-[85%] pb-5 md:pb-1 md:w-[60%] mt-[2em] mx-auto h-[30px] border-b ">
@@ -125,7 +127,7 @@ const [click, setClick] = useState(false)
                 <div>               
                  
                  <div  key= {s.id} onClick ={()=> handleToggle(index)}>
-                 <div className="rounded border border-black bg-rh-sunset mb-4 p-4 flex gap-2">
+                 <div className=" border border-rh-sunset rounded  bg-rh-sunset mb-4 p-4 flex gap-2">
                 {openIndex !== index ?  <RxDoubleArrowDown size = {"25px"} className="mt-1 font-black" onClick={clickArrow}/>: <RxDoubleArrowUp size = {"25px"} className="mt-1 font-black" onClick={clickArrow}/>}
                
                  <h1 className= "text-[1rem]  md:text-[1.5rem] font-poppins" onClick={getText} >{s.Question}</h1>
