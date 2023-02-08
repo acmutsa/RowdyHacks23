@@ -40,22 +40,8 @@ export const Mountains: FunctionComponent = () => {
 				<div className="cloud-scroll-bg will-change-transform"></div>
 			</motion.div>
 			<motion.div
-				style={{ y: l3 }}
-				className="absolute flex items-center justify-center w-screen h-screen"
-			>
-				<div className='bg-[url("https://static.rowdyhacks.org/img/landscape/BlimpSketch.png")] bg-contain h-[400px] w-[400px] bg-center bg-no-repeat flex items-center justify-center text-2xl font-permanent-marker mt-32 blimpFloat'>
-					<div className="bg-rh-deep-purple rounded border-rh-sunset border-dashed border-2 translate-y-[-15px] p-2 text-rh-sunset">
-						<h1 className="text-center">
-							March
-							<br />
-							<span className="text-3xl">25th - 26th</span>
-						</h1>
-					</div>
-				</div>
-			</motion.div>
-			<motion.div
 				style={{ y: header }}
-				className="w-full flex md:flex-row flex-col justify-center absolute items-center pt-[calc(100vh/4)] will-change-transform"
+				className="w-full flex md:flex-row flex-col justify-center absolute items-center pt-[calc(100vh/6)] will-change-transform mt-[4rem] z-20"
 			>
 				<div className="md:h-[175px] md:w-[175px] w-[100px] h-[100px] relative">
 					<Image src="https://static.rowdyhacks.org/img/logos/rh_landing.svg" layout="fill"></Image>
@@ -88,6 +74,20 @@ export const Mountains: FunctionComponent = () => {
 					src="https://static.rowdyhacks.org/img/landscape/p/layer_3.png"
 					className="min-w-[3000px] object-cover border-b-[#2d112b] border-b-4"
 				></img>
+			</motion.div>
+			<motion.div
+				style={{ y: l3 }}
+				className="!absolute flex items-center justify-center w-screen h-screen"
+			>
+				<div className='bg-[url("https://static.rowdyhacks.org/img/landscape/BlimpSketch.png")] bg-contain h-[400px] w-[400px] mb-[-20px] bg-center bg-no-repeat flex items-center justify-center text-2xl font-permanent-marker mt-32 blimpFloat absolute z-20 max-w-screen overflow-x-hidden'>
+					<div className="bg-rh-deep-purple rounded border-rh-sunset border-dashed border-2 translate-y-[-15px] p-2 text-rh-sunset">
+						<h1 className="text-center">
+							March
+							<br />
+							<span className="text-3xl">25th - 26th</span>
+						</h1>
+					</div>
+				</div>
 			</motion.div>
 			<motion.div
 				style={{ y: l4 }}
