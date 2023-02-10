@@ -18,7 +18,7 @@ interface Props {
 
 const Disclosure: FunctionComponent = () => {
 	return (
-		<div className="bg-gray-900 min-h-[50vh] w-full grid grid-cols-2 py-[20px]">
+		<div className="bg-gray-900 min-h-[60vh] w-full grid grid-cols-2 py-[20px]">
 			<div className="w-full md:h-[30vh] flex md:justify-end justify-center items-center md:border-r-white md:border-r-2 pr-[10px] col-span-2 md:col-span-1">
 				<Image
 					src="https://static.rowdyhacks.org/img/logos/rh_landing.svg"

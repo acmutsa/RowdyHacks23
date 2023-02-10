@@ -99,8 +99,8 @@ export const Mountains: FunctionComponent = () => {
 						</div>
 					</div>
 				</div>
-				<div className="h-[calc(55vh-2rem)] flex items- justify-center">
-					<div className='bg-[url("https://static.rowdyhacks.org/img/landscape/BlimpSketch.png")] bg-contain h-[300px] w-[400px] mb-[-20px] bg-center bg-no-repeat flex items-center justify-center text-2xl font-permanent-marker blimpFloat z-20 max-w-screen overflow-x-hidden'>
+				<div className="h-[calc(55vh-2rem)] flex items- justify-center mt-[-100px] md:mt-[-20px]">
+					<div className='bg-[url("https://static.rowdyhacks.org/img/landscape/BlimpSketch.png")] bg-contain h-[300px] w-[400px] bg-center bg-no-repeat flex items-center justify-center text-2xl font-permanent-marker blimpFloat z-20 max-w-screen overflow-x-hidden'>
 						<div className="bg-rh-deep-purple rounded border-rh-sunset border-dashed border-2 translate-y-[-15px] p-2 text-rh-sunset">
 							<h1 className="text-center">
 								March

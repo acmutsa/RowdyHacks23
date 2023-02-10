@@ -264,7 +264,7 @@ a.link {
 		background-position: 0 calc(100vh - 600px);
 	}
 	to {
-		background-position: 100vw calc(100vh - 600px);
+		background-position: max(100%, 1000px) calc(100vh - 600px);
 	}
 }
 
