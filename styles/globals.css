@@ -13,6 +13,15 @@ body {
 	overflow-x: hidden;
 }
 
+.parallax-effect-img {
+	transform-style: preserve-3d;
+	transform: perspective(1000px);
+}
+
+.inner-parallax-element {
+	transform: translateZ(40px) scale(0.8);
+}
+
 @font-face {
 	font-family: 'wavehaus';
 	src: url('/fonts/Wavehaus-66Book.ttf') format('truetype');

@@ -60,6 +60,7 @@
     "react-markdown": "^8.0.3",
     "react-material-ui-carousel": "^2.3.5",
     "react-notion-x": "^6.12.10",
+    "react-parallax-tilt": "^1.7.101",
     "react-select": "^4.3.1",
     "react-spring": "^9.6.1",
     "react-use": "^17.4.0",
