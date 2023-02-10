@@ -10,13 +10,15 @@ import {
 	FaLinkedin,
 } from 'react-icons/fa';
 
+import { SiVercel } from 'react-icons/si';
+
 interface Props {
 	className?: string;
 }
 
 const Disclosure: FunctionComponent = () => {
 	return (
-		<div className="bg-gray-900 min-h-[50vh] w-full grid grid-cols-2 py-[20px]">
+		<div className="bg-gray-900 min-h-[60vh] w-full grid grid-cols-2 py-[20px]">
 			<div className="w-full md:h-[30vh] flex md:justify-end justify-center items-center md:border-r-white md:border-r-2 pr-[10px] col-span-2 md:col-span-1">
 				<Image
 					src="https://static.rowdyhacks.org/img/logos/rh_landing.svg"
@@ -82,6 +84,9 @@ const Disclosure: FunctionComponent = () => {
 						<br />© RowdyHacks & Association of Computing Machinery at UTSA{' '}
 						{new Date().getFullYear()}. All Rights Reserved.
 					</p>
+					<a className="flex mt-5 items-center border-b-[1px] border-white cursor-pointer">
+						Powered By <SiVercel className="ml-1" />
+					</a>
 					<div className="bg-amber-500 w-full flex flex-col items-center mt-[20px]">
 						<p className="text-center text-sm">
 							HackPortal developed with &lt;3 by <span className="font-black inline">HackUTD</span>{' '}
