@@ -75,7 +75,7 @@ export const Mountains: FunctionComponent = () => {
 			</motion.div>
 			<motion.div
 				style={{ y: l3 }}
-				className="!absolute flex flex-col items-center justify-evenly w-screen h-screen"
+				className="!absolute flex flex-col items-center justify-evenly w-screen h-screen pb-[5vh]"
 			>
 				<div className="flex items-end h-[calc(45vh-2rem)]">
 					<div className="flex md:flex-row flex-col justify-center items-center">
