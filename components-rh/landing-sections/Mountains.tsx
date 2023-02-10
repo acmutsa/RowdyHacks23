@@ -33,13 +33,11 @@ export const Mountains: FunctionComponent = () => {
 			<motion.div className="h-screen sky-gradient absolute w-full will-change-transform"></motion.div>
 			<motion.div
 				style={{ y: l3 }}
-				className="absolute w-full overflow-x-hidden will-change-transform"
+				className="absolute w-full overflow-x-hidden will-change-transfor"
 			>
-				{/* TODO: Make this more dynamic, split the clouds into different layers and then have then move at different speeds */}
-				{/* TODO: Fix bug where animation sometimes skips */}
 				<div className="cloud-scroll-bg will-change-transform"></div>
 			</motion.div>
-			<motion.div
+			{/* <motion.div
 				style={{ y: header }}
 				className="w-full flex md:flex-row flex-col justify-center absolute items-center pt-[calc(100vh/6)] will-change-transform mt-[4rem] z-20"
 			>
@@ -56,7 +54,7 @@ export const Mountains: FunctionComponent = () => {
 						Into The Unknown
 					</h2>
 				</div>
-			</motion.div>
+			</motion.div> */}
 			<motion.div
 				style={{ y: l2 }}
 				className="w-full h-full absolute overflow-x-hidden flex justify-center items-end will-change-transform"
@@ -77,15 +75,39 @@ export const Mountains: FunctionComponent = () => {
 			</motion.div>
 			<motion.div
 				style={{ y: l3 }}
-				className="!absolute flex items-center justify-center w-screen h-screen"
+				className="!absolute flex flex-col items-center justify-evenly w-screen h-screen"
 			>
-				<div className='bg-[url("https://static.rowdyhacks.org/img/landscape/BlimpSketch.png")] bg-contain h-[400px] w-[400px] mb-[-20px] bg-center bg-no-repeat flex items-center justify-center text-2xl font-permanent-marker mt-32 blimpFloat absolute z-20 max-w-screen overflow-x-hidden'>
-					<div className="bg-rh-deep-purple rounded border-rh-sunset border-dashed border-2 translate-y-[-15px] p-2 text-rh-sunset">
-						<h1 className="text-center">
-							March
-							<br />
-							<span className="text-3xl">25th - 26th</span>
-						</h1>
+				<div className="flex items-end h-[calc(45vh-2rem)]">
+					<div className="flex md:flex-row flex-col justify-center items-center">
+						<div className="md:h-[175px] md:w-[175px] w-[100px] h-[100px] relative">
+							<Image
+								src="https://static.rowdyhacks.org/img/logos/rh_landing.svg"
+								layout="fill"
+							></Image>
+						</div>
+						<div className="ml-[5px]">
+							<h1 className="md:text-8xl text-5xl font-black font-sans text-white mb-4">
+								RowdyHacks
+							</h1>
+							<h2
+								className={
+									'md:text-4xl text-3xl font-black font-permanent-marker italic text-white text-center'
+								}
+							>
+								Into The Unknown
+							</h2>
+						</div>
+					</div>
+				</div>
+				<div className="h-[calc(55vh-2rem)] flex items- justify-center">
+					<div className='bg-[url("https://static.rowdyhacks.org/img/landscape/BlimpSketch.png")] bg-contain h-[300px] w-[400px] mb-[-20px] bg-center bg-no-repeat flex items-center justify-center text-2xl font-permanent-marker blimpFloat z-20 max-w-screen overflow-x-hidden'>
+						<div className="bg-rh-deep-purple rounded border-rh-sunset border-dashed border-2 translate-y-[-15px] p-2 text-rh-sunset">
+							<h1 className="text-center">
+								March
+								<br />
+								<span className="text-3xl">25th - 26th</span>
+							</h1>
+						</div>
 					</div>
 				</div>
 			</motion.div>

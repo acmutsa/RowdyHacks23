@@ -230,10 +230,10 @@ a.link {
 .cloud-scroll-bg {
 	background: url('/img/landscape/clouds.svg');
 	background-repeat: repeat-x;
+	background-size: max(100%, 1000px);
 	height: 100vh;
-	animation: bgScrollLeft 60s linear infinite;
+	animation: bgScrollLeft 70s linear infinite;
 	opacity: 0.2;
-	background-size: 1000;
 }
 
 .forrest-bg {
@@ -261,10 +261,10 @@ a.link {
 
 @keyframes bgScrollLeft {
 	from {
-		background-position: 0 0;
+		background-position: 0 calc(100vh - 600px);
 	}
 	to {
-		background-position: 100vw 0;
+		background-position: 100vw calc(100vh - 600px);
 	}
 }
 
