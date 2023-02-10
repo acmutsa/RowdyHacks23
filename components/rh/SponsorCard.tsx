@@ -26,6 +26,7 @@ const SponsorCard: FunctionComponent<Sponsor> = (sponsor) => {
 			<Tilt
 				perspective={800}
 				gyroscope={false}
+				tiltReverse={true}
 				className="parallax-effect-img w-full !aspect-[3/2] flex items-center justify-center shadow-xl box-border hover:cursor-pointer rounded-t-xl border-b-0 border-gray-900 border-4 bg-blue-900"
 			>
 				<div className="absolute top-0 bg-gray-900 h-[15px] w-[20%] rounded-b-lg flex justify-center">
