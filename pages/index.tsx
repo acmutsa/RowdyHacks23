@@ -34,7 +34,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 	let contentWrapperRef = useRef(null);
 
 	return (
-		<div className="w-full absolute top-0">
+		<div className="w-screen max-w-screen absolute top-0">
 			<Mountains />
 			<MountainCaves stats={stats} />
 			<Ocean sponsors={props?.sponsors} />
