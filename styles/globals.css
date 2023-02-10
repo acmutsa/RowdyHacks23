@@ -22,6 +22,10 @@ body {
 	transform: translateZ(40px) scale(0.8);
 }
 
+.rh_cursor {
+	cursor: url('https://static.rowdyhacks.org/img/logos/rh_sunset_small.png') 32 32, auto;
+}
+
 @font-face {
 	font-family: 'wavehaus';
 	src: url('/fonts/Wavehaus-66Book.ttf') format('truetype');
