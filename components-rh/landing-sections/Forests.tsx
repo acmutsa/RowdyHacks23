@@ -2,7 +2,7 @@ import { type FunctionComponent } from 'react';
 
 export const Forest: FunctionComponent = () => {
 	return (
-		<div className="relative md:h-screen h-[calc(100vh+100px)] bg-emerald-900 overflow-x-hidden bg-[url('https://static.rowdyhacks.org/img/landscape/trees.svg')] bg-no-repeat bg-bottom bg-cover pb-[30px]">
+		<div className="relative md:h-screen h-[calc(100vh+100px)] bg-emerald-900 overflow-x-hidden bg-[url('https://static.rowdyhacks.org/img/landscape/trees.svg')] bg-no-repeat bg-top bg-cover pb-[30px]">
 			{/* <div className="w-full h-full absolute bottom-0">
 				<img
 					src="/img/landscape/trees.svg"
