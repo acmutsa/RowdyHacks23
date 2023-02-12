@@ -39,14 +39,17 @@ function PortalApp({ Component, pageProps }: AppProps) {
 								name="viewport"
 								content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
 							/>
-							<title>RowdyHacks</title> {/* !change */}
-							<meta name="description" content="Your all-in-one guide to this hackathon." />
+							<title>RowdyHacks</title>
+							<meta
+								name="description"
+								content="The official website for RowdyHacks 2023: Into The Unknown!"
+							/>
 							{process.env.ENABLE_PWA ||
 								(process.env.NODE_ENV !== 'development' && (
 									<link rel="manifest" href="/manifest.json" />
 								))}
 							<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-							<meta name="theme-color" content="#5D5FEF" />
+							<meta name="theme-color" content="#FF583D" />
 						</Head>
 						<div className="min-h-screen overflow-x-hidden bg-white max-w-screen">
 							<AppHeader />
