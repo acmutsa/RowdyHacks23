@@ -11,6 +11,7 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { Analytics } from '@vercel/analytics/react';
 
 // core styles shared by all of react-notion-x (required)
 import 'react-notion-x/src/styles.css';
@@ -54,6 +55,7 @@ function PortalApp({ Component, pageProps }: AppProps) {
 						<div className="min-h-screen overflow-x-hidden bg-white max-w-screen">
 							<AppHeader />
 							<Component {...pageProps} />
+							<Analytics />
 						</div>
 					</FCMProvider>
 				</AuthProvider>
