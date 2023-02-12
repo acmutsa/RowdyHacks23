@@ -1,6 +1,6 @@
 {
-  "name": "HackPortal Dev",
-  "short_name": "HackPortal Dev",
+  "name": "RowdyHacks 2023",
+  "short_name": "RowdyHacks",
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
@@ -19,8 +19,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#5D5FEF",
-  "background_color": "#5D5FEF",
+  "theme_color": "#FF583D",
+  "background_color": "#FF583D",
   "start_url": "/",
   "display": "standalone"
 }

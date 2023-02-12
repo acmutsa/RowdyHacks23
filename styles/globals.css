@@ -13,6 +13,10 @@ body {
 	overflow-x: hidden;
 }
 
+.faq-transtion {
+	transition: grid-column 1s ease;
+}
+
 .parallax-effect-img {
 	transform-style: preserve-3d;
 	transform: perspective(1000px);
