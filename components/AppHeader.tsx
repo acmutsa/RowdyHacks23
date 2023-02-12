@@ -168,7 +168,7 @@ export default function AppHeader() {
 				</div>
 				<div className="flex lg:mr-8">
 					<button
-						className="font-header font-bold bg-white rounded-full border-2 border-black text-sm px-8 py-1 text-black"
+						className="font-header font-bold bg-white rounded-full border-2 border-black text-sm px-8 py-1 text-black w-[115px]"
 						onClick={toggleDialog}
 					>
 						{!user || !isSignedIn ? 'Sign in' : hasProfile ? 'Profile' : 'Register'}

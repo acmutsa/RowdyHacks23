@@ -35,6 +35,31 @@ const Home: NextPage<propsType> = ({ props }) => {
 
 	return (
 		<div className="w-screen max-w-screen overflow-x-hidden absolute top-0">
+			<div
+				id="mlh-trust-badge"
+				className="block fixed top-0 w-[115px] lg:right-[3rem] right-[1rem] z-[10] mt-[4rem]"
+				onClick={() =>
+					window.open(
+						'https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2023-season&utm_content=black',
+					)
+				}
+			>
+				<div
+					style={{ filter: 'blur(10px)' }}
+					className="w-[calc(100%-15px)] mx-[7.5px] h-full bg-[url('/img/mlh/logo2.svg')] "
+				>
+					<img
+						className="w-full md:mx-0 opacity-0"
+						src="/img/mlh/logo2.svg"
+						alt="MLH Hackathon 2023 Season"
+					></img>
+				</div>
+				<img
+					className="w-[calc(100%-15px)] mx-[7.5px] absolute top-0"
+					src="/img/mlh/logo2.svg"
+					alt="MLH Hackathon 2023 Season"
+				></img>
+			</div>
 			<Mountains />
 			<MountainCaves stats={stats} />
 			<Ocean sponsors={props?.sponsors} />
