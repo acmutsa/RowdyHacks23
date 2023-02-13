@@ -169,9 +169,9 @@ export default function AuthPage() {
 				></img>
 			</div>
 
-			<section className="py-2 md:px-16 px-10 flex items-center justify-center flex-wrap w-full h-screen absolute top-0">
+			<section className="py-2 flex items-center justify-center flex-wrap w-full h-screen absolute top-0">
 				<div className="xl:w-1/2 lg:w-2/3 w-5/6 my-4">
-					<h1 className="md:text-8xl text-5xl font-black font-sans text-white text-center">
+					<h1 className="md:text-8xl text-5xl font-black font-sans text-white text-center mt-20">
 						RowdyHacks
 					</h1>
 					<h2 className="md:text-4xl text-3xl font-black font-permanent-marker italic text-white text-center">
@@ -195,7 +195,7 @@ export default function AuthPage() {
 					</div>
 					<section
 						id="signInSection"
-						className="bg-[#2d112b] 2xl:min-h-[30rem] min-h-[28rem] rounded-lg p-6 border-[#ff583d] border-2"
+						className="bg-[#2d112b] 2xl:min-h-[30rem] min-h-[28rem] rounded-lg p-6 border-[#ff583d] border-2 w-full"
 					>
 						<div className="bg-red-300 border-red-500 border-2 min-h-[75px] w-full mx-auto rounded flex items-center px-2">
 							<GoAlert className="text-5xl text-red-500" />
@@ -320,7 +320,7 @@ export default function AuthPage() {
 					</section>
 					<section
 						id="signUpSection"
-						className="hidden bg-rh-deep-purple border-rh-sunset border-2 2xl:min-h-[30rem] min-h-[28rem] rounded-lg p-6"
+						className="hidden bg-rh-deep-purple border-rh-sunset border-2 2xl:min-h-[30rem] min-h-[28rem] rounded-lg p-6 w-full"
 					>
 						<div className="bg-red-300 border-red-500 border-2 min-h-[75px] w-full mx-auto rounded flex items-center px-2">
 							<GoAlert className="text-5xl text-red-500" />
