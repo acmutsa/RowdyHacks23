@@ -475,7 +475,7 @@ export const fieldNames = {
 };
 
 //name fields that are checkbox questions belong here
-export const arrayField = ['scans', 'companies', 'dietary'];
+export const arrayField = ['scans', 'areasOfInterest', 'dietary'];
 //any other fields belong here
 export const singleField = [
 	'age',

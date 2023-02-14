@@ -35,6 +35,7 @@ async function getStatsData() {
 	const snapshot = await db.collection(USERS_COLLECTION).get();
 	snapshot.forEach((doc) => {
 		const userData = doc.data();
+		console.log(userData);
 
 		for (let arrayField of arrayFields) {
 			if (!userData[arrayField]) continue;
