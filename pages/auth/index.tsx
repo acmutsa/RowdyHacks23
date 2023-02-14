@@ -169,8 +169,8 @@ export default function AuthPage() {
 				></img>
 			</div>
 
-			<section className="py-2 flex items-center justify-center flex-wrap w-full h-screen absolute top-0">
-				<div className="xl:w-1/2 lg:w-2/3 w-5/6 my-4">
+			<section className="py-2 flex items-center justify-center flex-wrap w-full h-screen absolute top-0 px-2">
+				<div className="my-4 w-full max-w-[600px]">
 					<h1 className="md:text-8xl text-5xl font-black font-sans text-white text-center mt-20">
 						RowdyHacks
 					</h1>

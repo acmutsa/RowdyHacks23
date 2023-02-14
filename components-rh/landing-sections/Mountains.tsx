@@ -29,7 +29,7 @@ export const Mountains: FunctionComponent = () => {
 
 	const opacity = useTransform(scrollYProgress, [0, 1], ['100%', '0%']);
 	return (
-		<section ref={contentWrapperRef} className="h-screen relative">
+		<section ref={contentWrapperRef} className="h-screen min-h-[800px] relative">
 			<motion.div className="h-screen sky-gradient absolute w-full will-change-transform"></motion.div>
 			<motion.div
 				style={{ y: l3 }}
@@ -75,7 +75,7 @@ export const Mountains: FunctionComponent = () => {
 			</motion.div>
 			<motion.div
 				style={{ y: l3 }}
-				className="!absolute flex flex-col items-center justify-evenly w-screen h-screen pb-[5vh]"
+				className="!absolute flex flex-col items-center justify-evenly w-screen h-screen min-h-[800px] pb-[5vh]"
 			>
 				<div className="flex items-end h-[calc(45vh-2rem)]">
 					<div className="flex md:flex-row flex-col justify-center items-center">
