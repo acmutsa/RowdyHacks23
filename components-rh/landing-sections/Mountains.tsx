@@ -30,12 +30,12 @@ export const Mountains: FunctionComponent = () => {
 	const opacity = useTransform(scrollYProgress, [0, 1], ['100%', '0%']);
 	return (
 		<section ref={contentWrapperRef} className="h-screen min-h-[800px] relative">
-			<motion.div className="h-screen sky-gradient absolute w-full will-change-transform"></motion.div>
+			<motion.div className="h-screen min-h-[800px] sky-gradient absolute w-full will-change-transform"></motion.div>
 			<motion.div
 				style={{ y: l3 }}
-				className="absolute w-full overflow-x-hidden will-change-transfor"
+				className="absolute w-full overflow-x-hidden will-change-transfor h-screen min-h-[800px]"
 			>
-				<div className="cloud-scroll-bg will-change-transform"></div>
+				<div className="cloud-scroll-bg will-change-transform h-screen min-h-[800px]"></div>
 			</motion.div>
 			{/* <motion.div
 				style={{ y: header }}
