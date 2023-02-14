@@ -307,6 +307,10 @@ export const hackPortalConfig: HackPortalConfig = {
 								title: '2XL',
 								value: '2xl',
 							},
+							{
+								title: '3XL',
+								value: '3xl',
+							},
 						],
 					},
 				],
