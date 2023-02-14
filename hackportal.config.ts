@@ -303,6 +303,10 @@ export const hackPortalConfig: HackPortalConfig = {
 								title: 'XL',
 								value: 'xl',
 							},
+							{
+								title: '2XL',
+								value: '2xl',
+							},
 						],
 					},
 				],
