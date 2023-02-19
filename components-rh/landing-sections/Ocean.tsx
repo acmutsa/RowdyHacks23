@@ -1,10 +1,17 @@
 import { type FunctionComponent } from 'react';
 import Image from 'next/image';
 import SponsorCard from '../../components/rh/SponsorCard';
+import { ReactElement } from 'react-markdown/lib/react-markdown';
 
 interface propsType {
 	sponsors: Sponsor[];
 }
+
+const sponsorTierRanking = {
+	Gold: 3,
+	Silver: 2,
+	Bronze: 1,
+};
 
 export const Ocean: FunctionComponent<propsType> = ({ sponsors }) => {
 	return (
@@ -44,9 +51,37 @@ export const Ocean: FunctionComponent<propsType> = ({ sponsors }) => {
 			</div>
 			<div className="w-full max-w-[1200px] overflow-y-visible mx-auto px-[5px] grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 gap-y-12">
 				{(() => {
-					let sponsorCards = [];
-					if (sponsors) {
-						for (const sponsor of sponsors) {
+					const goldSponsors: Sponsor[] = [];
+					const silverSponsors: Sponsor[] = [];
+					const bronzeSponsors: Sponsor[] = [];
+					const otherSponsors: Sponsor[] = [];
+
+					for (const sponsor of sponsors) {
+						switch (sponsor.tier) {
+							case 'Gold':
+								goldSponsors.push(sponsor);
+								break;
+							case 'Silver':
+								silverSponsors.push(sponsor);
+								break;
+							case 'Bronze':
+								bronzeSponsors.push(sponsor);
+								break;
+							default:
+								otherSponsors.push(sponsor);
+								break;
+						}
+					}
+
+					const organizedSponsors = [
+						...goldSponsors,
+						...silverSponsors,
+						...bronzeSponsors,
+						...otherSponsors,
+					];
+					const sponsorCards: ReactElement[] = [];
+					if (organizedSponsors) {
+						for (const sponsor of organizedSponsors) {
 							console.log('Sponsor Data: ', sponsor);
 							sponsorCards.push(
 								<SponsorCard key={`${sponsor.reference}_${sponsor.tier}`} {...sponsor} />,
