@@ -316,6 +316,22 @@ a.link {
 	animation: blimpFloatAnimation 3s ease-in-out infinite;
 }
 
+@keyframes airBalloonAnimation {
+	0% {
+		transform: translate(0, 0px);
+	}
+	50% {
+		transform: translate(5px, 5px);
+	}
+	100% {
+		transform: translate(0, -0px);
+	}
+}
+
+.airBalloonFloat {
+	animation: airBalloonAnimation 5s ease-in-out infinite;
+}
+
 /* Utility */
 
 .drag-none {
