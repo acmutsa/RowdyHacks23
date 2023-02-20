@@ -10,7 +10,7 @@ export const Forest: FunctionComponent = () => {
 				></img>
 			</div> */}
 			<div className="absolute left-0 top-0 w-full">
-				<div className="w-full h-full mx-auto max-w-[1000px] grid lg:grid-cols-2 grid-cols-1 gap-2">
+				<div className="w-full h-full mx-auto max-w-[1000px] grid lg:grid-cols-2 grid-cols-1 gap-2 px-2">
 					<div className="lg:col-span-2 flex items-center min-h-[20vh] ">
 						<h1 className="font-permanent-marker text-6xl font-bold text-emerald-700 text-center lg:text-left w-full">
 							Work With Us
