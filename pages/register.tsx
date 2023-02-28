@@ -250,10 +250,30 @@ export default function Register() {
 							className="registrationForm flex flex-col max-w-4xl px-6 w-[56rem] text-lg"
 						>
 							<div className="text-4xl py-1 mr-auto mt-8 font-permanent-marker">General</div>
+							<p>
+								Welcome! Please make sure to fill out this form in its entirety in order to be
+								registered for RowdyHacks 2023! If you run into any issues, feel free to join us on{' '}
+								<a target={'_blank'} className="underline" href="https://go.rowdyhacks.org/discord">
+									Discord
+								</a>{' '}
+								and send a message in the "ask an organizer" channel.
+							</p>
 							{generalQuestions.map((obj, idx) => (
 								<DisplayQuestion key={idx} obj={obj} values={values} onChange={handleChange} />
 							))}
-
+							<p className="mt-2">
+								<a className="underline" target={'_blank'} href="https://go.rowdyhacks.org/coc">
+									MLH Code of Conduct
+								</a>{' '}
+								|{' '}
+								<a className="underline" target={'_blank'} href="https://mlh.io/privacy">
+									MLH Privacy Policy
+								</a>{' '}
+								|{' '}
+								<a className="underline" target={'_blank'} href="https://go.rowdyhacks.org/mlhtc">
+									MLH Terms & Conditions
+								</a>
+							</p>
 							<div className="text-4xl py-1 mr-auto mt-8 font-permanent-marker">School Info</div>
 							{schoolQuestions.map((obj, idx) => (
 								<DisplayQuestion key={idx} obj={obj} values={values} onChange={handleChange} />

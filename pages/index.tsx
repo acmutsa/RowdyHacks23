@@ -3,6 +3,7 @@
 import type { GetStaticPropsResult, NextPage } from 'next';
 import { useRef } from 'react';
 import { stats } from '../lib/data';
+import Image from 'next/image';
 
 /* Firebase */
 

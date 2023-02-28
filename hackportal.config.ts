@@ -99,10 +99,6 @@ export const hackPortalConfig: HackPortalConfig = {
 								value: 'Black',
 							},
 							{
-								title: 'Hispanic',
-								value: 'Hispanic',
-							},
-							{
 								title: 'White/Caucasian',
 								value: 'White',
 							},
@@ -132,6 +128,30 @@ export const hackPortalConfig: HackPortalConfig = {
 								title: 'Not Hispanic or Latino',
 								value: 'notHispanic',
 							},
+						],
+					},
+				],
+			},
+			{
+				checkboxQuestions: [
+					{
+						question:
+							'I accept the MLH Code of Conduct, MLH Privacy Policy, Terms & Conditions, and allow my registration data to be shared with MLH for administration purposes in accoardance with the MLH Privacy Policy.',
+						required: true,
+						id: 'mlhcoc',
+						name: 'mlhcoc',
+						initialValue: [],
+						options: [{ title: 'I accept', value: 'accept' }],
+					},
+					{
+						question: 'Would you like to receive marketing emails from MLH?',
+						required: true,
+						id: 'mlhemails',
+						name: 'mlhemails',
+						initialValue: [],
+						options: [
+							{ title: 'Yes', value: 'yes' },
+							{ title: 'No', value: 'no' },
 						],
 					},
 				],
@@ -191,6 +211,14 @@ export const hackPortalConfig: HackPortalConfig = {
 							{
 								title: 'Graduate Student',
 								value: 'grad',
+							},
+							{
+								title: 'Recent Graduate',
+								value: 'recentgrad',
+							},
+							{
+								title: 'Other',
+								value: 'other',
 							},
 						],
 					},
