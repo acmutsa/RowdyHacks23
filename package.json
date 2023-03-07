@@ -58,6 +58,7 @@
     "react-dnd-html5-backend": "^15.1.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.7.1",
+    "react-intersection-observer": "^9.4.3",
     "react-markdown": "^8.0.3",
     "react-material-ui-carousel": "^2.3.5",
     "react-notion-x": "^6.12.10",

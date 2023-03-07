@@ -18,6 +18,7 @@ import 'firebase/storage';
 import { Mountains, MountainCaves } from '../components-rh/landing-sections/Mountains';
 import { Ocean } from '../components-rh/landing-sections/Ocean';
 import { Forest } from '../components-rh/landing-sections/Forests';
+import { Space } from '../components-rh/landing-sections/Space';
 import Disclosure from '../components/Disclosure';
 import { data } from 'jquery';
 
@@ -65,6 +66,7 @@ const Home: NextPage<propsType> = ({ props }) => {
 			<MountainCaves stats={stats} />
 			<Ocean sponsors={props?.sponsors} />
 			<Forest />
+			<Space teamMembers={props.fetchedMembers} />
 			<Disclosure />
 		</div>
 	);
