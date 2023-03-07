@@ -91,7 +91,7 @@ export const Space: FunctionComponent<spaceProps> = ({ teamMembers }) => {
 				</h1>
 			</div>
 			<div
-				className={`grid md:grid-cols-4 grid-cols-1 px-2 max-w-[1200px] mx-auto gap-10 will-change-transform transform-gpu before:absolute before:top-0 before:left-0 before:h-full before:w-full team-card-gradient before:opacity-0 before:[filter:blur(120px)] backdrop-blur${
+				className={`grid md:grid-cols-4 grid-cols-1 px-2 max-w-[1200px] mx-auto gap-10 will-change-transform before:absolute before:top-0 before:left-0 before:h-full before:w-full team-card-gradient before:opacity-0 before:[filter:blur(120px)] backdrop-blur${
 					inView ? ' space-card-bg-ani' : ''
 				}`}
 			>
