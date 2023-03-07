@@ -22,9 +22,9 @@ const newDisclosure = () => {
 	const [showHackathons, setShowHackathons] = useState(false);
 
 	return (
-		<>
-			<div className="bg-black pb-10 lg:block hidden">
-				<div className="grid grid-cols-5 bg-black md:p-10 max-w-[1200px] mx-auto">
+		<div>
+			<div className="bg-black border-t-gray-500 border-t-[1px] pb-10 lg:block hidden">
+				<div className="grid grid-cols-5 bg-transparent md:p-10 max-w-[1200px] mx-auto">
 					<div className="col-span-2">
 						<div className="w-full flex items-center justify-start h-full">
 							<Image
@@ -135,7 +135,7 @@ const newDisclosure = () => {
 					</p>
 				</div>
 			</div>
-			<div className="lg:hidden grid grid-cols-2 bg-black min-h-[350px] py-5">
+			<div className="lg:hidden grid grid-cols-2 bg-black border-t-gray-500 border-t-[1px] min-h-[350px] py-5">
 				<div className="col-span-2 md:col-span-1">
 					<div className="w-full flex items-center justify-center h-full">
 						<Image
@@ -270,7 +270,7 @@ const newDisclosure = () => {
 					</p>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
