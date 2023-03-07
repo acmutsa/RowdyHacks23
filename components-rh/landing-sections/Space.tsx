@@ -26,7 +26,7 @@ export const TeamMemberItem: FunctionComponent<teamCardProps> = ({
 }) => {
 	return (
 		<div
-			className={`will-change-transform relative mx-auto bg-white bg-opacity-5 rounded-xl aspect-[9/12] w-[264px] before:absolute before:top-0 before:left-0 before:h-full before:w-full team-card-gradient before:opacity-0 before:[filter:blur(120px)] backdrop-blur border-[1px]`}
+			className={`will-change-transform relative mx-auto bg-white bg-opacity-5 rounded-xl aspect-[9/12] w-full max-w-[264px] before:absolute before:top-0 before:left-0 before:h-full before:w-full team-card-gradient before:opacity-0 before:[filter:blur(120px)] backdrop-blur border-[1px]`}
 		>
 			<div className="h-full internal-bg w-full z-10 absolute flex flex-col items-center justify-center p-2 top-0 left-0 rounded-2xl border-white">
 				<Image
@@ -93,7 +93,7 @@ export const Space: FunctionComponent<spaceProps> = ({ teamMembers }) => {
 				</h1>
 			</div>
 			<div
-				className={`grid md:grid-cols-4 grid-cols-1 px-2 max-w-[1200px] mx-auto gap-10 will-change-transform before:absolute before:top-0 before:left-0 before:h-full before:w-full team-card-gradient before:opacity-0 before:[filter:blur(120px)] backdrop-blur${
+				className={`grid md:grid-cols-4 grid-cols-1 px-5 max-w-[1200px] mx-auto gap-10 will-change-transform before:absolute before:top-0 before:left-0 before:h-full before:w-full team-card-gradient before:opacity-0 before:[filter:blur(120px)] backdrop-blur${
 					inView ? ' space-card-bg-ani' : ''
 				}`}
 			>
