@@ -37,6 +37,7 @@ export const TeamMemberItem: FunctionComponent<teamCardProps> = ({
 					objectPosition={'center center'}
 					className="rounded-full"
 					quality={50}
+					priority
 				/>
 
 				<h1 className="text-white font-sans font-black mt-5">{name}</h1>
