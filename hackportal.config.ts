@@ -347,7 +347,8 @@ export const hackPortalConfig: HackPortalConfig = {
 				checkboxQuestions: [
 					{
 						//Allergies question
-						question: 'Allergies / Dietary Restrictions:',
+						question:
+							'Allergies / Dietary Restrictions (If you have any questions about dietary restrictions, reach out to us at team@rowdyhacks.org!):',
 						required: false,
 						id: 'dietary',
 						name: 'dietary',
@@ -380,6 +381,10 @@ export const hackPortalConfig: HackPortalConfig = {
 							{
 								title: 'Eggs',
 								value: 'Eggs',
+							},
+							{
+								title: 'Halal',
+								value: 'Halal',
 							},
 						],
 					},
