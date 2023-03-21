@@ -2,7 +2,6 @@ import { type FunctionComponent, type MutableRefObject, useRef, useEffect } from
 import { useScroll, useSpring, useTransform, motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
 
 interface MountainsProps {
 	containterRef: MutableRefObject<any>;
