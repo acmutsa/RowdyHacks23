@@ -23,7 +23,7 @@ const Contact: NextPage = () => {
 					</button>
 				</div>
 				<h1 className="mt-5 text-white font-sans font-bold mb-1">Public Relations & Partners</h1>
-				<div className="flex rounded border-rh-sunset border-2">
+				<div className="flex rounded border-rh-sunset border-2 overflow-hidden">
 					<input className="p-2 text-center" value={'pr@rowdyhacks.org'} readOnly />
 					<button
 						onClick={() =>
