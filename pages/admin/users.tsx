@@ -20,200 +20,202 @@ type UserIdentifier = Omit<UserData, 'scans'>;
  *
  */
 export default function UserPage() {
-  const [loading, setLoading] = useState(true);
-  const [users, setUsers] = useState<UserIdentifier[]>([]);
-  const [filteredUsers, setFilteredUsers] = useState<UserIdentifier[]>([]);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [currentUser, setCurrentUser] = useState('');
+	const [loading, setLoading] = useState(true);
+	const [users, setUsers] = useState<UserIdentifier[]>([]);
+	const [filteredUsers, setFilteredUsers] = useState<UserIdentifier[]>([]);
+	const [searchQuery, setSearchQuery] = useState('');
+	const [currentUser, setCurrentUser] = useState('');
 
-  const { user } = useAuthContext();
+	const { user } = useAuthContext();
 
-  let timer: NodeJS.Timeout;
+	let timer: NodeJS.Timeout;
 
-  const [filter, setFilter] = useState({
-    hacker: true,
-    sponsor: true,
-    organizer: true,
-    admin: true,
-    super_admin: true,
-  });
+	const [filter, setFilter] = useState({
+		hacker: true,
+		sponsor: true,
+		organizer: true,
+		admin: true,
+		super_admin: true,
+	});
 
-  async function fetchAllUsers() {
-    setLoading(true);
-    if (!user) return;
+	async function fetchAllUsers() {
+		setLoading(true);
+		if (!user) return;
 
-    const { data } = await RequestHelper.get<UserIdentifier[]>('/api/users', {
-      headers: {
-        Authorization: user.token,
-      },
-    });
+		const { data } = await RequestHelper.get<UserIdentifier[]>('/api/users', {
+			headers: {
+				Authorization: user.token,
+			},
+		});
 
-    setUsers(data);
-    setFilteredUsers([...data]);
-    setLoading(false);
-  }
+		console.log(data);
 
-  useEffect(() => {
-    fetchAllUsers();
-  }, []);
+		setUsers(data);
+		setFilteredUsers([...data]);
+		setLoading(false);
+	}
 
-  useEffect(() => {
-    if (loading) return;
-    timer = setTimeout(() => {
-      if (searchQuery !== '') {
-        const newFiltered = users.filter(
-          ({ user }) =>
-            `${user.firstName} ${user.lastName}`
-              .toLowerCase()
-              .indexOf(searchQuery.toLowerCase()) !== -1,
-        );
-        setFilteredUsers(newFiltered);
-      } else {
-        setFilteredUsers([...users]);
-      }
-    }, 750);
+	useEffect(() => {
+		fetchAllUsers();
+	}, []);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [searchQuery, loading, users]);
+	useEffect(() => {
+		if (loading) return;
+		timer = setTimeout(() => {
+			if (searchQuery !== '') {
+				const newFiltered = users.filter(
+					({ user }) =>
+						`${user.firstName} ${user.lastName}`
+							.toLowerCase()
+							.indexOf(searchQuery.toLowerCase()) !== -1,
+				);
+				setFilteredUsers(newFiltered);
+			} else {
+				setFilteredUsers([...users]);
+			}
+		}, 750);
 
-  const updateFilter = (name: string) => {
-    const filterCriteria = {
-      ...filter,
-      [name]: !filter[name],
-    };
-    const newFilteredUser = users.filter(({ user }) => {
-      for (let category of Object.keys(filterCriteria)) {
-        if (filterCriteria[category] && user.permissions.includes(category)) {
-          return true;
-        }
-      }
-      return false;
-    });
-    setFilteredUsers(newFilteredUser);
-    setFilter(filterCriteria);
-  };
+		return () => {
+			clearTimeout(timer);
+		};
+	}, [searchQuery, loading, users]);
 
-  const sortByName = () => {
-    setFilteredUsers((prev) =>
-      [...prev].sort((a, b) => {
-        const nameA = a.user.firstName + ' ' + a.user.lastName;
-        const nameB = b.user.firstName + ' ' + b.user.lastName;
-        return nameA.localeCompare(nameB);
-      }),
-    );
-  };
+	const updateFilter = (name: string) => {
+		const filterCriteria = {
+			...filter,
+			[name]: !filter[name],
+		};
+		const newFilteredUser = users.filter(({ user }) => {
+			for (let category of Object.keys(filterCriteria)) {
+				if (filterCriteria[category] && user.permissions.includes(category)) {
+					return true;
+				}
+			}
+			return false;
+		});
+		setFilteredUsers(newFilteredUser);
+		setFilter(filterCriteria);
+	};
 
-  if (!user || !isAuthorized(user))
-    return <div className="text-2xl font-black text-center">Unauthorized</div>;
+	const sortByName = () => {
+		setFilteredUsers((prev) =>
+			[...prev].sort((a, b) => {
+				const nameA = a.user.firstName + ' ' + a.user.lastName;
+				const nameB = b.user.firstName + ' ' + b.user.lastName;
+				return nameA.localeCompare(nameB);
+			}),
+		);
+	};
 
-  if (loading) {
-    return (
-      <div>
-        <h1>Loading...</h1>
-      </div>
-    );
-  }
+	if (!user || !isAuthorized(user))
+		return <div className="text-2xl font-black text-center">Unauthorized</div>;
 
-  return (
-    <div className="flex flex-col flex-grow">
-      <Head>
-        <title>HackPortal - Admin</title> {/* !change */}
-        <meta name="description" content="HackPortal's Admin Page" />
-      </Head>
-      <section id="subheader" className="p-4">
-        <AdminHeader />
-      </section>
-      {currentUser === '' ? (
-        <>
-          <div className="top-6 p-4 flex flex-row items-center gap-x-2">
-            <h1 className="font-bold text-lg">Search Users</h1>
-            <input
-              type="text"
-              className="rounded-lg px-2 py-1 w-2/5"
-              style={{ backgroundColor: '#F2F3FF' }}
-              value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-              }}
-            />
-          </div>
-          <div className="p-4 flex flex-row w-full">
-            <div className="w-full md:w-1/6 lg:w-1/12 flex flex-col gap-y-4">
-              <div>
-                <h1 className="text-md font-bold text-center">Filters</h1>
-                <FilterComponent
-                  checked={filter['hacker']}
-                  onCheck={() => {
-                    updateFilter('hacker');
-                  }}
-                  title="Hackers"
-                />
-                {/* <FilterComponent
+	if (loading) {
+		return (
+			<div>
+				<h1>Loading...</h1>
+			</div>
+		);
+	}
+
+	return (
+		<div className="flex flex-col flex-grow">
+			<Head>
+				<title>HackPortal - Admin</title> {/* !change */}
+				<meta name="description" content="HackPortal's Admin Page" />
+			</Head>
+			<section id="subheader" className="p-4">
+				<AdminHeader />
+			</section>
+			{currentUser === '' ? (
+				<>
+					<div className="top-6 p-4 flex flex-row items-center gap-x-2">
+						<h1 className="font-bold text-lg">Search Users</h1>
+						<input
+							type="text"
+							className="rounded-lg px-2 py-1 w-2/5"
+							style={{ backgroundColor: '#F2F3FF' }}
+							value={searchQuery}
+							onChange={(e) => {
+								setSearchQuery(e.target.value);
+							}}
+						/>
+					</div>
+					<div className="p-4 flex flex-row w-full">
+						<div className="w-full md:w-1/6 lg:w-1/12 flex flex-col gap-y-4">
+							<div>
+								<h1 className="text-md font-bold text-center">Filters</h1>
+								<FilterComponent
+									checked={filter['hacker']}
+									onCheck={() => {
+										updateFilter('hacker');
+									}}
+									title="Hackers"
+								/>
+								{/* <FilterComponent
                   checked={filter['sponsor']}
                   onCheck={() => {
                     updateFilter('sponsor');
                   }}
                   title="Sponsors"
                 /> */}
-                {/* <FilterComponent
+								{/* <FilterComponent
                   checked={filter['organizer']}
                   onCheck={() => {
                     updateFilter('organizer');
                   }}
                   title="Organizers"
                 /> */}
-                <FilterComponent
-                  checked={filter['admin']}
-                  onCheck={() => {
-                    updateFilter('admin');
-                  }}
-                  title="Admin"
-                />
-                <FilterComponent
-                  checked={filter['super_admin']}
-                  onCheck={() => {
-                    updateFilter('super_admin');
-                  }}
-                  title="Super Admin"
-                />
-              </div>
-              <div className="my-4">
-                <h1 className="text-md font-bold text-center mb-4">Sort By:</h1>
-                <h4
-                  className="text-md text-center underline cursor-pointer"
-                  onClick={() => {
-                    sortByName();
-                  }}
-                >
-                  Alphabetically
-                </h4>
-                <h4 className="text-md text-center underline cursor-pointer">User Level</h4>
-              </div>
-            </div>
-            <div className="w-full px-8">
-              <UserList
-                hasSuperAdminPrivilege={user.permissions.includes('super_admin')}
-                users={filteredUsers}
-                onItemClick={(id) => {
-                  setCurrentUser(id);
-                }}
-              />
-            </div>
-          </div>
-        </>
-      ) : (
-        <UserAdminView
-          currentUserId={currentUser}
-          goBack={() => {
-            setCurrentUser('');
-          }}
-          updateCurrentUser={(value) => {
-            setUsers((prev) => prev.map((obj) => (obj.id === value.id ? { ...value } : obj)));
-          }}
-        />
-      )}
-    </div>
-  );
+								<FilterComponent
+									checked={filter['admin']}
+									onCheck={() => {
+										updateFilter('admin');
+									}}
+									title="Admin"
+								/>
+								<FilterComponent
+									checked={filter['super_admin']}
+									onCheck={() => {
+										updateFilter('super_admin');
+									}}
+									title="Super Admin"
+								/>
+							</div>
+							<div className="my-4">
+								<h1 className="text-md font-bold text-center mb-4">Sort By:</h1>
+								<h4
+									className="text-md text-center underline cursor-pointer"
+									onClick={() => {
+										sortByName();
+									}}
+								>
+									Alphabetically
+								</h4>
+								<h4 className="text-md text-center underline cursor-pointer">User Level</h4>
+							</div>
+						</div>
+						<div className="w-full px-8">
+							<UserList
+								hasSuperAdminPrivilege={user.permissions.includes('super_admin')}
+								users={filteredUsers}
+								onItemClick={(id) => {
+									setCurrentUser(id);
+								}}
+							/>
+						</div>
+					</div>
+				</>
+			) : (
+				<UserAdminView
+					currentUserId={currentUser}
+					goBack={() => {
+						setCurrentUser('');
+					}}
+					updateCurrentUser={(value) => {
+						setUsers((prev) => prev.map((obj) => (obj.id === value.id ? { ...value } : obj)));
+					}}
+				/>
+			)}
+		</div>
+	);
 }
