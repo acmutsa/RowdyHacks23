@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextRequest } from 'next/server';
+import { get } from '@vercel/edge-config';
 
 // This function can be marked `async` if using `await` inside
-export default function middleware(request: NextRequest) {
+export default async function middleware(request: NextRequest) {
 	switch (request.nextUrl.pathname) {
 		case '/judges':
 		case '/judge':
@@ -13,6 +14,19 @@ export default function middleware(request: NextRequest) {
 			return NextResponse.redirect('https://go.rowdyhacks.org/mentor');
 			break;
 		case '/volunteers':
+		case '/music':
+			console.log('enableHackPortalMusicClient : ', await get('enableHackPortalMusicClient'));
+			if (
+				(await get('enableHackPortalMusicClient')) === true ||
+				process.env.NEXT_PUBLIC_IS_STAGED_PROD == 'true'
+			) {
+				return NextResponse.next();
+				break;
+			}
+			const url = request.nextUrl;
+			url.pathname = '/404';
+
+			return NextResponse.rewrite(url);
 		case '/volunteer':
 			return NextResponse.redirect('https://go.rowdyhacks.org/volunteer');
 			break;
@@ -24,5 +38,5 @@ export default function middleware(request: NextRequest) {
 
 // See "Matching Paths" below to learn more
 export const config = {
-	matcher: ['/judges', '/mentors', '/mentor', '/judge', '/volunteer', '/volunteers'],
+	matcher: ['/judges', '/mentors', '/mentor', '/judge', '/volunteer', '/volunteers', '/music'],
 };

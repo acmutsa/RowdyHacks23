@@ -123,7 +123,15 @@ export default function AuthPage() {
 	}
 
 	// Switches between sign in and create an account
-	const changeOption = (option) => {
+	const changeOption = async (option) => {
+		const req = await fetch('/api/canDoRegister');
+		const { canDoRegister } = await req.json();
+		if (canDoRegister === false && option === false) {
+			alert(
+				'RowdyHacks has reached capacity for registrations this year! If you have not registered, we hope to see you at RowdyHacks 2024! If you have any questions or concerns, feel free to reach out to us at team@rowdyhacks.org.',
+			);
+			return;
+		}
 		document.getElementById(`signInOption`).style.textDecoration = option ? 'underline' : 'none';
 		document.getElementById(`signUpOption`).style.textDecoration = option ? 'none' : 'underline';
 
