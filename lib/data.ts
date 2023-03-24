@@ -11,7 +11,7 @@ export const stats = [
 		object: 'Hours',
 	},
 	{
-		data: '400+',
+		data: '500+',
 		object: 'Hackers',
 	},
 	{
