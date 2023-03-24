@@ -136,17 +136,17 @@ export const Space: FunctionComponent<spaceProps> = ({ teamMembers }) => {
 			</div>
 			<div className="flex items-center justify-center flex-col min-h-screen p-5">
 				<h2 className="text-white text-center font-poppins md:text-4xl text-3xl font-black">
-					Will You
+					Ready To
 				</h2>
 				<h1 className="text-white text-center md:text-8xl text-6xl font-poppins font-black">
 					Enter The Unknown?
 				</h1>
 				<div className="w-full max-w-[475px] relative hover:scale-125 ease-in-out duration-150 mt-10">
-					<Link href={'auth'}>
+					<Link href={'/dashboard'}>
 						<div className="relative max-w-[475px] mx-auto mb-10">
 							<div className="absolute z-[5] h-[64px] w-full max-w-[500px] hover:cursor-pointer bg-white mx-auto flex items-center justify-center register-clip">
 								<h2 className="md:text-5xl text-3xl font-sans font-black italic text-center text-black">
-									REGISTER NOW!
+									DASHBOARD &#x25BA;
 								</h2>
 							</div>
 							<div className="translate-y-2 absolute h-[64px] w-full max-w-[500px] hover:cursor-pointer bg-gray-400 mx-auto flex items-center justify-center register-clip"></div>

@@ -117,7 +117,7 @@ export default function ProfilePage() {
 									<div className="font-bold font-permanent-marker text-xl">Level of Study</div>
 									<h1 className="font-bold">{titleCase(profile.studyLevel)}</h1>
 								</div>
-								<div>
+								<div className="flex flex-col">
 									{!uploading ? (
 										<>
 											<input
@@ -129,7 +129,7 @@ export default function ProfilePage() {
 											/>
 											<label
 												id="resume_label"
-												className="transition rounded p-3 text-center whitespace-nowrap text-white w-min bg-gray-500 cursor-pointer font-black gap-y-2 hover:brightness-110"
+												className="transition mb-[-10.5px] rounded p-3 text-center whitespace-nowrap text-white w-min bg-gray-500 cursor-pointer font-black gap-y-2 hover:brightness-110"
 												htmlFor="resume"
 											>
 												Update Resume
@@ -138,6 +138,14 @@ export default function ProfilePage() {
 									) : (
 										<LoadIcon width={16} height={16} />
 									)}
+								</div>
+								<div className="flex flex-col">
+									<a
+										href="https://go.rowdyhacks.org/discord"
+										className="bg-[#7289DA] text-white w-min p-3 whitespace-nowrap text-center rounded min-h-[48px] font-black"
+									>
+										Join the Discord
+									</a>
 								</div>
 							</div>
 						</div>

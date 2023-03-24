@@ -146,11 +146,11 @@ export const MountainCaves: FunctionComponent<Mountain2Props> = ({ stats }) => {
 	return (
 		<section className="min-h-screen bg-[#2d112b] relative z-5 px-2 pt-[50px]" id="about">
 			<div className="w-full relative hover:scale-125 ease-in-out duration-150">
-				<Link href={'auth'}>
+				<Link href={'/dashboard'}>
 					<div className="relative max-w-[475px] mx-auto mb-10">
 						<div className="absolute z-[5] h-[64px] w-full max-w-[500px] hover:cursor-pointer bg-rh-sunset mx-auto flex items-center justify-center register-clip">
 							<h2 className="md:text-5xl text-3xl font-sans font-black italic text-center text-rh-deep-purple">
-								REGISTER NOW!
+								DASHBOARD &#x25BA;
 							</h2>
 						</div>
 						<div className="translate-y-2 absolute h-[64px] w-full max-w-[500px] hover:cursor-pointer bg-red-500 mx-auto flex items-center justify-center register-clip"></div>

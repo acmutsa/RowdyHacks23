@@ -83,7 +83,7 @@ export const Forest: FunctionComponent = () => {
 											target={'_blank'}
 										>
 											<button className="bg-emerald-700 font-sans w-[150px] h-[45px] rounded font-bold translate-y-[-4px] hover:translate-y-0">
-												Sponsor Packet
+												Partner Packet
 											</button>
 										</a>
 									</div>

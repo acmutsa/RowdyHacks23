@@ -8,6 +8,34 @@ const Contact: NextPage = () => {
 				<h2 className="font-sans text-white text-center mt-3 font-bold">
 					Have a question and want to reach out? Feel free to use one of the contact methods below!
 				</h2>
+				<h1 className="mt-10 text-white font-sans font-bold mb-1">General Email</h1>
+				<div className="flex rounded border-rh-sunset border-2">
+					<input className="p-2 text-center" value={'team@rowdyhacks.org'} readOnly />
+					<button
+						onClick={() =>
+							navigator.clipboard
+								.writeText('team@rowdyhacks.org')
+								.then(() => alert('Copied to Clipboard!'))
+						}
+						className="p-2 px-4 font-sans font-bold text-rh-deep-purple bg-rh-sunset"
+					>
+						Copy
+					</button>
+				</div>
+				<h1 className="mt-5 text-white font-sans font-bold mb-1">Public Relations & Partners</h1>
+				<div className="flex rounded border-rh-sunset border-2 overflow-hidden">
+					<input className="p-2 text-center" value={'pr@rowdyhacks.org'} readOnly />
+					<button
+						onClick={() =>
+							navigator.clipboard
+								.writeText('pr@rowdyhacks.org')
+								.then(() => alert('Copied to Clipboard!'))
+						}
+						className="p-2 px-4 font-sans font-bold text-rh-deep-purple bg-rh-sunset"
+					>
+						Copy
+					</button>
+				</div>
 			</div>
 		</div>
 	);

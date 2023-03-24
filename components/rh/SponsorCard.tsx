@@ -22,7 +22,7 @@ const SponsorCard: FunctionComponent<Sponsor> = (sponsor) => {
 	// );
 
 	return (
-		<Link href={sponsor.link} target="_blank">
+		<a href={sponsor.link} target="_blank">
 			<Tilt
 				perspective={800}
 				gyroscope={false}
@@ -53,7 +53,7 @@ const SponsorCard: FunctionComponent<Sponsor> = (sponsor) => {
 					</div>
 				</div>
 			</Tilt>
-		</Link>
+		</a>
 	);
 };
 
