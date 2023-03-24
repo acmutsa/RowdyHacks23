@@ -23,7 +23,17 @@ export default async function middleware(request: NextRequest) {
 				return NextResponse.next();
 				break;
 			}
-			const url = request.nextUrl;
+			url.pathname = '/404';
+
+			return NextResponse.rewrite(url);
+		case '/dashboard':
+			if (
+				(await get('allowViewDashboard')) === true ||
+				process.env.NEXT_PUBLIC_IS_STAGED_PROD == 'true'
+			) {
+				return NextResponse.next();
+				break;
+			}
 			url.pathname = '/404';
 
 			return NextResponse.rewrite(url);
@@ -58,5 +68,6 @@ export const config = {
 		'/volunteers',
 		'/music',
 		'/schedule',
+		'/dashboard',
 	],
 };
