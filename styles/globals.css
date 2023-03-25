@@ -110,6 +110,7 @@ a.link {
 }
 
 @media (max-width: 1024px) {
+
 	/* Home page video scaling */
 	.video {
 		zoom: 0.85;
@@ -156,6 +157,7 @@ a.link {
 	-o-transition: width 0.15s ease-in-out;
 	transition: width 0.15s ease-in-out;
 }
+
 .menuactive {
 	width: 100%;
 }
@@ -189,25 +191,21 @@ a.link {
 }
 
 .sky-gradient {
-	background: linear-gradient(
-		to bottom,
-		black 0%,
-		black 7.5%,
-		#40405c 25%,
-		#6f71aa 40%,
-		#f84c34 100%
-	);
+	background: linear-gradient(to bottom,
+			black 0%,
+			black 7.5%,
+			#40405c 25%,
+			#6f71aa 40%,
+			#f84c34 100%);
 }
 
 .register-gradient {
-	background: linear-gradient(
-		to bottom,
-		black 0%,
-		black 60%,
-		#40405c 80%,
-		#6f71aa 90%,
-		#f84c34 100%
-	);
+	background: linear-gradient(to bottom,
+			black 0%,
+			black 60%,
+			#40405c 80%,
+			#6f71aa 90%,
+			#f84c34 100%);
 }
 
 .cave-gradient {
@@ -228,15 +226,13 @@ a.link {
 /* Backgrounds */
 
 .team-card-gradient::before {
-	background-image: conic-gradient(
-		from 230.29deg at 51.63% 52.16%,
-		rgb(36, 0, 255) 0deg,
-		rgb(0, 135, 255) 67.5deg,
-		rgb(108, 39, 157) 198.75deg,
-		rgb(24, 38, 163) 251.25deg,
-		rgb(54, 103, 196) 301.88deg,
-		rgb(105, 30, 255) 360deg
-	);
+	background-image: conic-gradient(from 230.29deg at 51.63% 52.16%,
+			rgb(36, 0, 255) 0deg,
+			rgb(0, 135, 255) 67.5deg,
+			rgb(108, 39, 157) 198.75deg,
+			rgb(24, 38, 163) 251.25deg,
+			rgb(54, 103, 196) 301.88deg,
+			rgb(105, 30, 255) 360deg);
 }
 
 .internal-bg {
@@ -249,10 +245,12 @@ a.link {
 		opacity: 0;
 		animation-timing-function: cubic-bezier(0.74, 0.25, 0.76, 1);
 	}
+
 	10% {
 		opacity: 1;
 		animation-timing-function: cubic-bezier(0.12, 0.01, 0.08, 0.99);
 	}
+
 	100% {
 		opacity: 0.3;
 	}
@@ -311,6 +309,7 @@ a.link {
 	from {
 		background-position: 0 calc(100vh - 600px);
 	}
+
 	to {
 		background-position: max(100%, 1000px) calc(100vh - 600px);
 	}
@@ -320,9 +319,11 @@ a.link {
 	0% {
 		background-position: 0% 50%;
 	}
+
 	50% {
 		background-position: 100% 50%;
 	}
+
 	100% {
 		background-position: 0% 50%;
 	}
@@ -333,10 +334,12 @@ a.link {
 		transform: translate(0, 0px);
 		rotate: -2deg;
 	}
+
 	50% {
 		transform: translate(0, 5px);
 		rotate: -2deg;
 	}
+
 	100% {
 		transform: translate(0, -0px);
 		rotate: -2deg;
@@ -351,9 +354,11 @@ a.link {
 	0% {
 		transform: translate(0, 0px);
 	}
+
 	50% {
 		transform: translate(5px, 5px);
 	}
+
 	100% {
 		transform: translate(0, -0px);
 	}

@@ -21,6 +21,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 import Image from 'next/image';
+import QuickLink from './Components/QuickLink';
 
 /**
  * The dashboard / hack center.
@@ -109,12 +110,12 @@ export default function Dashboard(props: {
 
 					<DashboardHeader />
 					{/* Spotlight & Announcements */}
-					<div className="flex flex-wrap my-16">
+					<div className="flex flex-wrap justify-around my-12  gap-y-4">
 						{/* Spotlight Events */}
 						{/* Hides spotlight if no events are going on */}
 						{eventCount > 0 && (
-							<div className="lg:w-3/5 w-full h-96">
-								<h1 className="md:text-3xl text-xl font-black">Spotlight</h1>
+							<div className="sm:w-[47%] w-full max-h-96 p-4 bg-rh-sunset text-rh-deep-purple rounded-md">
+								<h1 className="md:text-3xl text-xl font-black font-permanent-marker">Spotlight</h1>
 								<div>{eventCountString}</div>
 								<Swiper
 									modules={[Navigation, Pagination, A11y]}
@@ -128,8 +129,8 @@ export default function Dashboard(props: {
 										({ title, speakers, startTimestamp, endTimestamp, location, page }, idx) =>
 											validTimeDate(startTimestamp, endTimestamp) && (
 												<SwiperSlide key={idx}>
-													<div className="h-[19rem] w-full">
-														{/* Customize Spotlight card design for carousel in  SpotlightCard component file*/}
+													<div className="h-[15rem] w-full bg-rh-white rounded-md">
+														{/* Customize Spotlight card design for carousel in SpotlightCard component file*/}
 														<SpotlightCard
 															title={title}
 															speakers={speakers}
@@ -137,6 +138,7 @@ export default function Dashboard(props: {
 															location={location}
 															endDate={endTimestamp}
 															page={page}
+															eventCount={eventCount}
 														/>
 													</div>
 												</SwiperSlide>
@@ -146,8 +148,24 @@ export default function Dashboard(props: {
 								<div />
 							</div>
 						)}
+						{/* Quick Links */}
+						<div className="sm:w-[47%] w-full max-h-96 overflow-scroll bg-white rounded-md p-4">
+							<h1 className="md:text-3xl text-xl font-black text-rh-deep-purple font-permanent-marker">
+								Quick Links
+							</h1>
+							<div className="flex flex-col gap-y-1 mt-2">
+								<QuickLink title="Dummy Link" href="#" />
+								<QuickLink title="Dummy Link" href="#" />
+								<QuickLink title="Dummy Link" href="#" />
+								<QuickLink title="Dummy Link" href="#" />
+								<QuickLink title="Dummy Link" href="#" />
+								<QuickLink title="Dummy Link" href="#" />
+								<QuickLink title="Dummy Link" href="#" />
+							</div>
+						</div>
+
 						{/* Announcements */}
-						<div className={`${eventCount > 0 ? 'lg:w-2/5' : 'lg:w-full'} w-full h-96`}>
+						{/* <div className={`${eventCount > 0 ? 'lg:w-2/5' : 'lg:w-full'} w-full h-96`}>
 							<h1 className="md:text-3xl text-xl font-black">Announcements</h1>
 							<div id="announcement-items" className="overflow-y-scroll h-9/10">
 								{announcements.map((announcement, idx) => {
@@ -164,12 +182,12 @@ export default function Dashboard(props: {
 									);
 								})}
 							</div>
-						</div>
+						</div> */}
 					</div>
 
 					{/* Challenges */}
-					<div className="flex flex-col items-center my-8">
-						<h1 className="md:text-3xl text-xl font-black">Challenges</h1>
+					<div className="flex flex-col items-center my-8 text-rh-white">
+						<h1 className="md:text-3xl text-xl font-black font-permanent-marker">Challenges</h1>
 						{/* Cards */}
 						<div className="challengeGrid my-8">
 							{challenges.map(({ title, description, prizes }, idx) => (
