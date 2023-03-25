@@ -105,7 +105,9 @@ export default function Dashboard(props: {
 					</h2>
 					<div className="flex items-center">
 						<img></img>
-						<h1 className="text-6xl font-poppins font-black text-rh-sunset">Dashboard</h1>
+						<h1 className="md:text-6xl text-3xl font-poppins font-black text-rh-sunset">
+							Dashboard
+						</h1>
 					</div>
 
 					<DashboardHeader />
