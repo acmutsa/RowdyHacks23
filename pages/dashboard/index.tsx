@@ -192,8 +192,14 @@ export default function Dashboard(props: {
 
 					{/* Challenges */}
 					<div className="flex flex-col items-center my-8 text-rh-white">
-						<h1 className="md:text-3xl text-xl font-black font-permanent-marker">Challenges</h1>
+						<h1 className="md:text-3xl text-xl font-black font-permanent-marker mb-5">
+							Challenges
+						</h1>
 						{/* Cards */}
+						<QuickLink
+							href="https://guide.rowdyhacks.org/tracks-challenges-prizes"
+							title={'View Challenges'}
+						/>
 						<div className="challengeGrid my-8">
 							{challenges.map(({ title, description, prizes }, idx) => (
 								<ChallengeCard key={idx} title={title} description={description} prizes={prizes} />
