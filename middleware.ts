@@ -51,6 +51,8 @@ export default async function middleware(request: NextRequest) {
 		case '/volunteer':
 			return NextResponse.redirect('https://go.rowdyhacks.org/volunteer');
 			break;
+		case '/guide':
+			return NextResponse.redirect('https://guide.rowdyhacks.org/');
 		default:
 			return NextResponse.next();
 			break;
@@ -69,5 +71,6 @@ export const config = {
 		'/music',
 		'/schedule',
 		'/dashboard',
+		'/guide',
 	],
 };

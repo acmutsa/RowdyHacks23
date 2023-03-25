@@ -45,13 +45,13 @@ export default function DashboardHeader() {
 				<div className="panel w-full bg-[#F2F3FF] text-sm">
 					<ul className="">
 						<li className="p-2 hover:bg-[#DCDEFF]">
-							<Link href="/dashboard">HackCenter</Link>
+							<Link href="/dashboard">Dashboard</Link>
 						</li>
 						<li className="p-2 hover:bg-[#DCDEFF]">
 							<Link href="/dashboard/scan-in">Scan-In</Link>
 						</li>
 						<li className="p-2 hover:bg-[#DCDEFF]">
-							<Link href="/dashboard/questions">Ask a Question</Link>
+							<Link href="/music">Music</Link>
 						</li>
 					</ul>
 				</div>
