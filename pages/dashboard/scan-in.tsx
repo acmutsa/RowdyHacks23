@@ -6,6 +6,7 @@ import { useAuthContext } from '../../lib/user/AuthContext';
 import QRCode from '../../components/QRCode';
 import QRCodeReader from '../../components/QRCodeReader';
 import Sidebar from './Components/Sidebar';
+import { groups } from '../../lib/data';
 
 /**
  * The dashboard / scan-in.
@@ -14,7 +15,7 @@ import Sidebar from './Components/Sidebar';
  */
 export default function Scan() {
 	const router = useRouter();
-	const { user, isSignedIn, hasProfile } = useAuthContext();
+	const { user, isSignedIn, hasProfile, profile } = useAuthContext();
 	const [qrData, setQRData] = useState('');
 	const [qrLoading, setQRLoading] = useState(false);
 	const [error, setError] = useState('');
@@ -81,6 +82,9 @@ export default function Scan() {
 							Fetch QR
 						</div>
 						<QRCode data={qrData} loading={qrLoading} width={200} height={200} />
+						<h4 className="text-center text-lg font-bold">
+							Hacker Biome: {groups[profile.user.group]}
+						</h4>
 					</div>
 				) : (
 					<div className="top-6 flex justify-center md:text-lg text-base">
