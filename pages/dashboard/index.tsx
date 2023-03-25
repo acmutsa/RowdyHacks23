@@ -154,13 +154,16 @@ export default function Dashboard(props: {
 								Quick Links
 							</h1>
 							<div className="flex flex-col gap-y-1 mt-2">
+								<QuickLink
+									title="RowdyHacks WiFi Info"
+									href="https://gist.githubusercontent.com/Lermatroid/e9eb864e24e5081521e57feddf1d6d0e/raw/9c8dda2a676043aa702673aa33f266d2a3b84db6/gistfile1.txt"
+								/>
+								<QuickLink title="Parking Map" href="https://i.imgur.com/rBJhkAO.png" />
+								<QuickLink title="Adventure Guide" href="/guide" />
+								{/* <QuickLink title="Dummy Link" href="#" />
 								<QuickLink title="Dummy Link" href="#" />
 								<QuickLink title="Dummy Link" href="#" />
-								<QuickLink title="Dummy Link" href="#" />
-								<QuickLink title="Dummy Link" href="#" />
-								<QuickLink title="Dummy Link" href="#" />
-								<QuickLink title="Dummy Link" href="#" />
-								<QuickLink title="Dummy Link" href="#" />
+								<QuickLink title="Dummy Link" href="#" /> */}
 							</div>
 						</div>
 
