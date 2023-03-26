@@ -248,7 +248,7 @@ export default function Calendar(props: { scheduleCard: ScheduleEvent[] }) {
 						<div className="flex flex-row">
 							<Scheduler data={props.scheduleCard}>
 								<ViewState defaultCurrentDate={defaultCurrentDate} />
-								<DayView startDayHour={8} endDayHour={24} intervalCount={1} />
+								<DayView startDayHour={0} endDayHour={24} intervalCount={1} />
 								<Appointments
 									appointmentComponent={Appointment}
 									appointmentContentComponent={AppointmentContent}
