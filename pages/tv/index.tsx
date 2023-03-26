@@ -7,7 +7,7 @@ const NotFound: NextPage = () => {
 				<h1 className="text-6xl font-poppins font-black text-rh-sunset text-center my-5">RHTV</h1>
 				<div className="w-full h-[0px] relative pb-[56.25%] border-2 rounded border-rh-sunset">
 					<iframe
-						src="https://streamyard.com/watch/6qgv3rBR95wx?embed=true"
+						src="https://streamyard.com/watch/syuxjqhcEYFJ?embed=true"
 						width="100%"
 						height="100%"
 						frameBorder="0"
