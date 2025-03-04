@@ -20,3 +20,4 @@ const handleRequest = async (req: NextApiRequest, res: NextApiResponse) => {
 };
 
 export default handleRequest;
+export const config = { runtime: 'edge' };

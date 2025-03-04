@@ -149,3 +149,5 @@ export default async function handleApplications(
 		res.status(405).end(`Method ${method} Not Allowed`);
 	}
 }
+
+export const config = { runtime: 'edge' };
