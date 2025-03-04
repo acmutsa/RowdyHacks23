@@ -89,4 +89,4 @@ export default function handleApplications(req: NextApiRequest, res: NextApiResp
     res.status(405).end(`Method ${method} Not Allowed`);
   }
 }
-export const config = { runtime: 'edge' };
+export const config = { runtime: 'experimental-edge' };
