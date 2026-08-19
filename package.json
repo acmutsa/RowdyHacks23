@@ -29,6 +29,7 @@
     "@material-ui/styles": "^4.11.5",
     "@mui/icons-material": "^5.5.0",
     "@mui/material": "^5.5.0",
+    "@mui/x-date-pickers": "^7.0.0",
     "@mui/styles": "^5.5.0",
     "@mui/system": "^5.5.0",
     "@react-spring/parallax": "^9.6.1",
