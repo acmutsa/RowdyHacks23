@@ -1,7 +1,6 @@
-import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AdminHeader from '../../components/AdminHeader';
 import ErrorList from '../../components/ErrorList';
 import EventDetailLink from '../../components/EventDetailLink';
@@ -25,12 +24,19 @@ export function isAuthorized(user): boolean {
  *
  * Route: /admin
  */
-export default function Admin({ questions }: { questions: QADocument[] }) {
+export default function Admin() {
   const { user, isSignedIn } = useAuthContext();
 
+  const [questions, setQuestions] = useState<QADocument[]>([]);
   const [announcement, setAnnouncement] = useState('');
   const [errors, setErrors] = useState<string[]>([]);
   const [showSuccessMsg, setShowSuccessMsg] = useState(false);
+
+  useEffect(() => {
+    RequestHelper.get<QADocument[]>('/api/questions/pending', {})
+      .then(({ data }) => setQuestions(data))
+      .catch((error) => console.log(error));
+  }, []);
 
   const addError = (errMsg: string) => {
     setErrors((prev) => [...prev, errMsg]);
@@ -110,7 +116,7 @@ export default function Admin({ questions }: { questions: QADocument[] }) {
       <div className="p-6">
         <h1 className="font-bold text-xl">Pending Questions: </h1>
         {questions.map((question, idx) => (
-          <Link key={idx} passHref href={`/admin/resolve/${question.id}`}>
+          <Link key={idx} passHref href={`/admin/resolve?questionId=${question.id}`}>
             <a>
               <PendingQuestion key={idx} question={question.question} />
             </a>
@@ -130,17 +136,3 @@ export default function Admin({ questions }: { questions: QADocument[] }) {
     </div>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const protocol = context.req.headers.referer?.split('://')[0] || 'http';
-  const { data } = await RequestHelper.get<QADocument[]>(
-    `${protocol}://${context.req.headers.host}/api/questions/pending`,
-    {},
-  );
-  return {
-    props: {
-      questions: data,
-    },
-  };
-};
-export const config = { runtime: 'experimental-edge' };

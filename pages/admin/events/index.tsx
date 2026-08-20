@@ -1,28 +1,29 @@
 import { Transition, Dialog } from '@headlessui/react';
-import { GetServerSideProps } from 'next';
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import EventForm from '../../../components/EventForm';
 import EventList from '../../../components/EventList';
 import { RequestHelper } from '../../../lib/request-helper';
 import { useAuthContext } from '../../../lib/user/AuthContext';
 import Link from 'next/link';
 
-interface EventPageProps {
-  events_: ScheduleEvent[];
-}
-
 function isAuthorized(user): boolean {
   if (!user || !user.permissions) return false;
   return (user.permissions as string[]).includes('super_admin');
 }
 
-export default function EventPage({ events_ }: EventPageProps) {
+export default function EventPage() {
   const { user, isSignedIn } = useAuthContext();
-  const [events, setEvents] = React.useState<ScheduleEvent[]>(events_);
+  const [events, setEvents] = React.useState<ScheduleEvent[]>([]);
   const [currentEventEditIndex, setCurrentEventEditIndex] = React.useState<number>(-1);
   const [currentEventDeleteIndex, setCurrentEventDeleteIndex] = React.useState<number>(-1);
   const [modalOpen, setModalOpen] = React.useState(false);
-  const nextEventIndex = events_.reduce((acc, curr) => Math.max(acc, curr.Event), 0) + 1;
+  const nextEventIndex = events.reduce((acc, curr) => Math.max(acc, curr.Event), 0) + 1;
+
+  useEffect(() => {
+    RequestHelper.get<ScheduleEvent[]>('/api/schedule', {})
+      .then(({ data }) => setEvents(data))
+      .catch((error) => console.log(error));
+  }, []);
 
   const submitEditEventRequest = async (eventData: ScheduleEvent) => {
     if (eventData.startDate > eventData.endDate) {
@@ -181,18 +182,3 @@ export default function EventPage({ events_ }: EventPageProps) {
     </div>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const protocol = context.req.headers.referer?.split('://')[0] || 'http';
-  const { data } = await RequestHelper.get<ScheduleEvent[]>(
-    `${protocol}://${context.req.headers.host}/api/schedule`,
-    {},
-  );
-  return {
-    props: {
-      events_: data,
-    },
-  };
-};
-
-export const config = { runtime: 'experimental-edge' };

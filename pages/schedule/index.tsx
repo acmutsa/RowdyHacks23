@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GroupingState, IntegratedGrouping, ViewState } from '@devexpress/dx-react-scheduler';
 import {
 	Scheduler,
@@ -17,7 +17,6 @@ import Paper from '@material-ui/core/Paper';
 import { alpha } from '@material-ui/core/styles/colorManipulator';
 import { WithStyles } from '@material-ui/styles';
 import classNames from 'clsx';
-import { GetServerSideProps } from 'next';
 import { RequestHelper } from '../../lib/request-helper';
 import CalendarIcon from '@material-ui/icons/CalendarToday';
 import PinDrop from '@material-ui/icons/PinDrop';
@@ -121,8 +120,16 @@ const AppointmentContent = withStyles(styles, { name: 'AppointmentContent' })(
 	},
 );
 
-export default function Calendar(props: { scheduleCard: ScheduleEvent[] }) {
+export default function Calendar() {
 	// Hooks
+	const [scheduleCard, setScheduleCard] = useState<ScheduleEvent[]>([]);
+
+	useEffect(() => {
+		RequestHelper.get<ScheduleEvent[]>('/api/schedule', {})
+			.then(({ data }) => setScheduleCard(data))
+			.catch((error) => console.error(error));
+	}, []);
+
 	const [eventData, setEventData] = useState({
 		title: '',
 		speakers: '',
@@ -216,7 +223,7 @@ export default function Calendar(props: { scheduleCard: ScheduleEvent[] }) {
 		else return teal;
 	};
 
-	const scheduleEvents = props.scheduleCard;
+	const scheduleEvents = scheduleCard;
 	const tracks = scheduleEvents.map((event) => event.track);
 	const uniqueTracks = new Set(tracks);
 
@@ -246,7 +253,7 @@ export default function Calendar(props: { scheduleCard: ScheduleEvent[] }) {
 				<div className="overflow-y-auto overflow-x-hidden lg:w-[62%] w-full h-full border-2 border-black rounded-md">
 					<Paper>
 						<div className="flex flex-row">
-							<Scheduler data={props.scheduleCard}>
+							<Scheduler data={scheduleCard}>
 								<ViewState defaultCurrentDate={defaultCurrentDate} />
 								<DayView startDayHour={0} endDayHour={24} intervalCount={1} />
 								<Appointments
@@ -325,17 +332,3 @@ export default function Calendar(props: { scheduleCard: ScheduleEvent[] }) {
 		</div>
 	);
 }
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-	const protocol = context.req.headers.referer?.split('://')[0] || 'http';
-	const { data: scheduleData } = await RequestHelper.get<ScheduleEvent[]>(
-		`${protocol}://${context.req.headers.host}/api/schedule`,
-		{},
-	);
-	return {
-		props: {
-			scheduleCard: scheduleData,
-		},
-	};
-};
-export const config = { runtime: 'experimental-edge' };

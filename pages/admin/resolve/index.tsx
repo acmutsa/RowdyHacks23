@@ -1,6 +1,5 @@
-import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { isAuthorized } from '..';
 import ErrorList from '../../../components/ErrorList';
 import PendingQuestion from '../../../components/PendingQuestion';
@@ -13,19 +12,22 @@ import { QADocument } from '../../api/questions';
  *
  * This page allows admins and organizers to resolve a specific question asked by contestant
  *
- * Route: /admin/resolve/[questionId]
+ * Route: /admin/resolve?questionId=...
  */
-export default function ResolveQuestionPage({
-  question,
-  questionId,
-}: {
-  question: QADocument;
-  questionId: string;
-}) {
+export default function ResolveQuestionPage() {
   const router = useRouter();
+  const questionId = router.query.questionId as string;
+  const [question, setQuestion] = useState<QADocument | null>(null);
   const [answer, setAnswer] = useState('');
   const [errors, setErrors] = useState<string[]>([]);
   const { user } = useAuthContext();
+
+  useEffect(() => {
+    if (!questionId) return;
+    RequestHelper.get<QADocument>(`/api/questions/pending/${questionId}`, {})
+      .then(({ data }) => setQuestion(data))
+      .catch((error) => console.log(error));
+  }, [questionId]);
 
   const addError = (errMsg: string) => {
     setErrors((prev) => [...prev, errMsg]);
@@ -55,6 +57,8 @@ export default function ResolveQuestionPage({
 
   if (!user || !isAuthorized(user))
     return <div className="text-2xl font-black text-center">Unauthorized</div>;
+
+  if (!question) return <div className="text-2xl font-black text-center">Loading...</div>;
 
   return (
     <div className="p-6">
@@ -90,19 +94,3 @@ export default function ResolveQuestionPage({
     </div>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const protocol = context.req.headers.referer?.split('://')[0] || 'http';
-  const { data } = await RequestHelper.get<QADocument>(
-    `${protocol}://${context.req.headers.host}/api/questions/pending/${context.params.questionId}`,
-    {},
-  );
-  return {
-    props: {
-      question: data,
-      questionId: context.params.questionId,
-    },
-  };
-};
-
-export const config = { runtime: 'experimental-edge' };

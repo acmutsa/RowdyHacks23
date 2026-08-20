@@ -150,4 +150,3 @@ export default async function handleApplications(
 	}
 }
 
-export const config = { runtime: 'experimental-edge' };

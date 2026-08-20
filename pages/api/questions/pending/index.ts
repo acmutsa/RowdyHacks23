@@ -40,4 +40,3 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     }
   }
 }
-export const config = { runtime: 'experimental-edge' };

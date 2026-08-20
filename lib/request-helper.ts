@@ -1,6 +1,16 @@
 import { ConsoleSqlOutlined } from '@ant-design/icons';
 
 /**
+ * Base URL prepended to relative `/api/...` calls. Needed when the frontend is deployed
+ * as a static export (no Next.js API routes available) and the API lives elsewhere.
+ */
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || '';
+
+function resolveUrl(url: string): string {
+  return API_BASE_URL && url.startsWith('/') ? `${API_BASE_URL}${url}` : url;
+}
+
+/**
  *
  * A utility class created to make the process of making request to backend easier and also to enforce type-checking
  * Function designs are inspired by axios
@@ -22,7 +32,7 @@ export class RequestHelper {
     config: RequestInit,
     body?: ReqBody,
   ): Promise<ResponseData<ResBody>> {
-    const temp = await fetch(url, {
+    const temp = await fetch(resolveUrl(url), {
       ...config,
       method: 'POST',
       mode: 'cors',
@@ -45,7 +55,7 @@ export class RequestHelper {
    *
    */
   static async get<ResBody>(url: string, config: RequestInit): Promise<ResponseData<ResBody>> {
-    const temp = await fetch(url, {
+    const temp = await fetch(resolveUrl(url), {
       ...config,
       method: 'GET',
       mode: 'cors',
@@ -72,7 +82,7 @@ export class RequestHelper {
     config: RequestInit,
     body?: ReqBody,
   ): Promise<ResponseData<ResBody>> {
-    const temp = await fetch(url, {
+    const temp = await fetch(resolveUrl(url), {
       ...config,
       method: 'DELETE',
       mode: 'cors',

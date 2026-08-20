@@ -7,8 +7,6 @@ import AnnouncementCard from './Components/AnnouncementCards';
 import Sidebar from './Components/Sidebar';
 import firebase from 'firebase';
 import 'firebase/messaging';
-import { GetServerSideProps } from 'next';
-import { RequestHelper } from '../../lib/request-helper';
 import { useFCMContext } from '../../lib/service-worker/FCMContext';
 import SpotlightCard from './Components/SpotlightCard';
 import ChallengeCard from './Components/ChallengeCard';
@@ -31,11 +29,12 @@ import QuickLink from './Components/QuickLink';
  *
  */
 
-export default function Dashboard(props: {
-	announcements: Announcement[];
-	scheduleEvents: ScheduleEvent[];
-	challenges: Challenge[];
-}) {
+export default function Dashboard() {
+	const props = { announcements: [], scheduleEvents: [], challenges: [] } as {
+		announcements: Announcement[];
+		scheduleEvents: ScheduleEvent[];
+		challenges: Challenge[];
+	};
 	const { isSignedIn, hasProfile } = useAuthContext();
 	const user = useUser();
 	const role = user.permissions?.length > 0 ? user.permissions[0] : '';
@@ -211,28 +210,3 @@ export default function Dashboard(props: {
 		</>
 	);
 }
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-	const protocol = context.req.headers.referer?.split('://')[0] || 'http';
-	// const { data: announcementData } = await RequestHelper.get<Announcement[]>(
-	// 	`${protocol}://${context.req.headers.host}/api/announcements/`,
-	// 	{},
-	// );
-	// const { data: eventData } = await RequestHelper.get<ScheduleEvent[]>(
-	// 	`${protocol}://${context.req.headers.host}/api/schedule/`,
-	// 	{},
-	// );
-	// const { data: challengeData } = await RequestHelper.get<Challenge[]>(
-	// 	`${protocol}://${context.req.headers.host}/api/challenges/`,
-	// 	{},
-	// );
-
-	return {
-		props: {
-			announcements: [],
-			scheduleEvents: [],
-			challenges: [],
-		},
-	};
-};
-export const config = { runtime: 'experimental-edge' };

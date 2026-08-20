@@ -1,6 +1,5 @@
 import { Transition, Dialog } from '@headlessui/react';
-import { GetServerSideProps } from 'next';
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import ChallengeForm from '../../../components/ChallengeForm';
 import { RequestHelper } from '../../../lib/request-helper';
 import { useAuthContext } from '../../../lib/user/AuthContext';
@@ -8,24 +7,28 @@ import Link from 'next/link';
 import ChallengeList from '../../../components/ChallengeList';
 import { arrayMove } from '@dnd-kit/sortable';
 
-interface ChallengePageProps {
-  challenges_: Challenge[];
-}
-
 function isAuthorized(user): boolean {
   if (!user || !user.permissions) return false;
   return (user.permissions as string[]).includes('super_admin');
 }
 
-export default function ChallengePage({ challenges_ }: ChallengePageProps) {
+export default function ChallengePage() {
   const { user, isSignedIn } = useAuthContext();
-  const [challenges, setChallenges] = React.useState<SortableObject<Challenge>[]>(
-    challenges_.sort((a, b) => a.rank - b.rank).map((obj, i) => ({ ...obj, id: i.toString() })),
-  );
+  const [challenges, setChallenges] = React.useState<SortableObject<Challenge>[]>([]);
   const [currentChallengeEditIndex, setCurrentChallengeEditIndex] = React.useState<number>(-1);
   const [currentChallengeDeleteIndex, setCurrentChallengeDeleteIndex] = React.useState<number>(-1);
   const [modalOpen, setModalOpen] = React.useState(false);
-  const nextChallengeIndex = challenges_.reduce((acc, curr) => Math.max(acc, curr.rank), 0) + 1;
+  const nextChallengeIndex = challenges.reduce((acc, curr) => Math.max(acc, curr.rank), 0) + 1;
+
+  useEffect(() => {
+    RequestHelper.get<Challenge[]>('/api/challenges', {})
+      .then(({ data }) =>
+        setChallenges(
+          data.sort((a, b) => a.rank - b.rank).map((obj, i) => ({ ...obj, id: i.toString() })),
+        ),
+      )
+      .catch((error) => console.log(error));
+  }, []);
 
   const submitEditChallengeRequest = async (challengeDataWrapper: SortableObject<Challenge>) => {
     const { id, ...challengeData } = challengeDataWrapper;
@@ -221,18 +224,3 @@ export default function ChallengePage({ challenges_ }: ChallengePageProps) {
     </div>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const protocol = context.req.headers.referer?.split('://')[0] || 'http';
-  const { data } = await RequestHelper.get<Challenge[]>(
-    `${protocol}://${context.req.headers.host}/api/challenges`,
-    {},
-  );
-  return {
-    props: {
-      challenges_: data,
-    },
-  };
-};
-
-export const config = { runtime: 'experimental-edge' };
